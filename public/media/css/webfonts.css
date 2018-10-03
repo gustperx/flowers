@@ -1,0 +1,24 @@
+/* @license
+ * MyFonts Webfont Build ID 2377788, 2012-10-04T06:30:52-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Louisiana by CBdO Fonts
+ * URL: http://www.myfonts.com/fonts/charlesborges/louisiana/regular/
+ * Copyright: Copyright (c) 2008 by Charles Borges de Oliveira and Melanie Snedeker. All rights reserved.
+ * Licensed pageviews: 100,000
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2377788
+ * 
+ * © 2012 Bitstream Inc
+*/
+@font-face {
+font-family: 'Louisiana';
+src: url('webfonts/2501BE_0_0.eot');
+src: url('webfonts/2501BE_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2501BE_0_0.woff') format('woff'),url('webfonts/2501BE_0_0.ttf') format('truetype'),url('webfonts/2501BE_0_0.svg#wf') format('svg');
+}

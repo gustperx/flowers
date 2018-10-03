@@ -1,0 +1,65 @@
+<html>
+<head>
+<style>
+#div1 {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+#div2 {
+    float: left;
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<h2>Drag and Drop</h2>
+<p>Drag the image back and forth between the two div elements.</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="gb_Carnation-1.png" draggable="true" ondragstart="drag(event)" id="drag1">
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<img src="gb_Carnation-4.png" width="0" height="0">
+</body>
+<script>
+window.allowDrop = function(ev) {
+    ev.preventDefault();
+}
+
+window.drag = function(ev) {
+    var img = document.createElement("img");
+    img.src = 'gb_Carnation-4.png';
+    ev.dataTransfer.setDragImage(img, 10, 10);
+    ev.dataTransfer.setData("ori", ev.target.id);
+}
+
+window.drop = function(ev) {
+    ev.preventDefault();
+    if (ev.target.id === ev.dataTransfer.getData("ori")) {
+      return;
+    }
+    var img = document.createElement("img");
+    img.id = 'targetId_' + Math.random();
+    img.draggable = true;
+    img.addEventListener('dragstart', drag);
+    if (ev.target.id === 'div2') {
+      img.src = 'gb_Carnation-1.png';
+    } else if (ev.target.id === 'div1') {
+      img.src = 'gb_Carnation-4.png';
+    }
+    var originEle = document.getElementById(ev.dataTransfer.getData("ori"));
+    originEle.outerHTML = '';
+    delete originEle;
+    ev.target.appendChild(img);
+}
+</script>
+</html>

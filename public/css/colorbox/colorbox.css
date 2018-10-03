@@ -1,0 +1,5175 @@
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	overflow: visible
+}
+
+#cboxOverlay {
+	position: fixed;
+	width: 100%;
+	height: 100%
+}
+
+#cboxMiddleLeft,
+#cboxBottomLeft {
+	clear: left
+}
+
+#cboxContent {
+	position: relative
+}
+
+#cboxLoadedContent {
+	overflow: visible
+}
+
+#cboxTitle {
+	margin: 0
+}
+
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+	cursor: pointer
+}
+
+.cboxPhoto {
+	float: left;
+	margin: auto;
+	border: 0;
+	display: block;
+	max-width: none
+}
+
+.cboxIframe {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border: 0
+}
+
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+	box-sizing: content-box
+}
+
+#cboxOverlay {
+	background: #D8D5C2
+}
+
+#colorbox {}
+
+#cboxContent {
+	background: #fff;
+	overflow: visible
+}
+
+.cboxIframe {
+	background: #fff
+}
+
+#cboxError {
+	padding: 50px;
+	border: 1px solid #ccc
+}
+
+#cboxLoadedContent {
+	margin-bottom: 20px;
+	overflow: visible !important
+}
+
+#cboxTitle {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	color: #999
+}
+
+#cboxCurrent {
+	position: absolute;
+	bottom: 0px;
+	left: 100px;
+	color: #999
+}
+
+#cboxSlideshow {
+	position: absolute;
+	bottom: 0px;
+	right: 42px;
+	color: #444
+}
+
+#cboxPrevious {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	color: #444
+}
+
+#cboxNext {
+	position: absolute;
+	bottom: 0px;
+	left: 63px;
+	color: #444
+}
+
+#cboxLoadingOverlay {
+	background: #fff url(/media/css/images/loading.gif) no-repeat 5px 5px
+}
+
+#cboxClose {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: block;
+	color: #1F1F1F;
+	width: 100px
+}
+
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF)
+}
+
+.cboxIE6 #cboxTopLeft {
+	background: url(/media/css/images/ie6/borderTopLeft.png)
+}
+
+.cboxIE6 #cboxTopCenter {
+	background: url(/media/css/images/ie6/borderTopCenter.png)
+}
+
+.cboxIE6 #cboxTopRight {
+	background: url(/media/css/images/ie6/borderTopRight.png)
+}
+
+.cboxIE6 #cboxBottomLeft {
+	background: url(/media/css/images/ie6/borderBottomLeft.png)
+}
+
+.cboxIE6 #cboxBottomCenter {
+	background: url(/media/css/images/ie6/borderBottomCenter.png)
+}
+
+.cboxIE6 #cboxBottomRight {
+	background: url(/media/css/images/ie6/borderBottomRight.png)
+}
+
+.cboxIE6 #cboxMiddleLeft {
+	background: url(/media/css/images/ie6/borderMiddleLeft.png)
+}
+
+.cboxIE6 #cboxMiddleRight {
+	background: url(/media/css/images/ie6/borderMiddleRight.png)
+}
+
+.cboxIE6 #cboxTopLeft,
+.cboxIE6 #cboxTopCenter,
+.cboxIE6 #cboxTopRight,
+.cboxIE6 #cboxBottomLeft,
+.cboxIE6 #cboxBottomCenter,
+.cboxIE6 #cboxBottomRight,
+.cboxIE6 #cboxMiddleLeft,
+.cboxIE6 #cboxMiddleRight {
+	_behavior: expression(this.src=this.src ? this.src: this.currentStyle.backgroundImage.split('"')[1], this.style.background="none", this.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(src="+this.src+",sizingMethod='scale')")
+}
+
+.overlayBuildImg {
+	padding: 0px;
+	margin: 0px;
+	float: left
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+fieldset,
+img {
+	border: 0
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+	font-style: normal;
+	font-weight: normal
+}
+
+caption,
+th {
+	text-align: left
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal
+}
+
+q:before,
+q:after {
+	content: ''
+}
+
+abbr,
+acronym {
+	border: 0
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0
+}
+
+a,
+button,
+.arrowWrap,
+.arrowWrap input,
+.rememberMe {
+	cursor: pointer
+}
+
+button {
+	width: auto;
+	overflow: visible
+}
+
+textarea {
+	resize: none
+}
+
+html {}
+
+body {
+	margin: 0px auto;
+	width: 994px;
+	height: 503;
+	font-family: Arial, sans-serif;
+	color: #1F1F1E;
+	font-size: 11px;
+	line-height: 1.2em;
+	background-color: white
+}
+
+a {
+	outline: none
+}
+
+a:link {
+	color: #333;
+	text-decoration: none;
+	outlilne: none
+}
+
+a:visited {
+	color: #333;
+	text-decoration: none
+}
+
+a:hover,
+a:focus {
+	color: #000;
+	text-decoration: underline
+}
+
+a:active {
+	color: #000;
+	text-decoration: none
+}
+
+a:focus {
+	outline: thin dotted
+}
+
+a:hover,
+a:active {
+	outline: 0
+}
+
+h1 {
+	font-size: 2em;
+	line-height: 1.5em;
+	margin-top: 0.75em;
+	margin-bottom: 0.75em;
+	padding: 0 20px
+}
+
+h2 {
+	font-size: 1.5em;
+	line-height: 2em;
+	margin-top: 1em;
+	margin-bottom: 1em
+}
+
+h3 {
+	font-size: 1.17em;
+	line-height: 1.282em;
+	margin-top: 1.282em;
+	margin-bottom: 1.282em
+}
+
+h4 {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em
+}
+
+h5 {
+	font-size: 0.83em;
+	line-height: 1.807em;
+	margin-top: 1.807em;
+	margin-bottom: 1.807em
+}
+
+h6 {
+	font-size: 0.75em;
+	line-height: 2em;
+	margin-top: 2em;
+	margin-bottom: 2em
+}
+
+p,
+pre {
+	margin: 1.5em 0
+}
+
+textarea {
+	font-family: Arial
+}
+
+.inlineblock {
+	display: inline-block;
+	padding: 10px
+}
+
+#mainContent {
+	position: relative;
+	border-width: 0px 1px 1px 1px;
+	border-style: solid;
+	border-color: black;
+	width: 994px;
+	height: 503px;
+	overflow: hidden
+}
+
+.Louisiana {
+	font-family: Louisiana, Arial;
+	font-style: normal
+}
+
+#account,
+#accountsignedin {
+	position: absolute;
+	width: 100px;
+	height: 32px;
+	margin: 0px;
+	top: 5px;
+	right: 0px;
+	z-index: 1000;
+	cursor: pointer;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+#account .signinIcon,
+#accountsignedin .signinIcon {
+	float: right;
+	margin: 5px 15px 0 0
+}
+
+#account div,
+#accountsignedin div {
+	display: inline-block;
+	vertical-align: middle;
+	height: 32px;
+	padding: 0 5px 0 0;
+	float: left
+}
+
+#account div span,
+#accountsignedin div span {
+	display: inline-block;
+	vertical-align: middle;
+	height: 32px
+}
+
+#account div a,
+#accountsignedin div a {
+	color: #333;
+	text-decoration: none
+}
+
+#account div a:hover,
+#accountsignedin div a:hover {
+	color: #000
+}
+
+.hamper .configurator #accountsignedin {
+	width: 233px
+}
+
+.hamper .configurator #account {
+	width: 143px
+}
+
+.configurator #account,
+.configurator #accountsignedin {
+	width: 351px
+}
+
+#registrationBenefits {
+	float: left;
+	width: 300px
+}
+
+#mainTop {
+	margin: 10px;
+	padding: 20px;
+	border-style: solid;
+	border-width: 1px;
+	height: 200px
+}
+
+#bottomLeft {
+	width: 582px;
+	margin: 10px;
+	padding: 20px;
+	border-style: solid;
+	border-width: 1px;
+	display: inline-block;
+	height: 200px
+}
+
+#bottomRight {
+	width: 291px;
+	margin: 10px;
+	padding: 20px;
+	border-style: solid;
+	border-width: 1px;
+	display: inline-block;
+	height: 200px
+}
+
+#nav {
+	list-style: none;
+	font-weight: bold;
+	margin-bottom: 10px;
+	width: 100%;
+	z-index: 2000
+}
+
+#nav li {
+	display: inline-block;
+	margin-right: 2px;
+	z-index: 2000;
+	zoom: 1;
+	*display: inline
+}
+
+#nav a {
+	display: block;
+	padding: 5px;
+	color: #FF1493;
+	background: #fff;
+	text-decoration: none;
+	z-index: 2000
+}
+
+#nav a:hover {
+	color: #fff;
+	background: #FF1493;
+	text-decoration: underline
+}
+
+div.buildImage {
+	float: left
+}
+
+div.store {}
+
+table {
+	border-collapse: collapse
+}
+
+table,
+th,
+td {
+	border: 1px solid black
+}
+
+th,
+td {
+	padding: 5px
+}
+
+thead {
+	background-color: green;
+	color: white
+}
+
+.error {
+	color: #FF1493;
+	font-weight: bold
+}
+
+.error,
+.notice,
+.status {
+	padding: .8em 1.5em;
+	margin-bottom: 3em;
+	border: 2px solid #ddd
+}
+
+.error {
+	background: #FBE3E4;
+	color: #8a1f11;
+	border-color: #FBC2C4
+}
+
+.notice {
+	background: #FFF6BF;
+	color: #514721;
+	border-color: #FFD324
+}
+
+.status {
+	background: #E6EFC2;
+	color: #264409;
+	border-color: #C6D880;
+	float: left;
+	position: absolute;
+	top: 0px;
+	z-index: 1500;
+	width: 994px
+}
+
+#registrationForm div .error,
+#loginWrap div .error,
+.shareEmail .error,
+.forgottenPasswordWrap .error {
+	line-height: 1.3em;
+	padding: 5px 0 0 0;
+	margin: 0px;
+	background-color: #fff;
+	border: none;
+	color: #F00;
+	display: block;
+	float: left;
+	width: 100%
+}
+
+#registrationForm div .errorStar,
+#loginWrap div .errorStar,
+.shareEmail .errorStar,
+.forgottenPasswordWrap .errorStar {
+	display: inline-block;
+	font-size: 18px;
+	color: #F00;
+	float: left
+}
+
+#loginWrap div .errorStar {
+	left: 63px;
+	top: 0
+}
+
+#registrationForm .form-field .errorStar {
+	left: 52px;
+	top: 0
+}
+
+#registrationForm .emailWrap .errorStar {
+	left: 69px;
+	top: 0
+}
+
+#registrationForm .passwordWrap .errorStar {
+	left: 54px;
+	top: 0
+}
+
+.overlayWrap,
+.infoWrap {
+	padding: 15px 15px 15px 15px;
+	background: #fff;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464;
+	width: 325px
+}
+
+.overlayTitle {
+	font-size: 28px;
+	color: #1F1F1E;
+	line-height: auto;
+	border-bottom: solid 1px #CCC;
+	line-height: 1em
+}
+
+.wf-active .overlayTitle {
+	font-size: 48px;
+	line-height: 0.7em
+}
+
+.overlayText {
+	font-size: 1.16em;
+	margin: 15px 0px 0 0;
+	color: #1F1F1E;
+	line-height: 1.4em;
+	padding: 0 45px 0 0
+}
+
+.overlayText ul {
+	list-style-type: none
+}
+
+.overlayText ul li span.invItem {
+	float: left;
+	width: 180px
+}
+
+.overlayButtons {
+	padding: 15px 0 0 0;
+	margin: 0 0 0 -3px;
+	height: 38px
+}
+
+.overlayButtons #goToInspirations {
+	height: 27px;
+	border: none;
+	padding: 10px 4px 0 19px;
+	text-align: left;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #333;
+	display: block;
+	margin: 0;
+	overflow: visible
+}
+
+.beinspiredOverlay {
+	margin: 0 26px 0 0
+}
+
+.overlayButtons #goToInspirations {}
+
+.overlayButtons #gallerySave {
+	height: 27px;
+	display: inline-block;
+	padding: 10px 4px 0 12px;
+	font-size: 1.2em;
+	font-weight: bold
+}
+
+.overlayButtons #yesClear {
+	height: 27px;
+	display: inline-block;
+	padding: 10px 4px 0 16px;
+	font-size: 1.2em;
+	font-weight: bold
+}
+
+.overlayButtons #noClear {
+	height: 27px;
+	display: inline-block;
+	padding: 10px 4px 0 20px;
+	font-size: 1.2em;
+	font-weight: bold
+}
+
+.overlayButtons #ok {
+	height: 27px;
+	display: inline-block;
+	padding: 10px 4px 0 16px;
+	font-size: 1.2em;
+	font-weight: bold
+}
+
+.buyConfirmOverlay {
+	margin: 0 25px 0 0
+}
+
+.overlayButtons #yes {
+	height: 27px;
+	display: inline-block;
+	padding: 10px 4px 0 16px;
+	font-size: 1.2em;
+	font-weight: bold
+}
+
+.overlayButtons #savebuild {
+	height: 27px;
+	display: inline-block;
+	padding: 10px 4px 0 12px;
+	font-size: 1.2em;
+	font-weight: bold
+}
+
+.overlayButtons .clearOverlay {
+	margin: 0 26px 0 0
+}
+
+.silver {
+	background: rgb(255, 255, 255);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(222, 222, 222, 1)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede', GradientType=0)
+}
+
+.silver:hover {
+	text-decoration: none;
+	background: rgb(237, 232, 203);
+	background: -moz-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(237, 232, 203, 1)), color-stop(100%, rgba(227, 209, 137, 1)));
+	background: -webkit-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: -o-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: linear-gradient(to bottom, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ede8cb', endColorstr='#e3d189', GradientType=0)
+}
+
+#bouquetWrap {
+	width: 994px;
+	height: 503px
+}
+
+.noselect {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none
+}
+
+#itemWrapper {
+	width: 269px;
+	height: 416px
+}
+
+.hline {
+	height: 1px;
+	padding: 0px;
+	padding-left: 10px;
+	margin: 0px;
+	line-height: 0px
+}
+
+.hline img {
+	position: relative;
+	top: -3px
+}
+
+#canvasWrapper {
+	display: inline;
+	left: 0px;
+	position: relative;
+	background: #fff;
+	float: left;
+	width: 727px
+}
+
+.kineticjs-content {
+	float: left
+}
+
+#byobtotals {
+	clear: both;
+	display: block;
+	width: 179px;
+	height: 138px;
+	border: none;
+	background: url(/media/images/configurator/tag.gif) no-repeat top left;
+	position: absolute;
+	top: 366px;
+	left: 755px;
+	padding: 50px 0 0 40px
+}
+
+.hamper #byobtotals {
+	background: url(/media/images/hamper/tagH.png) no-repeat top left;
+	position: absolute;
+	top: 391px;
+	left: 754px;
+	padding: 28px 0 0 40px
+}
+
+#dataUrlImg {
+	clear: both;
+	display: block
+}
+
+#dataUrlImg .bouquetConfBuy button {
+	font-size: 13px;
+	height: 36px
+}
+
+#dataUrlImg #image {
+	display: block
+}
+
+#dataUrlImg .bouquetConfBuy {
+	position: absolute;
+	top: 388px;
+	left: 899px;
+	z-index: 1000;
+	width: auto;
+	height: 39px;
+	border: none
+}
+
+#dataUrlImg .bouquetConfBuy:hover {
+	z-index: 1000;
+	background: url(/media/images/configurator/buyselected.gif) no-repeat top left
+}
+
+.hamper #dataUrlImg .bouquetConfBuy,
+.hamper #dataUrlImg .bouquetConfBuy:hover {
+	top: 406px
+}
+
+#dataUrlImg .bouquetConfBuy .basketIcon,
+.helpSendImage .basketIcon {
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 14px;
+	z-index: 10
+}
+
+#dataUrlImg #share {
+	position: absolute;
+	top: 427px;
+	left: 912px;
+	z-index: 1000;
+	-moz-box-shadow: 2px 3px 5px -2px #000;
+	-webkit-box-shadow: 2px 3px 5px -2px #000;
+	box-shadow: 2px 3px 5px -2px #000;
+	padding: 6px 11px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	cursor: pointer;
+	border: 1px solid #CDCDCD
+}
+
+#dataUrlImg #save {
+	position: absolute;
+	top: 462px;
+	left: 912px;
+	z-index: 1000;
+	-moz-box-shadow: 2px 3px 5px -2px #000;
+	-webkit-box-shadow: 2px 3px 5px -2px #000;
+	box-shadow: 2px 3px 5px -2px #000;
+	padding: 6px 13px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	cursor: pointer;
+	border: 1px solid #CDCDCD
+}
+
+.hamper #dataUrlImg #save {
+	top: 445px;
+	border: none
+}
+
+#creativeCharge {
+	position: absolute;
+	bottom: 20px;
+	right: 43px;
+	z-index: 1000
+}
+
+#yourgif {
+	position: absolute;
+	bottom: 20px;
+	right: 43px;
+	z-index: 1000
+}
+
+#mygif {
+	position: absolute;
+	top: 414px;
+	left: 290px;
+	z-index: 1000
+}
+
+#xmlRings {
+	display: none
+}
+
+.unavailable,
+.unavailable:hover {}
+
+.unavailable span {
+	display: block;
+	overflow: visible;
+	visibility: visible
+}
+
+.totalCostWrap .creativeCharge {
+	font-size: 12px;
+	padding: 0 0 1px 40px
+}
+
+.totalCostWrap .creativeCharge img {
+	vertical-align: middle;
+	cursor: pointer
+}
+
+.totalCostWrap .totalPrice {
+	font-size: 28px;
+	line-height: 1em
+}
+
+.totalCostWrap .totalPrice #pence {
+	font-size: 19px;
+	line-height: 1em
+}
+
+.wf-active .totalCostWrap .totalPrice {
+	font-size: 56px;
+	line-height: 0.6em
+}
+
+.wf-active .totalCostWrap .totalPrice #pence {
+	font-size: 34px;
+	line-height: 0.6em
+}
+
+.stemBlockWidthAnchor {
+	width: 246px;
+	height: 45px;
+	padding: 10px;
+	background-color: white
+}
+
+.stemBlockWidthAnchor .arrow {
+	background: url(/media/images/configurator/viewMenuGoldArrow.png) no-repeat top left;
+	width: 19px;
+	height: 14px;
+	display: block;
+	position: absolute;
+	top: 18px;
+	right: 6px
+}
+
+.menuOpen .arrow {
+	background: url(/media/images/configurator/viewMenuGreyArrow.png) no-repeat top left;
+	width: 14px;
+	height: 19px;
+	top: 16px;
+	right: 6px
+}
+
+#filterInfo {
+	width: 251px;
+	height: 20px;
+	padding-left: 10px
+}
+
+#filterInfo div {
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	border: none;
+	height: 100%;
+	overflow: hidden;
+	color: #656565;
+	font-style: italic
+}
+
+#filterInfo div b {
+	color: #000
+}
+
+div.fbchoice {
+	width: 110px
+}
+
+div.sbchoice {
+	width: 130px
+}
+
+#productPopUp {
+	width: 356px;
+	position: fixed;
+	background-color: #fff;
+	padding: 15px 15px 60px 15px;
+	display: none;
+	z-index: 1000;
+	-moz-box-shadow: 0 0 22px -12px #000;
+	-webkit-box-shadow: 0 0 22px -12px #000;
+	box-shadow: 0 0 22px -12px #000
+}
+
+#productPopUp p {
+	font-size: 1.2em;
+	line-height: 1.3em
+}
+
+#productPopUp .closeProductOverlay {
+	position: absolute;
+	bottom: 15px;
+	right: 15px
+}
+
+#productPopUp .closeProductOverlay {
+	text-align: right;
+	display: block;
+	padding: 0 8px 0 0;
+	position: absolute;
+	bottom: 3px;
+	right: 7px;
+	cursor: pointer
+}
+
+#productPopUp .closeProductOverlay .closeText {
+	display: inline-block;
+	vertical-align: top;
+	padding: 3px 0 0 0;
+	cursor: pointer
+}
+
+#productPopUp .closeProductOverlay .closeBtn {
+	display: inline-block;
+	padding: 0 0 0 8px;
+	cursor: pointer
+}
+
+.productWrap {
+	display: inline-block;
+	position: relative;
+	width: 120px;
+	height: 120px;
+	float: left
+}
+
+.hamper .productWrap {
+	padding: 0 0 10px 0
+}
+
+.productImg {
+	width: 91px;
+	height: 91px;
+	padding: 0px 14px;
+	overflow: hidden
+}
+
+.productImg img {
+	padding: 0px;
+	cursor: pointer
+}
+
+.productName {
+	height: 26px;
+	width: 109px;
+	text-align: center;
+	padding: 5px 5px 0px 5px;
+	overflow: hidden;
+	font-size: 11px
+}
+
+.overlayProductName {
+	font-size: 1.75em;
+	border-bottom: 1px solid #CCC;
+	margin: 0 0 0.8em 0
+}
+
+.wf-active .overlayProductName {
+	font-size: 2.75em
+}
+
+#productPopUp .overlayProductName p {
+	margin: 0px;
+	line-height: 1em;
+	font-size: 1em
+}
+
+.overlayImageWrap {
+	width: 91px;
+	height: 91px;
+	float: right;
+	-moz-box-shadow: 2px 4px 23px -7px #000;
+	-webkit-box-shadow: 2px 4px 23px -7px #0000000;
+	box-shadow: 2px 4px 23px -7px #000;
+	margin: 0 10px 0 0
+}
+
+.overlayImage {
+	width: 91px;
+	height: 91px;
+	background-color: #fff;
+	margin: 5px
+}
+
+.overlayProductCost {
+	float: left;
+	width: 220px
+}
+
+.overlayProductCost p {
+	margin: 0.4em 0
+}
+
+.overlayProductLatin {
+	float: left;
+	width: 220px
+}
+
+.overlayProductLatin p {
+	margin: 0.4em 0
+}
+
+.overlayProductMeaning {
+	float: left;
+	width: 220px
+}
+
+.overlayProductMeaning p {
+	margin: 0.4em 0
+}
+
+.overlayProductDescription {
+	float: left;
+	width: 100%
+}
+
+.overlayProductDescription p {
+	margin: 0.4em 0
+}
+
+.boxWrap {
+	width: 266px;
+	height: 503px;
+	float: left;
+	display: inline;
+	position: relative;
+	border-right: 1px solid #999
+}
+
+.box {
+	padding: 0;
+	width: 100px !important;
+	height: 100px !important;
+	margin: 0px !important
+}
+
+#viewMenu {
+	background: rgb(222, 205, 113);
+	background: -moz-linear-gradient(top, rgba(222, 205, 113, 1) 15%, rgba(179, 158, 7, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(222, 205, 113, 1)), color-stop(100%, rgba(179, 158, 7, 1)));
+	background: -webkit-linear-gradient(top, rgba(222, 205, 113, 1) 15%, rgba(179, 158, 7, 1) 100%);
+	background: -o-linear-gradient(top, rgba(222, 205, 113, 1) 15%, rgba(179, 158, 7, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(222, 205, 113, 1) 15%, rgba(179, 158, 7, 1) 100%);
+	background: linear-gradient(to bottom, rgba(222, 205, 113, 1) 15%, rgba(179, 158, 7, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#decd71', endColorstr='#b39e07', GradientType=0);
+	width: 244px;
+	display: block;
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #c3b880;
+	position: relative
+}
+
+.menuOpen #viewMenu {
+	background: rgb(255, 255, 255);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(222, 222, 222, 1)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede', GradientType=0);
+	border: 1px solid #D1D1D1
+}
+
+#viewMenu:hover {
+	text-decoration: none
+}
+
+#viewMenu .menuHeading {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 11px 0 0 70px;
+	display: block
+}
+
+#viewMenu .menuSub {
+	font-size: 11px;
+	display: block;
+	padding: 5px 0 7px 12px
+}
+
+.hamper #viewMenu .menuHeading {
+	padding: 19px 0 16px 70px
+}
+
+#sortoptions {
+	position: absolute;
+	z-index: 500;
+	background: #fff;
+	width: 266px;
+	height: 433px;
+	overflow: hidden;
+	left: 0px;
+	top: 60px;
+	float: left;
+	border-bottom: 10px solid #fff
+}
+
+.hideBlock {
+	display: none
+}
+
+.unused {
+	color: #999
+}
+
+.flowersOptions {
+	margin: 0 0 10px 10px;
+	float: left
+}
+
+.stemOptions {
+	padding-top: 10px;
+	margin: 0px 0 0px 10px;
+	float: left
+}
+
+.stemOptions,
+.foliageOptions,
+.containerOptions {
+	height: 48px;
+	width: 246px;
+	outline: none
+}
+
+.foliageOptions {
+	margin: 2px 0 2px 10px;
+	float: left
+}
+
+.containerOptions {
+	margin: 0px 0 2px 10px;
+	float: left
+}
+
+.sundryOptions {
+	height: 48px;
+	width: 251px;
+	margin: 0 0 0 10px;
+	float: left;
+	outline: none
+}
+
+.topLevelButton {
+	padding: 5px;
+	border: 1px solid #E7D485;
+	display: block;
+	color: #333;
+	width: 234px;
+	height: 36px;
+	position: relative;
+	outline: none;
+	background: rgb(237, 232, 203);
+	background: -moz-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(237, 232, 203, 1)), color-stop(100%, rgba(227, 209, 137, 1)));
+	background: -webkit-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: -o-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: linear-gradient(to bottom, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ede8cb', endColorstr='#e3d189', GradientType=0)
+}
+
+#hamperWrap .topLevelButton {
+	padding: 0 5px
+}
+
+.topLevelButton span,
+.secondLevelButton span {}
+
+.secondLevelButton {
+	height: 40px
+}
+
+.secondLevelButton,
+.filterBy {
+	display: block;
+	color: #333;
+	border: 1px solid #ccc;
+	position: relative;
+	width: 244px;
+	padding: 0;
+	overflow: hidden;
+	background: rgb(255, 255, 255);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(222, 222, 222, 1)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede', GradientType=0)
+}
+
+.filerWrap {
+	float: left
+}
+
+.filterBy {
+	width: 229px;
+	height: 15px;
+	padding: 5px 0 3px 15px;
+	font-size: 1em;
+	font-weight: bold
+}
+
+.secondLevelButton {
+	background: rgb(255, 255, 255);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(204, 204, 204, 1)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede', GradientType=0)
+}
+
+.secondLevelButton a {
+	display: block;
+	color: #333;
+	position: relative;
+	width: 240px;
+	outline: none
+}
+
+.showAllFlowers,
+.filterByName,
+.filterByColour,
+.filterByMeaning {
+	border: 1px solid #ccc;
+	height: 36px
+}
+
+.filterByName,
+.filterByColour,
+.filterByMeaning {}
+
+.nameBlock {
+	width: 244px;
+	height: 280px;
+	border: 1px solid #CCC;
+	background: rgb(255, 255, 255);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(204, 204, 204, 1)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede', GradientType=0);
+	-moz-box-shadow: inset 0px 10px 20px -10px #333;
+	-webkit-box-shadow: inset 0px 10px 20px -10px #333;
+	box-shadow: inset 0px 10px 20px -10px #333
+}
+
+.letterBlock {
+	padding: 25px 31px 0px 35px;
+	height: 226px;
+	line-height: 1.7em
+}
+
+.letterBlock span {
+	display: inline-block;
+	font-size: 17px;
+	font-weight: bold;
+	padding: 0 0 0 14px;
+	border-left: 1px solid #999;
+	width: 25px;
+	margin: 0 0 16px 0
+}
+
+.letterBlock span:nth-child(4n),
+.letterBlock span:last-child {
+	border-right: 1px solid #999
+}
+
+#cboxClose {
+	z-index: 999
+}
+
+.close {
+	text-align: right;
+	display: block;
+	height: 33px;
+	padding: 0 8px 0 0;
+	position: relative;
+	bottom: 3px;
+	right: 10px;
+	cursor: pointer
+}
+
+.close .closeText {
+	display: inline-block;
+	vertical-align: top;
+	font-weight: bold;
+	font-size: 12px;
+	padding: 2px 0 0;
+	text-decoration: none
+}
+
+.close .closeText a {
+	text-decoration: none
+}
+
+.close .closeBtn {
+	display: inline-block;
+	padding: 0 0 0 8px
+}
+
+.flowerColourBlock {
+	display: block;
+	clear: both;
+	position: relative;
+	height: 213px
+}
+
+.colourBlock {
+	width: 244px;
+	padding: 0 0 0px 0;
+	border: 1px solid #CCC;
+	background: rgb(255, 255, 255);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(204, 204, 204, 1)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede', GradientType=0);
+	-moz-box-shadow: inset 0px 10px 20px -10px #333;
+	-webkit-box-shadow: inset 0px 10px 20px -10px #333;
+	box-shadow: inset 0px 10px 20px -10px #333
+}
+
+.colourBlock a,
+.colourBlock span.colourCenter {
+	padding: 0px;
+	display: block;
+	position: absolute
+}
+
+.colourBlock a.red {
+	background: url(/media/images/configurator/menu/red-colour-petal.gif) no-repeat top left;
+	text-indent: -9000px;
+	width: 48px;
+	height: 71px;
+	left: 102px;
+	top: 20px
+}
+
+.colourBlock a.orange {
+	background: url(/media/images/configurator/menu/orange-colour-petal.gif) no-repeat top left;
+	text-indent: -9000px;
+	width: 62px;
+	height: 55px;
+	left: 135px;
+	top: 43px
+}
+
+.colourBlock a.yellow {
+	background: url(/media/images/configurator/menu/yellow-colour-petal.gif) no-repeat top left;
+	text-indent: -9000px;
+	width: 71px;
+	height: 51px;
+	left: 143px;
+	top: 91px
+}
+
+.colourBlock a.green {
+	background: url(/media/images/configurator/menu/green-colour-petal.png) no-repeat top left;
+	text-indent: -9000px;
+	width: 57px;
+	height: 60px;
+	left: 134px;
+	top: 129px
+}
+
+.colourBlock a.blue {
+	background: url(/media/images/configurator/menu/blue-colour-petal.png) no-repeat top left;
+	text-indent: -9000px;
+	width: 48px;
+	height: 77px;
+	padding: 0px;
+	left: 100px;
+	top: 134px
+}
+
+.colourBlock a.purple {
+	background: url(/media/images/configurator/menu/purple-colour-petal.png) no-repeat top left;
+	text-indent: -9000px;
+	width: 56px;
+	height: 60px;
+	left: 51px;
+	top: 129px
+}
+
+.colourBlock a.pink {
+	background: url(/media/images/configurator/menu/pink-colour-petal.gif) no-repeat top left;
+	text-indent: -9000px;
+	width: 72px;
+	height: 51px;
+	padding: 0px;
+	left: 28px;
+	top: 91px
+}
+
+.colourBlock a.white {
+	background: url(/media/images/configurator/menu/white-colour-petal.gif) no-repeat top left;
+	text-indent: -9000px;
+	width: 58px;
+	height: 56px;
+	left: 48px;
+	top: 43px
+}
+
+.colourBlock span.colourCenter {
+	background: url(/media/images/configurator/menu/colour-center.gif) no-repeat top left;
+	text-indent: -9000px;
+	width: 34px;
+	height: 34px;
+	left: 105px;
+	top: 95px
+}
+
+.meaningBlock {
+	width: 244px;
+	border: 1px solid #CCC;
+	height: 175px;
+	padding: 0 0 21px 0;
+	background: rgb(255, 255, 255);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(204, 204, 204, 1)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 15%, rgba(204, 204, 204, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede', GradientType=0);
+	-moz-box-shadow: inset 0px 10px 20px -10px #333;
+	-webkit-box-shadow: inset 0px 10px 20px -10px #333;
+	box-shadow: inset 0px 10px 20px -10px #333
+}
+
+.meaningBlockList {
+	padding: 10px 0px 0px 35px
+}
+
+.meaningBlockList ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	line-height: 1.6em
+}
+
+.meaningBlockList ul li {
+	width: 100%;
+	padding: 5px 0px;
+	margin: 0px;
+	background-image: url(/media/images/configurator/menu/meaningbullet.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 12px;
+	padding-left: 14px
+}
+
+.meaningBlockList ul li a {
+	background: none;
+	padding: 0px;
+	height: auto;
+	font-size: 12px;
+	color: #333;
+	text-decoration: none
+}
+
+.meaningBlockList ul li a:hover,
+.meaningBlockList ul li a:active,
+.meaningBlockList ul li a:visited {
+	color: #333
+}
+
+.meaningBlock .close {
+	bottom: 7px
+}
+
+.secondLevelButton form {
+	color: #333;
+	display: block;
+	padding: 7px 10px
+}
+
+.secondLevelButton form label {
+	padding: 7px 7px 0 0;
+	font-size: 1.1em;
+	font-weight: bold;
+	float: left
+}
+
+.secondLevelButton form select {
+	width: 160px;
+	margin: 4px 0 0;
+	float: left
+}
+
+.secondLevelText {
+	font-size: 1.16em;
+	font-weight: bold;
+	display: inline-block;
+	padding: 11px 0 0 0
+}
+
+.flower-icon {
+	background: url(/media/images/configurator/menu/flowers-icon.png) no-repeat top left;
+	text-indent: -9000px;
+	display: inline-block;
+	width: 43px;
+	height: 39px;
+	margin: 0 6px 0 4px;
+	vertical-align: middle
+}
+
+.foliage-icon {
+	background: url(/media/images/configurator/menu/foliage-icon.png) no-repeat top left;
+	text-indent: -9000px;
+	display: inline-block;
+	width: 50px;
+	height: 36px;
+	margin: 0 3px 0 0;
+	vertical-align: middle
+}
+
+.vases-icon {
+	background: url(/media/images/configurator/menu/vases-icon.png) no-repeat top left;
+	text-indent: -9000px;
+	display: inline-block;
+	width: 19px;
+	height: 32px;
+	margin: 0 23px 0 11px;
+	vertical-align: middle
+}
+
+.accessories-icon {
+	background: url(/media/images/configurator/menu/accessories-icon.png) no-repeat top left;
+	text-indent: -9000px;
+	display: inline-block;
+	width: 44px;
+	height: 34px;
+	margin: 0 6px 0 3px;
+	vertical-align: middle
+}
+
+.thirdLevelText {
+	font-size: 1.1em;
+	font-weight: bold;
+	display: inline-block;
+	padding: 14px 0 0 0
+}
+
+.showall-icon {
+	background: url(/media/images/configurator/menu/showall-icon.png) no-repeat top left;
+	text-indent: -9000px;
+	display: inline-block;
+	width: 32px;
+	height: 30px;
+	margin: 0 12px 0 30px;
+	vertical-align: middle;
+	position: relative;
+	top: -4px
+}
+
+.letters-icon {
+	background: url(/media/images/configurator/menu/letters-icon.png) no-repeat top left;
+	text-indent: -9000px;
+	display: inline-block;
+	width: 29px;
+	height: 31px;
+	margin: 0 16px 0 30px;
+	vertical-align: middle;
+	position: relative;
+	top: -3px
+}
+
+.colour-icon {
+	background: url(/media/images/configurator/menu/colours-icon.png) no-repeat top left;
+	text-indent: -9000px;
+	display: inline-block;
+	width: 33px;
+	height: 33px;
+	margin: 0 14px 0 28px;
+	vertical-align: middle;
+	position: relative;
+	top: -3px
+}
+
+.meaning-icon {
+	background: url(/media/images/configurator/menu/meaning-icon.png) no-repeat top left;
+	text-indent: -9000px;
+	display: inline-block;
+	width: 28px;
+	height: 24px;
+	margin: 0 17px 0 30px;
+	vertical-align: middle;
+	position: relative;
+	top: -2px
+}
+
+.secondLevelButton .arrow {
+	background: url(/media/images/configurator/menu/menu-silver-arrow-closed.gif) no-repeat top left;
+	width: 14px;
+	height: 20px;
+	display: block;
+	position: absolute;
+	top: 8px;
+	right: 15px
+}
+
+.topLevelButton .arrow {
+	background: url(/media/images/configurator/menu/menu-arrow-closed.gif) no-repeat top left;
+	width: 14px;
+	height: 20px;
+	display: block;
+	position: absolute;
+	top: 13px;
+	right: 15px
+}
+
+#myCreation {
+	position: absolute;
+	top: 337px;
+	left: 290px
+}
+
+div.admin {
+	width: 750px
+}
+
+#resultsTable {
+	width: 994px;
+	height: 363px;
+	overflow: hidden;
+	overflow-y: scroll;
+	border-bottom: 1px solid #000
+}
+
+.admin {
+	width: 994px;
+	height: 473px;
+	overflow: hidden;
+	overflow-y: scroll
+}
+
+.admin input {
+	width: 200px;
+	height: 25px;
+	padding: 5px;
+	margin: 5px
+}
+
+.admin label {
+	width: auto;
+	height: 25px;
+	padding: 5px;
+	margin: 5px
+}
+
+.admin select {
+	width: auto;
+	height: 25px;
+	margin: 5px
+}
+
+.admin div {
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid black
+}
+
+.actionBlock {
+	clear: both;
+	padding: 20px 0
+}
+
+.adminAction {
+	width: 100px;
+	padding: 10px;
+	border: 1px solid black;
+	margin-right: 10px;
+	display: inline
+}
+
+#newProduct {
+	height: 70px;
+	width: 150px;
+	background: white;
+	padding: 10px
+}
+
+#stemProductView {
+	height: 1063px;
+	width: 750px;
+	background: white
+}
+
+.adminStemUpdate,
+.adminFoliageUpdate {
+	height: 950px;
+	width: 650px;
+	background: white;
+	padding: 10px
+}
+
+.adminContainerUpdate,
+.adminSundryUpdate {
+	height: 480px;
+	width: 570px;
+	background: white;
+	padding: 10px
+}
+
+.adminProductUpdate,
+.adminHamperUpdate {
+	height: 480px;
+	width: 650px;
+	background: white;
+	padding: 10px
+}
+
+.adminImgUpdate {
+	height: 280px;
+	width: 200px;
+	background: white;
+	padding: 10px
+}
+
+.seasonsadmin {
+	height: 80px;
+	width: 700px;
+	background: white;
+	padding: 10px
+}
+
+.admindelete {
+	height: 300px;
+	width: 350px;
+	background: white;
+	padding: 10px
+}
+
+.admincategory {
+	height: 80px;
+	width: 250px;
+	background: white;
+	padding: 10px
+}
+
+.admincategoryremove {
+	height: 300px;
+	width: 250px;
+	background: white;
+	padding: 10px
+}
+
+.settingsadmin {
+	height: 150px;
+	width: 300px;
+	background: white;
+	padding: 10px
+}
+
+.rolesWrap {
+	height: 450px;
+	width: 200px;
+	background: white;
+	padding: 10px
+}
+
+.tipsadmin {
+	height: 200px;
+	width: 450px;
+	background: white;
+	padding: 10px
+}
+
+.helpOverlaySettingsBackground {
+	background: #333 !important;
+	opacity: 0.75 !important;
+	-moz-opacity: 0.75 !important;
+	filter: alpha(opacity=75) !important
+}
+
+.helpOverlaySettingsBox {
+	top: 0px !important
+}
+
+.helpOverlaySettingsClose {
+	top: 13px !important
+}
+
+.helpOverlaySettingsClose img {
+	padding-right: 5px !important
+}
+
+.helpOverlaySettingsClose .close {
+	color: #DED089 !important;
+	padding: 0px !important;
+	right: 9px !important
+}
+
+#addToInspirations {
+	width: 100px;
+	height: 80px;
+	background-color: #fff;
+	padding: 10px
+}
+
+#stemProductView,
+.adminProductUpdate,
+.adminStemUpdate,
+.adminFoliageUpdate,
+.adminContainerUpdate,
+.adminSundryUpdate,
+.adminHamperUpdate {
+	height: 363px;
+	overflow: hidden;
+	overflow-y: scroll
+}
+
+#newRecord {
+	width: 100px;
+	padding: 10px;
+	border: 1px solid black
+}
+
+#stemProductView {
+	width: 750px
+}
+
+#stemProductView div {
+	display: inline-block;
+	padding: 5px;
+	margin: 5px
+}
+
+#stemImages {
+	width: 700px
+}
+
+#stemAvailability,
+#stemVaseLife,
+#stemNotes,
+#stemColourRange,
+#stemColourName,
+#stemMeaning,
+#stemMeaningText {
+	width: 200px;
+	border: 1px solid black
+}
+
+.productSettings {
+	width: 60px;
+	border: 1px solid black
+}
+
+#assignedSeasons ul {
+	list-style-type: none
+}
+
+#mainSettings,
+#stemImages,
+#productInfo,
+#productSettings {
+	width: 90%
+}
+
+div.imageUpload,
+div.stemInfoTextarea,
+div.stemSettingsInput,
+div.stemSettingsSelect,
+div.meaningCheckboxes,
+div.meaningCategories {
+	border: 0px none;
+	display: inline-block
+}
+
+div.checkbox {
+	display: inline-block;
+	width: 180px
+}
+
+div.checkbox input {
+	width: 50px
+}
+
+#seasonResult {
+	width: 300px;
+	height: 300px
+}
+
+.arrowWrap,
+.overlayBuy .arrowWrap {
+	position: relative;
+	display: inline-block;
+	height: 39px;
+	width: auto;
+	background: none !important;
+	cursor: pointer
+}
+
+.overlayBuy .arrowWrap {
+	padding: 0px
+}
+
+.helpOverlayBuy {
+	padding: 0 0 0 0;
+	width: auto
+}
+
+.arrowWrap .arrowText,
+.overlayBuy .arrowWrap .arrowText {
+	background: url(/media/images/arrowText.gif) no-repeat 0 0;
+	width: auto !important;
+	height: 39px;
+	float: left !important;
+	display: inline-block;
+	font-weight: bold;
+	text-align: left;
+	font-size: 1.3em;
+	padding: 0 0 3px 15px;
+	display: inline-block;
+	border: none;
+	text-decoration: none;
+	color: #332B28;
+	font-size: 13px;
+	font-family: arial;
+	margin: 0px
+}
+
+.arrowWrap .arrowTip {
+	background: url(/media/images/arrowTip.gif) no-repeat top right;
+	display: block;
+	width: 24px;
+	height: 39px;
+	position: absolute;
+	top: 0px;
+	right: -24px;
+	z-index: 10
+}
+
+.arrowWrap:hover .arrowText {
+	background: url(/media/images/arrowText.gif) no-repeat left -38px;
+	text-decoration: none
+}
+
+.arrowWrap:hover .arrowTip {
+	background: url(/media/images/arrowTip.gif) no-repeat right -38px
+}
+
+.overlayBuy .unavailable .arrowText {
+	padding: 11px 0px 0px 15px;
+	height: 29px
+}
+
+.bouquetConfBuy .arrowText,
+.helpOverlayBuy .arrowText {
+	background: url(/media/images/arrowText.png) no-repeat 0 0;
+	padding: 0 0px 0 42px !important;
+	color: #332B28;
+	vertical-align: top;
+	height: 34px
+}
+
+.bouquetConfBuy .arrowTip,
+.helpOverlayBuy .arrowTip {
+	background: url(/media/images/arrowTip.png) no-repeat top right
+}
+
+.bouquetConfBuy:hover .arrowText,
+.helpOverlayBuy:hover .arrowText {
+	background: url(/media/images/arrowText.png) no-repeat left -38px;
+	text-decoration: none
+}
+
+.bouquetConfBuy:hover .arrowTip,
+.helpOverlayBuy:hover .arrowTip {
+	background: url(/media/images/arrowTip.png) no-repeat right -38px
+}
+
+.viewShareWrap .arrowText {
+	background: url(/media/images/arrowText.png) no-repeat 0 0
+}
+
+.viewShareWrap .arrowTip {
+	background: url(/media/images/arrowTip.png) no-repeat top right
+}
+
+.viewShareWrap .galleryGoToConf:hover .arrowText {
+	background: url(/media/images/arrowText.png) no-repeat left -38px;
+	text-decoration: none
+}
+
+.viewShareWrap .galleryGoToConf:hover .arrowTip {
+	background: url(/media/images/arrowTip.png) no-repeat right -38px
+}
+
+.galleryPageWrap {
+	float: left;
+	position: relative;
+	width: 994px;
+	height: 504px;
+	overflow: hidden;
+	overflow-y: auto
+}
+
+.galleryBgImg {
+	float: left;
+	background: url(/media/images/configurator/galleryBgFlowers.jpg) no-repeat right 35px;
+	padding: 0 25px;
+	display: block;
+	height: 100%;
+	width: 944px
+}
+
+.hamper .galleryBgImg {
+	float: left;
+	background: url(/media/images/configurator/galleryBgHamper.jpg) no-repeat 455px -100px;
+	display: block;
+	height: 100%;
+	width: 944px
+}
+
+.galleryGoToConf {
+	position: absolute !important;
+	top: 45px;
+	right: 25px
+}
+
+.galleryGoToConf #gotoConfigurator {
+	display: block
+}
+
+.galleryTextWrap {
+	width: 470px
+}
+
+.galleryPageWrap h1 {
+	float: left;
+	font-size: 24px;
+	height: auto;
+	margin: 20px 0 10px 0;
+	padding: 0;
+	width: 450px;
+	line-height: 1em
+}
+
+.wf-active .galleryPageWrap h1 {
+	font-size: 40px;
+	line-height: 0.7em
+}
+
+.galleryPageWrap h1 span {
+	font-size: 30px
+}
+
+.wf-active .galleryPageWrap h1 span {
+	font-size: 53px
+}
+
+#gallerysubheader {
+	float: left;
+	width: 100%;
+	font-size: 1.2em
+}
+
+#gallerysubheader p {
+	margin: 0px;
+	font-weight: bold;
+	line-height: 1.3em
+}
+
+#gallerytext {
+	float: left;
+	width: 100%;
+	margin: 0 0 0 0;
+	font-size: 1.2em;
+	line-height: 1.3em
+}
+
+#gallerytext p {
+	line-height: 1.3em
+}
+
+#gallerytext p:last-child {
+	margin: 1.5em 0 0 0
+}
+
+#mygallery {
+	list-style: none;
+	font-weight: bold;
+	float: left;
+	-moz-box-shadow: -9px 14px 48px -9px #646464;
+	-webkit-box-shadow: -9px 14px 48px -9px #646464;
+	box-shadow: -9px 14px 48px -9px #646464;
+	margin: 20px 0 0 0;
+	clear: both
+}
+
+#mygallery li {
+	float: left;
+	display: inline-block;
+	position: relative;
+	border-top: 1px solid #D1D1D1;
+	background: url(/media/images/configurator/tabBg.gif) no-repeat left -2px;
+	width: 185px;
+	height: 36px
+}
+
+#galleryWrapper {
+	background: #fff;
+	border-left: 1px solid #D1D1D1;
+	border-right: 1px solid #D1D1D1;
+	border-bottom: 1px solid #D1D1D1;
+	float: left;
+	width: 896px;
+	padding: 25px 15px;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464;
+	position: relative;
+	top: -1px
+}
+
+#noCreationsSaved {
+	display: block;
+	float: left;
+	font-size: 24px;
+	padding: 40px 20px
+}
+
+.wf-active #noCreationsSaved {
+	font-size: 36px
+}
+
+#mygallery li.activeTab {
+	border-bottom: 1px solid #fff;
+	border-left: 1px solid #D1D1D1;
+	background: #fff
+}
+
+#mygallery li a {
+	background: url(/media/images/configurator/endTab.png) no-repeat top -1px;
+	color: #000;
+	display: block;
+	padding: 12px 37px 11px 28px;
+	font-size: 16px;
+	font-weight: normal;
+	width: 114px;
+	position: relative;
+	top: 0px;
+	border-bottom: none;
+	text-decoration: none
+}
+
+.wf-active #mygallery li a {
+	font-size: 28px
+}
+
+#mygallery li.child1 a {
+	background: none
+}
+
+#mygallery li.activeTab a {
+	color: #000;
+	top: 1px;
+	margin: 11px 40px 0px 31px;
+	padding: 0 0 11px 0;
+	border-bottom: 1px solid #D1D1D1;
+	text-decoration: none;
+	outline: none
+}
+
+#mygallery li .tabEnd {
+	background: transparent url(/media/images/configurator/endTabEnd.png) no-repeat right 0px;
+	width: 38px;
+	height: 37px;
+	position: absolute;
+	top: 0px;
+	right: -26px
+}
+
+#mygallery li.lastChild {
+	border-bottom: none
+}
+
+#mygallery li.lastChild .tabEnd {
+	background: url(/media/images/configurator/endTabEnd.png) no-repeat scroll right 0px transparent;
+	height: 35px
+}
+
+#mygallery li.lastChild.activeTab .tabEnd {
+	border-bottom: none
+}
+
+#mygallery li.child1 {
+	z-index: 94;
+	border-left: 1px solid #D1D1D1;
+	width: 159px;
+	height: 35px;
+	background: url(/media/images/configurator/firstTabBg.gif) no-repeat left -2px;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important
+}
+
+#mygallery li.child1 .tabEnd {
+	background: transparent url(/media/images/configurator/endTabEnd.png) no-repeat right 0px
+}
+
+#mygallery li.child2 {
+	z-index: 93
+}
+
+#mygallery li.child3 {
+	z-index: 92
+}
+
+#mygallery li.child4 {
+	z-index: 91
+}
+
+#mygallery li.lastChild {
+	z-index: 90
+}
+
+#mygallery li.prevSibling {
+	background: url(/media/images/configurator/tabFirstBg.gif) no-repeat right -2px !important
+}
+
+#mygallery li.prevSibling .tabEnd {
+	background: none
+}
+
+#mygallery li.prevPrevSibling {
+	background: url(/media/images/configurator/tabBg.gif) no-repeat left -2px
+}
+
+#mygallery li.prevPrevSibling .tabEnd {
+	background: transparent url(/media/images/configurator/tabEnd.png) no-repeat left -2px
+}
+
+#mygallery li.activeTab {
+	background: #fff;
+	z-index: 99;
+	-moz-box-shadow: -23px -4px 19px -16px #646464;
+	-webkit-box-shadow: -23px -4px 19px -16px #646464;
+	box-shadow: -23px -4px 19px -16px #646464;
+	border-bottom: none !important
+}
+
+#mygallery li.activeTab .tabEnd {
+	background: transparent url(/media/images/configurator/activeTabEnd.png) no-repeat right -2px;
+	width: 26px;
+	height: 37px;
+	position: absolute;
+	top: 0px;
+	right: -26px
+}
+
+#mygallery li.activeTab.lastChild .tabEnd {
+	background: transparent url(/media/images/configurator/endTab.png) no-repeat left 0px;
+	width: 26px;
+	height: 37px;
+	position: absolute;
+	top: 0px;
+	right: -26px
+}
+
+#mygallery li.child1.prevSibling,
+#mygallery li.child1.prevPrevSibling {
+	background: url(/media/images/configurator/firstTabBg.gif) no-repeat left -2px
+}
+
+.gallerybox {
+	padding: 20px;
+	display: inline-block;
+	text-align: center;
+	width: 258px;
+	float: left
+}
+
+.gallerybox img {
+	cursor: pointer;
+	-moz-box-shadow: 0 0 32px -9px #646464;
+	-webkit-box-shadow: 0 0 32px -9px #646464;
+	box-shadow: 0 0 32px -9px #646464;
+	float: left
+}
+
+.no-boxshadow .gallerybox img {
+	border: 1px solid #D1D1D1
+}
+
+.galleryboxName {
+	float: left;
+	width: 250px;
+	display: block;
+	padding: 14px 8px 10px 0;
+	text-decoration: underline;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #333;
+	cursor: pointer
+}
+
+.galleryboxName .galleryItemName {
+	float: left;
+	display: inline-block;
+	width: 190px;
+	text-align: left;
+	overflow: hidden;
+	line-height: 1.4em;
+	height: 34px;
+	word-wrap: break-word
+}
+
+.galleryboxName .galleryItemName a {
+	display: inline
+}
+
+.galleryboxName .galleryItemName .editGalleryName {
+	display: inline;
+	padding: 0 0 0 5px
+}
+
+.galleryboxName .galleryItemName .editGalleryName a {
+	color: #999
+}
+
+.galleryboxName .galleryItemPrice {
+	float: right;
+	display: inline-block;
+	font-size: 1.2em
+}
+
+.galleryboxLinks {
+	float: left;
+	width: 264px;
+	display: block;
+	height: 50px
+}
+
+.galleryboxLinks .silver {
+	padding: 5px 9px;
+	float: left;
+	display: inline-block;
+	border: 1px solid #D4D4D4;
+	font-weight: bold;
+	font-size: 12px;
+	margin: 5px 9px 0 0;
+	-moz-box-shadow: 2px 3px 5px -2px #000;
+	-webkit-box-shadow: 2px 3px 5px -2px #000;
+	box-shadow: 2px 3px 5px -2px #000
+}
+
+.galleryboxLinks .galleryBuy {
+	float: left;
+	margin: 0 0 0 5px;
+	width: 65px;
+	position: relative;
+	overflow: visible;
+	visibility: visible
+}
+
+.overlayBuy .galleryOverlayBuy {
+	float: left;
+	margin: 0 0 0 0;
+	position: relative;
+	overflow: visible;
+	visibility: visible
+}
+
+.overlayBuy span.unavailable {
+	width: 70px
+}
+
+.galleryboxLinks .galleryBuy .arrowWrap {
+	float: right;
+	margin: 0 19px 0 0
+}
+
+.galleryboxLinks .galleryBuy .arrowText,
+.overlayBuy .unavailable .arrowText {
+	height: 29px;
+	float: left;
+	display: block;
+	font-weight: bold;
+	text-align: left;
+	font-size: 1.3em;
+	padding: 10px 0 0 15px;
+	width: 26px !important
+}
+
+.galleryboxLinks .galleryBuy .arrowTip,
+.overlayBuy .unavailable .arrowTip {
+	position: static;
+	float: left;
+	width: 24px !important;
+	display: inline-block;
+	height: 39px
+}
+
+.galleryboxLinks .moreinfo {
+	margin: 5px 0 0 0
+}
+
+.galleryboxAdminLinks {
+	float: left;
+	width: 250px;
+	display: block;
+	padding: 2px 0 0 0;
+	text-decoration: underline;
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #333;
+	cursor: pointer
+}
+
+.galleryboxAdminLinks a {
+	width: 100%;
+	padding: 0 0 2px;
+	display: block
+}
+
+.overlayTab {
+	float: left;
+	width: 100%;
+	display: block;
+	height: 45px;
+	background: url(/media/images/configurator/overlayTabBg.gif) repeat-x top left;
+	width: auto;
+	float: left;
+	position: relative;
+	-moz-box-shadow: -9px 14px 48px -9px #646464;
+	-webkit-box-shadow: -9px 14px 48px -9px #646464;
+	box-shadow: -9px 14px 48px -9px #646464
+}
+
+.overlayBuildName {
+	float: left
+}
+
+.overlayBuildName h2 {
+	margin: 0px;
+	padding: 14px 15px 7px 15px;
+	line-height: 1em;
+	font-size: 1.5em;
+	float: left;
+	display: inline
+}
+
+.wf-active .overlayBuildName h2 {
+	padding: 7px 15px 7px 15px;
+	font-size: 2.8em
+}
+
+.overlayRenameBuild {
+	float: left
+}
+
+.overlayRenameBuild a {
+	margin: 0px;
+	padding: 16px 60px 0 0;
+	font-size: 1.1em;
+	color: #909090;
+	line-height: 1em;
+	float: left;
+	display: inline
+}
+
+.overlayTab .tabEnd {
+	position: absolute;
+	top: 0px;
+	right: -37px;
+	background: url(/media/images/configurator/overlayTabEnd.gif) no-repeat top right;
+	width: 37px;
+	height: 45px
+}
+
+.overlayBuildImg img {
+	width: 581px;
+	height: 404px;
+	height: auto
+}
+
+.overlayBranding {
+	position: absolute;
+	top: 38px;
+	left: 15px
+}
+
+.overlayBranding p {
+	font-size: 1.1em;
+	font-weight: bold;
+	line-height: 1.7em
+}
+
+.overlayBranding p span {
+	font-size: 1.4em;
+	font-weight: normal;
+	color: #32312f;
+	padding: 0 0 0 5px
+}
+
+.wf-active .overlayBranding p span {
+	font-size: 2.5em
+}
+
+.overlayPrice {
+	display: block;
+	width: 146px;
+	height: 80px;
+	border: none;
+	background: url(/media/images/gallerytag.gif) no-repeat top left;
+	position: absolute;
+	top: 330px;
+	left: 420px;
+	padding: 41px 0 0 39px
+}
+
+.overlayPrice div b {
+	font-size: 12px;
+	padding-left: 30px
+}
+
+.overlayPrice .totalPrice {
+	font-size: 28px;
+	line-height: 1em;
+	padding: 2px 0 0 0
+}
+
+.overlayPrice .totalPrice #pence {
+	font-size: 19px;
+	line-height: 1em;
+	padding: 8px 0 0 0
+}
+
+.overlayPrice .totalPrice span {
+	float: left
+}
+
+.wf-active .overlayPrice .totalPrice {
+	font-size: 56px;
+	line-height: 0.6em
+}
+
+.wf-active .overlayPrice .totalPrice #pence {
+	font-size: 34px;
+	line-height: 0.6em
+}
+
+#galleryOverlayInfo {
+	float: left;
+	display: inline-block;
+	width: 241px;
+	padding: 14px 10px 0 20px;
+	-moz-box-shadow: -5px 4px 18px -9px #646464;
+	-webkit-box-shadow: -5px 4px 18px -9px #646464;
+	box-shadow: -5px 4px 18px -9px #646464
+}
+
+.overlayGalleryBody {
+	float: left;
+	width: 855px;
+	display: block;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464
+}
+
+.overlayLeft {
+	float: left;
+	width: 581px;
+	background: #fff;
+	display: inline-block
+}
+
+.overlayRight {
+	float: left;
+	display: inline-block;
+	width: 242px;
+	height: 394px;
+	padding: 10px 10px 0 22px;
+	-moz-box-shadow: -11px 7px 18px -9px #646464;
+	-webkit-box-shadow: -11px 7px 18px -9px #646464;
+	box-shadow: -11px 7px 18px -9px #646464;
+	background: #fff
+}
+
+.overlayRight h2 {
+	font-size: 1.6em;
+	line-height: 1em;
+	margin: 0px
+}
+
+.wf-active .overlayRight h2 {
+	font-size: 2.6em
+}
+
+.overlayRight .overlayText {
+	float: left;
+	height: 219px;
+	width: 240px;
+	border-top: 1px solid #D1D1D1;
+	border-bottom: 1px solid #D1D1D1;
+	margin: 8px 0;
+	padding: 8px 0;
+	overflow: hidden
+}
+
+.overlayRight .overlayText ul {
+	margin: 0px;
+	padding: 6px 0 20px 0
+}
+
+.overlayRight .overlayText ul li {
+	font-size: 0.9em
+}
+
+.overlayRight .overlayText ul li span.invItem {}
+
+#cboxLoadedContent,
+#cboxLoadingOverlay,
+#cboxContent {
+	margin: 0px;
+	height: auto !important;
+	width: auto !important
+}
+
+.overlayEditShareDelete {
+	float: left;
+	display: block;
+	width: 100%;
+	padding: 0 0 25px 0
+}
+
+.overlayEditShareDelete a,
+.overlayEditShareDelete .unavailable {
+	display: inline-block;
+	float: left;
+	padding: 5px 15px;
+	border: 1px solid #d2d2d2;
+	font-weight: bold;
+	font-size: 1.1em;
+	-moz-box-shadow: 2px 3px 5px -2px #000;
+	-webkit-box-shadow: 2px 3px 5px -2px #000;
+	box-shadow: 2px 3px 5px -2px #000
+}
+
+.overlayEditShareDelete a#share,
+.overlayEditShareDelete a#delete {
+	margin: 0 10px
+}
+
+.overlayBuy {
+	float: left;
+	display: block;
+	width: 100%;
+	padding: 0 0 35px 0
+}
+
+.overlayBuy a {
+	height: 29px;
+	display: block;
+	padding: 10px 0 0 15px;
+	font-size: 1.3em;
+	font-weight: bold
+}
+
+.overlayBuy .unavailable {}
+
+.overlayBuy #buy {
+	padding: 11px 0 0 15px;
+	height: 28px
+}
+
+#cboxTopLeft,
+#cboxTopCenter,
+#cboxTopRight,
+#cboxMiddleLeft,
+#cboxMiddleRight,
+#cboxBottomLeft,
+#cboxBottomCenter,
+#cboxBottomRight,
+#cboxContent {
+	background: none
+}
+
+.galleryCompWrap {}
+
+.galleryCompWrap .galleryCompSignInText {
+	color: #333;
+	font-size: 13px;
+	display: block
+}
+
+.galleryCompWrap .galleryCompSignInText a {
+	text-decoration: none
+}
+
+.galleryCompWrap .signinorregister {
+	float: left;
+	display: block;
+	padding: 20px 0 0 0
+}
+
+.galleryCompWrap .signinorregister a {
+	font-size: 12px;
+	font-weight: bold;
+	display: inline-block;
+	text-decoration: underline;
+	float: left;
+	padding: 8px 0 0 0
+}
+
+.galleryCompWrap .signinIcon {
+	float: left;
+	padding: 0 5px 0 0
+}
+
+.galleryCompWrap .signInIconWrap {
+	width: 18px;
+	height: 25px;
+	overflow: hidden;
+	display: inline-block;
+	float: left;
+	padding: 0 5px 0 0
+}
+
+.galleryCompWrap .or {
+	float: left;
+	padding: 9px 13px 0 8px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #333
+}
+
+.galleryCompWrap .registernow {
+	float: left;
+	padding: 0 5px 0 0
+}
+
+.galleryCompWrap .galleryboxLinks .unavailable:hover {
+	background: rgb(255, 255, 255);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(222, 222, 222, 1)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 15%, rgba(222, 222, 222, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede', GradientType=0)
+}
+
+.gold {
+	text-decoration: none;
+	background: rgb(237, 232, 203);
+	background: -moz-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(237, 232, 203, 1)), color-stop(100%, rgba(227, 209, 137, 1)));
+	background: -webkit-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: -o-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	background: linear-gradient(to bottom, rgba(237, 232, 203, 1) 0%, rgba(227, 209, 137, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ede8cb', endColorstr='#e3d189', GradientType=0)
+}
+
+.gold:hover {
+	background: rgb(224, 204, 112);
+	background: -moz-linear-gradient(top, rgba(224, 204, 112, 1) 0%, rgba(190, 157, 15, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(224, 204, 112, 1)), color-stop(100%, rgba(190, 157, 15, 1)));
+	background: -webkit-linear-gradient(top, rgba(224, 204, 112, 1) 0%, rgba(190, 157, 15, 1) 100%);
+	background: -o-linear-gradient(top, rgba(224, 204, 112, 1) 0%, rgba(190, 157, 15, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(224, 204, 112, 1) 0%, rgba(190, 157, 15, 1) 100%);
+	background: linear-gradient(to bottom, rgba(224, 204, 112, 1) 0%, rgba(190, 157, 15, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0cc70', endColorstr='#be9d0f', GradientType=0)
+}
+
+.galleryCompWrap .registernow .gold {
+	border: 1px solid #CAC180;
+	box-shadow: 2px 3px 5px -2px #000;
+	display: inline-block;
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 6px 10px;
+	text-decoration: none
+}
+
+.galleryCompWrap p {
+	color: #333;
+	font-size: 13px;
+	width: 759px;
+	margin: 0 0 1.5em 0;
+	line-height: 1.4em
+}
+
+.galleryCompWrap p a {
+	text-decoration: underline;
+	font-weight: bold
+}
+
+.galleryCompWrap .galleryboxName {
+	padding: 14px 8px 8px 0
+}
+
+.galleryCompWrap .galleryboxName .galleryItemName {
+	height: 34px !important;
+	overflow: hidden
+}
+
+.galleryCompWrap .galleryboxLinks .silver {
+	margin: 5px 9px 0 -3px
+}
+
+.galleryCompWrap .enteredComp {
+	float: right;
+	display: inline-block
+}
+
+.galleryCompWrap .enteredComp img {
+	box-shadow: none
+}
+
+#entryWrap {
+	padding: 15px 20px 10px 20px;
+	width: 429px;
+	height: 82px;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464;
+	background: #fff
+}
+
+#entryWrap #mainHeader h1 {
+	padding: 0 0 5px 0;
+	margin: 0px;
+	float: left;
+	display: block;
+	width: 100%;
+	font-size: 28px
+}
+
+#loginWrap {
+	width: 612px
+}
+
+#loginWrap,
+#registrationWrap {
+	background: #fff;
+	padding: 20px 25px 20px 27px;
+	float: left;
+	-moz-box-shadow: 0 0px 32px -2px #646464;
+	-webkit-box-shadow: 0 0px 32px -2px #646464;
+	box-shadow: 0 0px 32px -2px #646464
+}
+
+#registrationWrap {
+	width: 360px
+}
+
+#loginWrap .Louisiana,
+#registrationWrap .Louisiana {
+	font-size: 22px;
+	color: #1F1F1E;
+	margin: 0px;
+	padding: 0 0 8px 0;
+	line-height: 0.7em
+}
+
+.wf-active #loginWrap .Louisiana,
+#registrationWrap .Louisiana {
+	font-size: 48px
+}
+
+#loginWrap h2 {}
+
+#loginWrap form,
+#registrationWrap form {
+	float: left;
+	color: #333;
+	width: 356px
+}
+
+#registrationWrap form {
+	border-top: 1px solid #CCC
+}
+
+#loginWrap form p {
+	font-size: 1.1em;
+	line-height: 1.3em;
+	padding: 15px 15px 15px 0;
+	margin: 0px
+}
+
+#loginWrap .loginLeftSide h3 {
+	padding: 7px 0 0 0;
+	margin: 0px;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #1F1F1E
+}
+
+#loginWrap .loginLeftSide p {
+	padding: 0 0 16px 0
+}
+
+#loginWrap form a,
+#registrationWrap form a {
+	color: #333
+}
+
+.form-field {
+	float: left;
+	display: block;
+	padding: 0 0 12px 0;
+	width: 100%;
+	position: relative
+}
+
+.form-field input {
+	color: #1F1F1E;
+	border: 1px solid #999;
+	width: 346px;
+	padding: 5px 5px;
+	font-size: 1.1em;
+	float: left
+}
+
+#loginWrap form {
+	width: auto
+}
+
+.loginLeftSide {
+	float: left;
+	display: inline-block;
+	width: 330px;
+	padding: 0 32px 0 0;
+	border-right: 1px solid #d1d1d1
+}
+
+#loginWrap .form-field label {
+	width: 72px;
+	float: left;
+	display: inline-block;
+	color: #1F1F1E;
+	font-size: 1.1em;
+	padding: 8px 0 0 0
+}
+
+#loginWrap .loginLeftSide .emailWrap input,
+#loginWrap .loginLeftSide .passwordWrap input {
+	width: 242px;
+	float: left;
+	display: inline-block
+}
+
+#loginWrap .passwordWrap input {
+	width: 132px;
+	display: inline
+}
+
+.fPassword {
+	float: right;
+	display: inline;
+	font-size: 1em;
+	text-decoration: underline !important;
+	padding: 6px 0 0 0;
+	font-weight: bold
+}
+
+.rememberMeWrap {
+	padding: 4px 0 16px 0
+}
+
+.rememberMeWrap input {
+	width: auto !important;
+	margin: 0 7px 0 0
+}
+
+.rememberMeWrap .rememberMe {
+	float: left;
+	display: inline !important;
+	font-size: 1em !important;
+	font-weight: bold !important;
+	width: auto !important;
+	padding: 0px !important
+}
+
+.loginWrap {
+	margin: 0 0 0 -3px
+}
+
+.loginWrap .signInButton {
+	height: 34px;
+	border: none;
+	float: left;
+	text-align: left;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #333;
+	line-height: 0.8em;
+	display: inline-block;
+	cursor: pointer
+}
+
+.loginWrap .signInButton .arrowWrap,
+.loginWrap .notRegisteredButton .arrowWrap {
+	margin: 0 26px
+}
+
+.loginWrap .signInButton .arrowText,
+.loginWrap .notRegisteredButton .arrowText {
+	padding: 0 0 5px 15px;
+	font-size: 13px;
+	font-family: arial;
+	overflow: hidden
+}
+
+.loginWrap .signInButton .arrowTip,
+.loginWrap .notRegisteredButton .arrowTip {
+	right: -20px
+}
+
+.loginWrap .signInButton .arrowText {
+	width: 60px !important
+}
+
+.loginWrap .notRegisteredButton .arrowText {
+	width: 80px !important
+}
+
+.loginWrap .signInButton input {
+	font-size: 1em
+}
+
+.loginWrap input:hover {
+	background: url(/media/images/signinBtn.gif) no-repeat left -39px
+}
+
+.loginWrap span.or,
+.registerWrap span.or {
+	font-size: 1.26em;
+	font-weight: bold;
+	padding: 10px 10px 0 26px;
+	float: left;
+	display: inline-block
+}
+
+.loginWrap .fb-login-button,
+.registerWrap .fb-login-button {
+	float: left;
+	display: inline-block;
+	padding: 6px 0 0 0
+}
+
+.loginRightSide {
+	float: left;
+	display: inline-block;
+	width: 221px;
+	padding: 0 0 0 28px
+}
+
+.notRegisteredWrap,
+.registerWrap {
+	padding: 0px
+}
+
+.registerWrap {
+	margin: 0 0 0 -3px
+}
+
+#loginWrap .loginRightSide h2 {
+	padding: 0 0 8px 0;
+	margin: 0 0 7px 0
+}
+
+#loginWrap .loginRightSide p {
+	padding: 0 0 16px 0
+}
+
+#loginWrap .loginRightSide .arrowWrap {
+	margin: 0 0 0 -4px
+}
+
+#registrationButton {
+	height: 39px;
+	border: none;
+	padding: 0 0 5px 15px;
+	text-align: left;
+	font-weight: bold;
+	color: #333;
+	line-height: 0.8em;
+	display: inline-block;
+	font-size: 13px;
+	font-family: arial;
+	width: 70px !important
+}
+
+#registrationWrap {
+	padding: 20px 20px 50px 15px
+}
+
+#registrationWrap .registerSubmitButton {
+	float: left
+}
+
+#registrationWrap form {
+	padding: 16px 0 0 0;
+	width: 100% !important
+}
+
+#registrationWrap .registerWrap input {
+	float: left;
+	width: 100px !important;
+	overlow: hidden
+}
+
+#registrationWrap .rememberMeWrap .rememberMe {
+	float: left
+}
+
+.registerWrap input {
+	background: url(/media/images/registerNowBtn.gif) no-repeat top left;
+	height: 39px;
+	border: none;
+	padding: 0 2px 5px 15px !important;
+	text-align: left;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #333;
+	line-height: 0.8em;
+	display: inline-block
+}
+
+.shareWrap {
+	width: 745px;
+	float: left
+}
+
+.shareTab {
+	float: left;
+	width: 100%;
+	display: block;
+	height: 45px;
+	background: #fff;
+	width: auto;
+	float: left;
+	position: relative;
+	-moz-box-shadow: -9px -11px 25px -16px #646464;
+	-webkit-box-shadow: -9px -11px 25px -16px #646464;
+	box-shadow: -9px -11px 25px -16px #646464;
+	z-index: 3
+}
+
+.shareTabTitle {
+	float: left
+}
+
+.shareTabTitle h2 {
+	line-height: 1em;
+	font-size: 1.5em;
+	float: left;
+	display: inline;
+	margin: 20px 15px 0;
+	padding: 0 22px 5px 0;
+	border-bottom: 1px solid #ccc
+}
+
+.wf-active .shareTabTitle h2 {
+	font-size: 2.8em;
+	margin: 8px 15px 0
+}
+
+.shareTab .tabEnd {
+	position: absolute;
+	top: 0px;
+	right: -37px;
+	background: url(/media/images/overlayTabEndNoGrad.gif) no-repeat top right;
+	width: 37px;
+	height: 45px
+}
+
+.overlayShareBody {
+	background: #fff;
+	float: left;
+	display: block;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464;
+	padding: 19px 18px 0 19px;
+	position: relative;
+	z-index: 2;
+	width: 708px
+}
+
+.shareLeft {
+	float: left;
+	width: 356px;
+	background: #fff;
+	padding: 0 24px 0 0
+}
+
+.shareImage {
+	float: left;
+	padding: 0 0 34px 0
+}
+
+.shareImage img {
+	width: 356px;
+	float: left;
+	-moz-box-shadow: 0 0px 22px -9px #646464;
+	-webkit-box-shadow: 0 0px 22px -9px #646464;
+	box-shadow: 0 0px 22px -9px #646464
+}
+
+.shareButtons {
+	float: left;
+	width: 100%
+}
+
+.shareButtons span {
+	width: 107px;
+	float: left;
+	display: inline-block;
+	padding: 0 0 20px 0
+}
+
+.shareButtons span img {
+	float: left;
+	display: inline
+}
+
+.shareButtons span .name {
+	width: auto;
+	vertical-align: top;
+	font-size: 1.16em;
+	padding: 0 0 0 7px;
+	text-decoration: underline;
+	cusor: pointer
+}
+
+.shareRight {
+	float: left;
+	width: 328px;
+	padding: 0;
+	background: #fff
+}
+
+.shareTitle {
+	padding: 0 0 5px 0;
+	float: left;
+	width: 100%
+}
+
+.shareTitle h1 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 28px;
+	line-height: 1em
+}
+
+.wf-active .shareTitle h1 {
+	font-size: 48px;
+	line-height: 0.8em
+}
+
+.shareText {
+	border-top: 1px solid #D1D1D1;
+	float: left;
+	width: 100%;
+	padding: 16px 0 0 0;
+	display: block
+}
+
+.shareText p {
+	font-size: 1.2em;
+	line-height: 1.4em;
+	float: left;
+	padding: 0 0 14px 0;
+	margin: 0px
+}
+
+.shareEmail {
+	float: left;
+	width: 100%;
+	display: block
+}
+
+.shareEmail textarea {
+	float: left;
+	display: block;
+	border: 1px solid #999;
+	height: 98px;
+	width: 326px
+}
+
+.shareEmail .form-field input {
+	float: left;
+	display: block;
+	border: 1px solid #999;
+	width: 316px
+}
+
+.shareEmail .submit {
+	padding: 0 0 11px 0;
+	float: left;
+	margin: 0 0 0 -4px
+}
+
+.shareEmail .submit input {
+	height: 39px;
+	border: none;
+	padding: 0 0 5px 15px;
+	text-align: left;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #333;
+	line-height: 0.8em;
+	display: inline-block
+}
+
+.shareEmail .shareOverlaySubmit .arrowText {
+	width: 53px !important
+}
+
+.viewShareWrap {
+	width: 994px;
+	height: 503px;
+	float: left;
+	background: url(/media/images/configurator/galleryBgFlowers.jpg) no-repeat right 45px
+}
+
+.viewShareWrap .shareWrap {
+	position: absolute;
+	top: 50px;
+	left: 120px
+}
+
+.saveWrap {
+	width: 994px;
+	float: left
+}
+
+.saveLeft {
+	float: left;
+	width: 727px;
+	background: #fff;
+	height: 503px
+}
+
+.saveLeft .buildImage {
+	width: 100%;
+	float: left
+}
+
+.saveRight {
+	float: left;
+	width: 232px;
+	height: 493px;
+	padding: 10px 17px 0 18px;
+	-moz-box-shadow: -11px 7px 18px -9px #646464;
+	-webkit-box-shadow: -11px 7px 18px -9px #646464;
+	box-shadow: -11px 7px 18px -9px #646464;
+	background: #fff
+}
+
+.saveRight .saveHeader {
+	float: left;
+	width: 100%;
+	display: block
+}
+
+.saveRight .saveHeader h1 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 28px;
+	line-height: 1em;
+	width: 150px
+}
+
+.wf-active .saveRight .saveHeader h1 {
+	font-size: 48px;
+	line-height: 0.8em
+}
+
+.saveRight .saveText {
+	border-top: 1px solid #D1D1D1;
+	width: 100%;
+	padding: 16px 0;
+	float: left
+}
+
+.saveRight .saveText p {
+	font-size: 1.2em;
+	line-height: 1.4em;
+	float: left;
+	margin: 0px;
+	padding: 0 0 12px 0
+}
+
+.saveRight .saveText p:last-child {
+	padding: 0px
+}
+
+.saveRight .saveText p a {
+	text-decoration: underline
+}
+
+.saveRight form {
+	float: left;
+	width: 100%;
+	display: block
+}
+
+.saveRight form .form-field {
+	position: relative;
+	flaot: left;
+	display: block
+}
+
+.saveRight form .form-field label {
+	font-size: 1.2em
+}
+
+.saveRight form .form-field textarea {
+	float: left;
+	display: block;
+	border: 1px solid #999;
+	height: 50px;
+	width: 230px
+}
+
+.saveRight form .saveButtons {
+	float: left;
+	display: block;
+	width: 100%
+}
+
+.saveRight form .saveButtons .backButton {
+	float: left;
+	display: inline-block;
+	padding: 3px 10px 0 0
+}
+
+.saveRight form .saveButtons .backButton a {
+	border: 1px solid #D4D4D4;
+	display: block;
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 8px 12px;
+	-moz-box-shadow: 2px 3px 5px -2px #000;
+	-webkit-box-shadow: 2px 3px 5px -2px #000;
+	box-shadow: 2px 3px 5px -2px #000
+}
+
+.saveRight form .saveButtons .saveBouquet input {
+	height: 38px;
+	border: none;
+	padding: 0 0 5px 12px;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #333;
+	line-height: 0.8em;
+	display: inline-block
+}
+
+.storeSubmitButton {
+	margin: 2px 0 0 0
+}
+
+.hintsandtipsWrap {
+	background: #fff;
+	width: 681px;
+	height: 420px;
+	padding: 10px 0 17px 17px;
+	position: relative;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464
+}
+
+.hintsandtipsLeft {
+	float: left;
+	display: block;
+	width: 545px
+}
+
+.hintsandtipsLeft h1 {
+	margin: 0px;
+	padding: 0 0 8px 0;
+	line-height: 0.7em;
+	border: none !important
+}
+
+.hintsandtipsLeft .hintsandtipsList {
+	width: 507px;
+	height: 364px;
+	border-top: 1px solid #D1D1D1;
+	border-bottom: 1px solid #D1D1D1
+}
+
+.hintsandtipsList ul {
+	float: left;
+	margin: 0;
+	padding: 0px;
+	width: 507px;
+	list-style-type: none
+}
+
+.hintsandtipsList li {
+	float: left;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	float: left;
+	margin: 0;
+	padding: 5px 0 5px 22px;
+	border-bottom: 1px solid #cfcfcf;
+	width: 485px;
+	background: url(/media/images/hintsDot.gif) no-repeat 10px 12px
+}
+
+.hintsandtipsList li:last-child {
+	border: none
+}
+
+.hintsandtipsRight {
+	position: absolute;
+	top: 20px;
+	right: -20px
+}
+
+.helpWrap {
+	width: 998px;
+	position: relative;
+	height: 504px
+}
+
+.helpWrap h1 {
+	color: #fff;
+	font-size: 29px;
+	margin: 0px;
+	padding: 0 0 6px 0;
+	border: none;
+	line-height: 0.7em
+}
+
+.wf-active .helpWrap h1 {
+	font-size: 51px
+}
+
+.helpStartImage {
+	position: absolute;
+	left: 13px;
+	top: 10px
+}
+
+.helpStartImage .helpStartButtonText {
+	position: absolute;
+	z-index: 10;
+	left: 65px;
+	top: 17px;
+	font-size: 1.6em;
+	font-weight: bold;
+	color: #000
+}
+
+.helpStartText {
+	position: absolute;
+	left: 344px;
+	top: 19px;
+	width: 226px
+}
+
+.helpStartText .helpStartCopy {
+	display: block;
+	width: 100%;
+	font-size: 1.1em;
+	color: #fff;
+	line-height: 1.3em
+}
+
+.helpSelectImage {
+	position: absolute;
+	left: 19px;
+	top: 90px
+}
+
+.helpSelectText {
+	position: absolute;
+	left: 286px;
+	top: 116px;
+	width: 265px
+}
+
+.helpSelectText .helpSelectCopy {
+	display: block;
+	width: 100%;
+	font-size: 1.1em;
+	color: #fff;
+	line-height: 1.3em
+}
+
+.helpSummaryImage {
+	position: absolute;
+	left: 279px;
+	top: 281px
+}
+
+.helpSummaryImage .helpSummaryButtonText {
+	font-size: 12px;
+	position: absolute;
+	z-index: 10;
+	left: 8px;
+	top: 50px;
+	color: #000;
+	width: 50px;
+	text-align: center
+}
+
+.wf-active .helpSummaryImage .helpSummaryButtonText {
+	font-size: 1.8em
+}
+
+.helpSummaryText {
+	position: absolute;
+	left: 438px;
+	top: 263px;
+	width: 159px
+}
+
+.helpSummaryText .helpSummaryCopy {
+	display: block;
+	width: 100%;
+	font-size: 1.1em;
+	color: #fff;
+	line-height: 1.3em
+}
+
+.hamper .helpSummaryImage .helpSummaryButtonText {
+	left: 77px;
+	top: 117px
+}
+
+.helpSend .helpSendImage {
+	position: absolute;
+	left: 818px;
+	top: 388px
+}
+
+.helpSendImage .helpSendButtonText1 {
+	position: absolute;
+	left: 85px;
+	top: 0px;
+	z-index: 10;
+	font-size: 1em;
+	font-weight: bold;
+	color: #332b28
+}
+
+.hamper .helpSendImage .helpSendButtonText1 {
+	left: 94px
+}
+
+.helpSendImage .helpSendButtonText2 {
+	position: absolute;
+	left: 110px;
+	top: 48px;
+	z-index: 10;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #332b28
+}
+
+.helpSendImage .helpSendButtonText3 {
+	position: absolute;
+	left: 112px;
+	top: 82px;
+	z-index: 10;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #332b28
+}
+
+.hamper .helpSendImage .helpSendButtonText3 {
+	left: 123px;
+	top: 48px
+}
+
+.helpSend .helpSendText {
+	position: absolute;
+	left: 534px;
+	top: 384px;
+	width: 266px
+}
+
+.helpSendText .helpSendCopy {
+	display: block;
+	width: 100%;
+	font-size: 1.1em;
+	color: #fff;
+	line-height: 1.3em
+}
+
+.inventoryWrap {
+	font-size: 12px;
+	padding: 10px;
+	position: relative;
+	width: 651px;
+	height: 361px;
+	background: #fff;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464
+}
+
+.inventoryWrap .bouquetContents {
+	width: 425px;
+	height: 315px;
+	display: inline-block;
+	position: absolute;
+	top: 10px
+}
+
+.inventoryWrap .hintsandtips {
+	width: 220px;
+	display: inline-block;
+	position: absolute;
+	left: 432px;
+	padding-top: 10px
+}
+
+.inventoryWrap .hintsandtips .overlaySubTitle {
+	padding-top: 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc
+}
+
+.inventoryWrap .hintsandtips .hintsandtipsText {
+	padding: 10px 0px;
+	line-height: 1.35em
+}
+
+.inventoryWrap .hintsandtips .overlayButtons {
+	padding-top: 10px
+}
+
+.inventoryWrap .hintsandtips .overlayButtons a {
+	border: 1px solid #D2D2D2;
+	-moz-box-shadow: 2px 3px 5px -2px #000;
+	-webkit-box-shadow: 2px 3px 5px -2px #000;
+	box-shadow: 2px 3px 5px -2px #000;
+	font-size: 0.9em;
+	font-weight: bold;
+	padding: 4px 15px;
+	text-decoration: none
+}
+
+.bouquetContents .overlayTitle {
+	width: 371px
+}
+
+.overlaySubTitle {
+	font-size: 18px
+}
+
+.wf-active .overlaySubTitle {
+	font-size: 36px
+}
+
+.overlayItems {
+	height: 315px
+}
+
+.overlayItems table {
+	width: 371px;
+	padding: 0px;
+	margin: 15px 0px
+}
+
+.overlayItems table,
+.overlayItems table thead,
+.overlayItems table thead tr th,
+.overlayItems table tbody,
+.overlayItems table tbody tr td {
+	border-collapse: collapse;
+	border-style: none;
+	color: #333;
+	background-color: transparent
+}
+
+.overlayItems th {
+	font-size: 12px
+}
+
+.overlayItems th.overlaySubTitle {
+	font-size: 18px;
+	line-height: 1em;
+	width: 250px
+}
+
+.wf-active .overlayItems th.overlaySubTitle {
+	font-size: 30px;
+	line-height: 0.7em
+}
+
+.overlayItems td.invItem {
+	width: 250px
+}
+
+.overlayItems table thead tr {
+	border-bottom: 1px solid #CCC
+}
+
+.overlayItems table thead tr {
+	height: 30px
+}
+
+.overlayItems table tbody tr td {}
+
+td.invItem,
+th.invItem {
+	width: 240px
+}
+
+td.invCost {
+	font-weight: bold
+}
+
+.overlayItems .mCustomScrollBox .mCSB_scrollTools,
+.overlayItems .mCustomScrollBox .mCSB_scrollTools .mCSB_draggerContainer,
+.overlayItems .mCustomScrollBox .mCSB_scrollTools .mCSB_draggerRail {
+	height: 313px
+}
+
+.overlayItems .mCustomScrollBox .mCSB_scrollTools {
+	right: 25px
+}
+
+.overlayItems .mCustomScrollBox .mCSB_scrollTools .mCSB_draggerRail {
+	background: #FFF url(/media/images/configurator/scrollerbgMyCreation.gif) -1px -1px
+}
+
+.overlayItems .mCSB_container {
+	width: 398px !important;
+	border-right: 1px solid #D1D1D1
+}
+
+.creativeChargeOverlayWrap {
+	width: 913px;
+	padding: 15px 20px 10px 20px;
+	width: auto;
+	height: 428px;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464;
+	background: #fff
+}
+
+.creativeChargeOverlayWrap .ccLeftPanel {
+	position: relative;
+	width: 312px;
+	height: 410px;
+	display: inline-block;
+	float: left;
+	top: 0px;
+	padding: 5px 0 0 0
+}
+
+.creativeChargeOverlayWrap .ccRightPanel {
+	position: relative;
+	width: 540px;
+	height: 410px;
+	display: inline-block;
+	float: left;
+	padding: 0 0 0 20px
+}
+
+.creativeChargeOverlayWrap .ccLeftPanel .overlayTitle {
+	padding: 0 0 5px 0;
+	float: left;
+	display: block;
+	width: 100%
+}
+
+.ccImages {
+	padding-top: 10px;
+	float: left;
+	display: block;
+	width: 100%
+}
+
+.ccImages img {
+	margin: 10px 0 0 0;
+	-moz-box-shadow: 5px 5px 20px -5px #333;
+	-webkit-box-shadow: 5px 5px 20px -5px #333;
+	box-shadow: 5px 5px 20px -5px #333;
+	float: left;
+	display: inline
+}
+
+.ccImages .ccImg1 {
+	margin: 10px 9px 0 0
+}
+
+.ccRightPanel .overlaySubTitle {
+	line-height: 1em;
+	font-size: 18px;
+	padding: 0 50px 6px 0
+}
+
+.wf-active .ccRightPanel .overlaySubTitle {
+	line-height: 0.7em;
+	font-size: 32px;
+	padding: 0 50px 6px 0
+}
+
+.goldText {
+	color: #BD9B0C
+}
+
+.ccRegularText {
+	font-size: 13px;
+	padding-top: 13px;
+	line-height: 1.35em
+}
+
+.ccRightPanel h3 {
+	font-size: 18px;
+	padding: 14px 0 4px 0;
+	margin: 0px
+}
+
+.wf-active .ccRightPanel h3 {
+	font-size: 32px;
+	padding: 8px 0 4px 0
+}
+
+.ccPriceTags {
+	width: 503px;
+	height: 84px;
+	position: relative
+}
+
+.ccPriceTags img {
+	position: relative;
+	top: -12px
+}
+
+.ccPriceTags .size1text,
+.ccPriceTags .size2text {
+	font-size: 14px;
+	font-weight: bold
+}
+
+.ccPriceTags .size1price,
+.ccPriceTags .size2price {
+	font-size: 14px
+}
+
+.wf-active .ccPriceTags .size1price,
+.wf-active .ccPriceTags .size2price {
+	font-size: 29px;
+	letter-spacing: -1px
+}
+
+.ccPriceTags .size1text {
+	position: absolute;
+	top: 7px
+}
+
+.ccPriceTags .size1price {
+	position: absolute;
+	top: 10px;
+	left: 202px
+}
+
+.ccPriceTags .size1SubText {
+	position: absolute;
+	top: 40px;
+	font-size: 1.15em;
+	width: 214px;
+	line-height: 1.5em
+}
+
+.ccPriceTags .size2text {
+	position: absolute;
+	top: 7px;
+	left: 270px
+}
+
+.ccPriceTags .size2price {
+	position: absolute;
+	top: 10px;
+	left: 445px
+}
+
+.ccPriceTags .size2SubText {
+	position: absolute;
+	top: 40px;
+	left: 270px;
+	font-size: 1.15em;
+	width: 214px;
+	line-height: 1.5em
+}
+
+.ccRightPanel .dontForget {
+	position: relative;
+	top: -58px;
+	border: 1px solid #BD9B0C;
+	padding: 12px 8px;
+	width: 520px
+}
+
+.ccRightPanel .dontForget .overlaySubTitle {
+	padding-top: 5px;
+	font-size: 29px
+}
+
+.ccRightPanel .dontForget .ccRegularText {
+	padding: 0px
+}
+
+.hamperChargeOverlayWrap {
+	width: 866px;
+	padding: 15px 20px 10px 20px;
+	height: 352px;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464;
+	background: #fff
+}
+
+.hamperChargeOverlayWrap .hcLeftPanel {
+	position: relative;
+	width: 310px;
+	height: auto;
+	display: inline-block;
+	float: left;
+	top: 0px;
+	padding: 0 0 0 0
+}
+
+.hcImages {
+	float: left;
+	display: block;
+	width: 100%
+}
+
+.hcImages img {
+	margin: 10px 0 0 0;
+	-moz-box-shadow: 0px 0px 20px -5px #333;
+	-webkit-box-shadow: 0px 0px 20px -5px #333;
+	box-shadow: 0px 0px 20px -5px #333;
+	float: left;
+	display: inline
+}
+
+.hcImages .hcImg1 {
+	margin: 0 10px 0 0
+}
+
+.hcImages .hcImg2 {
+	margin: 0px
+}
+
+.hcImages .hcImg3 {
+	margin: 10px 10px 0 0
+}
+
+.hamperChargeOverlayWrap .hcRightPanel {
+	position: relative;
+	width: 535px;
+	height: auto;
+	display: inline-block;
+	float: left;
+	padding: 0 0 0 20px
+}
+
+.hamperChargeOverlayWrap .overlayTitle {
+	padding: 0 0 5px 0;
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 20px 0
+}
+
+.hamperChargeOverlayWrap .hcRightPanel .overlaySubTitle {
+	line-height: 1em;
+	font-size: 17px;
+	padding: 0 0 15px 0;
+	float: left
+}
+
+.wf-active .hamperChargeOverlayWrap .hcRightPanel .overlaySubTitle {
+	line-height: 0.8em;
+	font-size: 28px
+}
+
+.hcRegularText {
+	font-size: 13px;
+	padding: 0 0 10px 0;
+	line-height: 1.35em;
+	width: 100%
+}
+
+.basketInfoWrap {
+	float: left;
+	display: block;
+	width: 100%;
+	position: relative
+}
+
+.hcPriceSection {
+	float: left;
+	display: inline-block;
+	position: relative;
+	width: 207px
+}
+
+.hcPriceSection .sizeText {
+	font-size: 13px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+	position: absolute
+}
+
+.hcPriceSection .sizePrice {
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	color: #343434
+}
+
+.wf-active .hcPriceSection .sizePrice {
+	font-size: 30px
+}
+
+.hcPriceSection .tagWrap {
+	position: relative
+}
+
+.hcPriceSection .hcsize1 .sizeText {
+	top: 20px
+}
+
+.hcPriceSection .hcsize1 .sizePrice {
+	top: 29px;
+	left: 128px
+}
+
+.hcPriceSection .hcsize2 .sizeText {
+	top: 20px
+}
+
+.hcPriceSection .hcsize2 .sizePrice {
+	top: 29px;
+	left: 128px
+}
+
+.hcPriceSection .hcsize3 .sizeText {
+	top: 20px
+}
+
+.hcPriceSection .hcsize3 .sizePrice {
+	top: 29px;
+	left: 128px
+}
+
+.hcBracket {
+	float: left;
+	display: inline-block;
+	position: relative;
+	width: 32px;
+	padding: 19px 15px 0 25px
+}
+
+.hcExplanation {
+	float: left;
+	display: inline-block;
+	position: relative;
+	width: 245px;
+	padding: 55px 0 0
+}
+
+.forgottenPasswordWrap {
+	background: #fff;
+	width: 356px;
+	padding: 12px 20px 10px 19px;
+	float: left;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464
+}
+
+.forgottenPasswordWrap h2 {
+	margin: 0px;
+	padding: 0 0 5px 0;
+	line-height: 1em;
+	font-size: 24px;
+	float: left;
+	display: block;
+	border-bottom: 1px solid #d1d1d1;
+	width: 100%
+}
+
+.wf-active .forgottenPasswordWrap h2 {
+	line-height: 0.7em;
+	font-size: 48px
+}
+
+.forgottenPasswordWrap p {
+	float: left;
+	width: 100%;
+	display: block;
+	margin: 0px;
+	padding: 10px 0 10px 0;
+	font-size: 14px;
+	line-height: 1.4em;
+	color: #333
+}
+
+.forgottenPasswordWrap form {
+	width: auto
+}
+
+.forgottenPasswordWrap .form-field {
+	float: left;
+	display: block;
+	padding: 0 0 20px 0;
+	width: 100%
+}
+
+.forgottenPasswordWrap .form-field label {
+	width: 46px;
+	float: left;
+	display: inline-block;
+	color: #1F1F1E;
+	font-size: 1.1em;
+	padding: 8px 0 0 0
+}
+
+.forgottenPasswordWrap .form-field input {
+	width: 298px;
+	float: left;
+	display: inline-block
+}
+
+.forgottenPasswordWrap .arrowWrap .arrowText {
+	color: #333;
+	width: 120px !important
+}
+
+.renameBuild {
+	background: #fff;
+	width: 356px;
+	padding: 12px 19px 7px 19px;
+	float: left;
+	-moz-box-shadow: 0 0px 32px -9px #646464;
+	-webkit-box-shadow: 0 0px 32px -9px #646464;
+	box-shadow: 0 0px 32px -9px #646464
+}
+
+.renameBuild h2 {
+	margin: 0px;
+	padding: 0 0 5px 0;
+	line-height: 1em;
+	font-size: 24px;
+	float: left;
+	display: block;
+	border-bottom: 1px solid #d1d1d1;
+	width: 100%
+}
+
+.wf-active .renameBuild h2 {
+	line-height: 0.7em;
+	font-size: 48px
+}
+
+.renameBuild p {
+	float: left;
+	width: 100%;
+	display: block;
+	margin: 0px;
+	padding: 10px 0 10px 0;
+	font-size: 14px;
+	line-height: 1.4em;
+	color: #333
+}
+
+.renameBuild form {
+	width: auto
+}
+
+.renameBuild .form-field {
+	float: left;
+	display: block;
+	padding: 0 0 10px 0;
+	width: 100%
+}
+
+.renameBuild .renameBtnWrap {
+	padding: 0 0 3px 0
+}
+
+.renameBuild .renameBtnWrap .arrowWrap {
+	margin: 0 0 0 -3px
+}
+
+.renameBuild .form-field label {
+	width: 100%;
+	float: left;
+	display: block;
+	color: #1F1F1E;
+	font-size: 1.1em;
+	padding: 12px 0 6px 0
+}
+
+.renameBuild .form-field input {
+	width: 342px;
+	float: left;
+	display: block
+}
+
+.renameBuild .arrowWrap .arrowText {
+	color: #333
+}
+
+#hamperWrap #sortoptions {
+	width: 266px
+}
+
+#hamperWrap .showAllProducts,
+#hamperWrap .productOptions,
+#hamperWrap .filterOption,
+#hamperWrap .sortBy {
+	margin: 0 0 0 10px;
+	float: left
+}
+
+#hamperWrap .topLevelButton {
+	height: auto
+}
+
+#hamperWrap .topLevelButton span {
+	padding: 11px 0 11px 10px
+}
+
+#hamperWrap .showAllProducts {
+	margin-top: 10px
+}
+
+#hamperWrap .productOptions {}
+
+#hamperWrap .productOptions span {
+	margin: 0px;
+	width: 229px
+}
+
+#hamperWrap .hamperWhiteButton {
+	margin: 0 0 0 10px;
+	background: #fff;
+	float: left;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	width: 244px
+}
+
+#hamperWrap .hamperWhiteButton form {
+	color: #333;
+	display: block;
+	padding: 7px 10px;
+	float: left
+}
+
+#hamperWrap .hamperWhiteButton form label {
+	float: left;
+	font-size: 1.1em;
+	font-weight: bold;
+	padding: 7px 12px 0 0
+}
+
+#hamperWrap .hamperWhiteButton form select {
+	float: left;
+	margin: 4px 0 0;
+	width: 160px
+}
+
+#hamperWrap .hamperGoldButton {
+	border-left: 1px solid #C9B978;
+	border-right: 1px solid #C9B978;
+	border-bottom: 1px solid #C9B978
+}
+
+#hamperWrap .hamperGoldButton a {
+	width: 232px
+}
+
+.hamper .helpSummaryImage {
+	left: 297px;
+	position: absolute;
+	top: 290px
+}
+
+.hamper .helpSend .helpSendImage {
+	left: 807px;
+	position: absolute;
+	top: 406px
+}
+
+.hamper #mygallery {
+	clear: both
+}
+
+.hamper #mygallery li.activeTab .tabEnd {
+	background: url("/media/images/configurator/activeEndTabEnd.gif") no-repeat scroll right 0px transparent;
+	top: -1px
+}
+
+.hamper #galleryWrapper .gallerybox .galleryboxLinks .silver {
+	padding: 5px 26px
+}
+
+#resetWrap {
+	background: url(/media/images/resetpassword.jpg) no-repeat right bottom;
+	float: left;
+	width: 100%;
+	height: 100%
+}
+
+#resetWrap #resetForm {
+	padding: 45px 0 0 26px;
+	width: 419px
+}
+
+#resetWrap #resetForm h2 {
+	font-size: 24px;
+	color: #1F1F1E;
+	margin: 0px;
+	padding: 0 0 8px 0;
+	line-height: 1em
+}
+
+.wf-active #resetWrap #resetForm h2 {
+	font-size: 48px;
+	line-height: 0.7em
+}
+
+#resetWrap #resetForm form {
+	float: left;
+	color: #333;
+	border-top: 1px solid #CCC;
+	width: 100%
+}
+
+#resetWrap #resetForm form .form-field {
+	padding: 12px 0 0 0
+}
+
+#resetWrap #resetForm form .form-field input {
+	color: #1F1F1E;
+	border: 1px solid #999;
+	width: 280px;
+	padding: 5px 5px;
+	font-size: 1.1em;
+	float: left;
+	display: inline-block
+}
+
+#resetWrap #resetForm form .form-field label {
+	width: 125px;
+	float: left;
+	display: inline-block;
+	color: #1F1F1E;
+	font-size: 1.1em;
+	padding: 8px 0 0 0
+}
+
+#resetWrap #resetForm form .registerWrap {
+	padding: 24px 0 0 0;
+	margin: 0 0 0 -3px
+}
+
+#resetWrap #resetForm form .registerWrap input {
+	border: none;
+	width: 117px !important
+}
+
+#renameBuild {
+	background: white;
+	width: 415px;
+	height: 70px;
+	padding: 10px;
+	float: left
+}
+
+#renameBuild form {
+	float: left
+}
+
+#renameBuild form #name {
+	width: 300px
+}
+
+#homeFlashWrap {
+	position: relative;
+	top: 0px
+}
+
+#loader {
+	position: relative;
+	background-color: #fff;
+	width: 430px;
+	height: 146px;
+	padding: 10px
+}
+
+#loader #loadImg {
+	position: absolute;
+	top: 10px;
+	left: 10px
+}
+
+#loader #loadTxt {
+	position: absolute;
+	width: 260px;
+	top: 25px;
+	left: 170px
+}
+
+#loader #loadTxt .loadHeader {
+	font-size: 18px;
+	padding: 10px 0px;
+	border-bottom: 1px solid #ccc
+}
+
+.wf-active #loader #loadTxt .loadHeader {
+	font-size: 40px
+}
+
+#loader #loadTxt .loadMessage {
+	font-size: 12px;
+	padding: 10px 0px;
+	line-height: 0.8em
+}
+
+.wf-active #loader #loadTxt .loadMessage {
+	font-size: 30px
+}
+
+#skip {
+	position: absolute;
+	right: 30px;
+	top: 470px;
+	z-index: 2000
+}
+
+#skip a {
+	font-weight: bold;
+	font-size: 13px;
+	color: #B99702
+}
+
+.browserInfoWrap {
+	width: 474px;
+	height: auto;
+	background-color: #fff;
+	padding: 20px;
+	float: left
+}
+
+.browserInfoWrapIE {
+	width: 474px;
+	height: auto;
+	background-color: #fff;
+	padding: 20px;
+	float: left
+}
+
+.browserInfoWrapIncompatible {
+	width: 471px;
+	height: auto;
+	background-color: #fff;
+	padding: 20px;
+	float: left
+}
+
+.browserInfoWrapIncompatible .overlayText {
+	font-size: 16px;
+	width: 425px;
+	float: left
+}
+
+.browserInfoWrap .overlayTitle,
+.browserInfoWrapIE .overlayTitle {
+	padding-bottom: 7px;
+	float: left;
+	width: 100%;
+	display: block
+}
+
+.browserInfoWrap .overlayText,
+.browserInfoWrapIE .overlayText {
+	float: left;
+	width: 100%;
+	display: block;
+	padding: 0px
+}
+
+.browserInfoWrap .boldtext,
+.browserInfoWrap .browserName,
+.browserInfoWrapIE .boldtext,
+.browserInfoWrapIE .browserName {
+	font-weight: bold
+}
+
+.browserInfoWrap .browserLinks {
+	width: 100px;
+	padding: 0
+}
+
+.browserInfoWrapIE .linksWrapper .browserLinks {
+	width: 115px;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	float: left
+}
+
+.browserInfoWrap .browserIcon img,
+.browserInfoWrapIE .browserIcon img {
+	display: block;
+	margin: 20px auto 10px auto
+}
+
+.browserInfoWrap .browserName,
+.browserInfoWrap .browserLink,
+.browserInfoWrapIE .browserName,
+.browserInfoWrapIE .browserLink {
+	text-align: center;
+	padding-bottom: 2px
+}
+
+.browserInfoWrap .browserLink a,
+.browserInfoWrapIE .browserLink a {
+	color: #666;
+	font-size: 11px;
+	text-decoration: underline
+}
+
+.browserInfoWrap .galleryLink,
+.browserInfoWrapIE .galleryLink {
+	padding: 10px 0 0 0
+}
+
+.browserInfoWrapIE .browserLinks,
+.browserInfoWrapIE .spacer {
+	display: inline-block;
+	float: left
+}
+
+.browserInfoWrapIE .spacer img {
+	padding: 65px 30px 0 30px;
+	float: left
+}
+
+.browserInfoWrap .linksWrapper {
+	padding: 0 186px;
+	float: left;
+	width: auto
+}
+
+.browserInfoWrapIE .linksWrapper {
+	width: auto;
+	padding: 0 90px;
+	float: left
+}
+
+.galleryStock .overlayButtons #ok,
+.galleryBuyMinimum .overlayButtons #ok {
+	height: 16px;
+	padding: 5px 10px 3px 10px;
+	float: left;
+	display: inline-block;
+	border: 1px solid #D4D4D4;
+	font-weight: bold;
+	font-size: 12px;
+	margin: 5px 9px 0 0;
+	-moz-box-shadow: 2px 3px 5px -2px #000;
+	-webkit-box-shadow: 2px 3px 5px -2px #000;
+	box-shadow: 2px 3px 5px -2px #000
+}
+
+.galleryBuyMinimum .confDialogOverlay {
+	float: left;
+	margin: 0 0 0 5px;
+	width: 120px;
+	position: relative;
+	overflow: visible;
+	visibility: visible
+}
+
+.galleryBuyMinimum .confDialogOverlay .arrowWrap {
+	float: right;
+	margin: 0 19px 0 0
+}
+
+.galleryBuyMinimum .confDialogOverlay .arrowText {
+	height: 29px;
+	float: left;
+	display: block;
+	font-weight: bold;
+	text-align: left;
+	font-size: 12px;
+	padding: 10px 0 0 15px;
+	width: 75px !important
+}
+
+.galleryBuyMinimum .confDialogOverlay .arrowTip {
+	position: static;
+	float: left;
+	width: 24px !important;
+	display: inline-block;
+	height: 39px
+}
+
+#cboxTitle,
+#cboxCurrent,
+#cboxNext,
+#cboxNext,
+#cboxPrevious,
+#cboxSlideshow,
+#cboxTopLeft,
+#cboxTopCenter,
+#cboxTopRight,
+#cboxBottomLeft,
+#cboxBottomCenter,
+#cboxBottomRight {
+	display: none;
+	height: 0px;
+	width: 0px
+}
+
+.overlayText .mCustomScrollBox .mCSB_scrollTools,
+.overlayText .mCustomScrollBox .mCSB_scrollTools .mCSB_draggerContainer,
+.overlayText .mCustomScrollBox .mCSB_scrollTools .mCSB_draggerRail {
+	height: 217px
+}
+
+.overlayText .mCustomScrollBox .mCSB_scrollTools {
+	right: 5px
+}
+
+.overlayText .mCustomScrollBox .mCSB_scrollTools .mCSB_draggerRail {
+	background: #FFF url(/media/images/gallery/scrollerbgGallery.gif) -1px -1px
+}
+
+#hamperWrap {
+	border-top: none
+}
+
+.mCSB_container {
+	width: auto;
+	overflow: hidden
+}
+
+.mCSB_container.mCS_no_scrollbar {
+	margin-right: 0
+}
+
+.mCustomScrollBox .mCSB_scrollTools {
+	width: 13px;
+	height: 414px;
+	top: 0;
+	right: 7px
+}
+
+.mCSB_scrollTools .mCSB_draggerContainer {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+.mCSB_scrollTools .mCSB_buttonUp+.mCSB_draggerContainer {
+	padding-bottom: 40px
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+	width: 13px;
+	height: 414px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px
+}
+
+.mCSB_scrollTools .mCSB_dragger {
+	cursor: pointer;
+	width: 100%;
+	height: 30px
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	width: 13px;
+	height: 100%;
+	margin: 1px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	text-align: center
+}
+
+.mCSB_scrollTools .mCSB_buttonUp,
+.mCSB_scrollTools .mCSB_buttonDown {
+	height: 20px;
+	overflow: hidden;
+	margin: 0 auto;
+	cursor: pointer
+}
+
+.mCSB_scrollTools .mCSB_buttonDown {
+	bottom: 0;
+	margin-top: -40px
+}
+
+.mCSB_horizontal .mCSB_container {
+	height: auto;
+	margin-right: 0;
+	margin-bottom: 30px;
+	overflow: hidden
+}
+
+.mCSB_horizontal .mCSB_container.mCS_no_scrollbar {
+	margin-bottom: 0
+}
+
+.mCSB_horizontal.mCustomScrollBox .mCSB_scrollTools {
+	width: 100%;
+	height: 16px;
+	top: auto;
+	right: auto;
+	bottom: 0;
+	left: 0;
+	overflow: hidden
+}
+
+.mCSB_horizontal .mCSB_scrollTools .mCSB_draggerContainer {
+	height: 100%;
+	width: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden
+}
+
+.mCSB_horizontal .mCSB_scrollTools .mCSB_buttonLeft+.mCSB_draggerContainer {
+	padding-bottom: 0;
+	padding-right: 20px
+}
+
+.mCSB_horizontal .mCSB_scrollTools .mCSB_draggerRail {
+	width: 100%;
+	height: 2px;
+	margin: 7px 0;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px
+}
+
+.mCSB_horizontal .mCSB_scrollTools .mCSB_dragger {
+	width: 30px;
+	height: 100%
+}
+
+.mCSB_horizontal .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	width: 100%;
+	height: 4px;
+	margin: 6px auto;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px
+}
+
+.mCSB_horizontal .mCSB_scrollTools .mCSB_buttonLeft,
+.mCSB_horizontal .mCSB_scrollTools .mCSB_buttonRight {
+	width: 20px;
+	height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	cursor: pointer;
+	float: left
+}
+
+.mCSB_horizontal .mCSB_scrollTools .mCSB_buttonRight {
+	right: 0;
+	bottom: auto;
+	margin-left: -40px;
+	margin-top: -16px;
+	float: right
+}
+
+.mCustomScrollBox .mCSB_scrollTools {
+	opacity: 1
+}
+
+.mCustomScrollBox:hover .mCSB_scrollTools {
+	opacity: 1
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+	border: 1px solid #656565;
+	background: #FFF;
+	background: rgba(255, 255, 255, 1);
+	filter: "alpha(opacity=100)";
+	-ms-filter: "alpha(opacity=100)";
+	background: #FFF url(/media/images/configurator/scrollerbg.gif) -1px -1px
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	background: rgba(223, 190, 103, 1);
+	filter: "alpha(opacity=100)";
+	-ms-filter: "alpha(opacity=100)";
+	background: #DFBE67
+}
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+	background: rgba(223, 190, 103, 1);
+	filter: "alpha(opacity=100)";
+	-ms-filter: "alpha(opacity=100)";
+	background: #DFBE67
+}
+
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+	background: rgba(223, 190, 103, 1);
+	filter: "alpha(opacity=100)";
+	-ms-filter: "alpha(opacity=100)";
+	background: #DFBE67
+}
+
+.mCSB_scrollTools .mCSB_buttonUp,
+.mCSB_scrollTools .mCSB_buttonDown,
+.mCSB_scrollTools .mCSB_buttonLeft,
+.mCSB_scrollTools .mCSB_buttonRight {
+	background-image: url(/media/css/mCSB_buttons.png);
+	background-repeat: no-repeat;
+	opacity: 0.4;
+	filter: "alpha(opacity=40)";
+	-ms-filter: "alpha(opacity=40)"
+}
+
+.mCSB_scrollTools .mCSB_buttonUp {
+	background-position: 0 0
+}
+
+.mCSB_scrollTools .mCSB_buttonDown {
+	background-position: 0 -20px
+}
+
+.mCSB_scrollTools .mCSB_buttonLeft {
+	background-position: 0 -40px
+}
+
+.mCSB_scrollTools .mCSB_buttonRight {
+	background-position: 0 -56px
+}
+
+.mCSB_scrollTools .mCSB_buttonUp:hover,
+.mCSB_scrollTools .mCSB_buttonDown:hover,
+.mCSB_scrollTools .mCSB_buttonLeft:hover,
+.mCSB_scrollTools .mCSB_buttonRight:hover {
+	opacity: 0.75;
+	filter: "alpha(opacity=75)";
+	-ms-filter: "alpha(opacity=75)"
+}
+
+.mCSB_scrollTools .mCSB_buttonUp:active,
+.mCSB_scrollTools .mCSB_buttonDown:active,
+.mCSB_scrollTools .mCSB_buttonLeft:active,
+.mCSB_scrollTools .mCSB_buttonRight:active {
+	opacity: 0.9;
+	filter: "alpha(opacity=90)";
+	-ms-filter: "alpha(opacity=90)"
+}
