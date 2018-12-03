@@ -187,7 +187,7 @@
     <script src="{{ asset('js/jquery/jquery-3.3.1.min.js') }}"></script>
 
     <!-- fixed TypeError: jQuery.browser is undefined (jquery 3) -->
-    <!--<script src="{{ asset('js/jquery/jquery-browser.js') }}"></script>-->
+    <script src="{{ asset('js/jquery/jquery-browser.js') }}"></script>
     <!-- fixed TypeError: jQuery.browser is undefined (jquery 3) -->
 
     <!-- JQuery UI -->
