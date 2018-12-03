@@ -19,16 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('konva')->group(function () {
-
-
-    Route::get('/', 'KonvaController@index');
-
-});
-
 
 Route::prefix('flowers')->group(function () {
 
     Route::get('/', 'FlowersController@index');
+});
 
+Route::post('product/index/{id}', function ($id) {
+
+    return response(['id' => $id]);
 });

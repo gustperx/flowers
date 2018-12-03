@@ -1726,33 +1726,33 @@ function viewshareclick_oncomplete() {
         });
         ev.preventDefault();
     });
-}; /*! KonvaJS v4.5.4 2013-06-09 http://www.kineticjs.com by Eric Rowell @ericdrowell - MIT License https://github.com/ericdrowell/KonvaJS/wiki/License*/
-var Konva = {};
+}; /*! KineticJS v4.5.4 2013-06-09 http://www.kineticjs.com by Eric Rowell @ericdrowell - MIT License https://github.com/ericdrowell/KineticJS/wiki/License*/
+var Kinetic = {};
 ! function() {
-    Konva.version = "4.5.4", Konva.Filters = {}, Konva.Node = function(a) {
+    Kinetic.version = "4.5.4", Kinetic.Filters = {}, Kinetic.Node = function(a) {
         this._nodeInit(a)
-    }, Konva.Shape = function(a) {
+    }, Kinetic.Shape = function(a) {
         this._initShape(a)
-    }, Konva.Container = function(a) {
+    }, Kinetic.Container = function(a) {
         this._containerInit(a)
-    }, Konva.Stage = function(a) {
+    }, Kinetic.Stage = function(a) {
         this._initStage(a)
-    }, Konva.Layer = function(a) {
+    }, Kinetic.Layer = function(a) {
         this._initLayer(a)
-    }, Konva.Group = function(a) {
+    }, Kinetic.Group = function(a) {
         this._initGroup(a)
-    }, Konva.Global = {
+    }, Kinetic.Global = {
         stages: [],
         idCounter: 0,
         ids: {},
         names: {},
         shapes: {},
         isDragging: function() {
-            var a = Konva.DD;
+            var a = Kinetic.DD;
             return a ? a.isDragging : !1
         },
         isDragReady: function() {
-            var a = Konva.DD;
+            var a = Kinetic.DD;
             return a ? !!a.node : !1
         },
         _addId: function(a, b) {
@@ -1781,25 +1781,25 @@ var Konva = {};
 function(a, b) {
     "object" == typeof exports ? module.exports = b() : "function" == typeof define && define.amd ? define(b) : a.returnExports = b()
 }(this, function() {
-    return Konva
+    return Kinetic
 }),
 function() {
-    Konva.Collection = function() {
+    Kinetic.Collection = function() {
         var a = [].slice.call(arguments),
             b = a.length,
             c = 0;
         for (this.length = b; b > c; c++) this[c] = a[c];
         return this
-    }, Konva.Collection.prototype = [], Konva.Collection.prototype.each = function(a) {
+    }, Kinetic.Collection.prototype = [], Kinetic.Collection.prototype.each = function(a) {
         for (var b = 0; b < this.length; b++) a(this[b], b)
-    }, Konva.Collection.prototype.toArray = function() {
+    }, Kinetic.Collection.prototype.toArray = function() {
         for (var a = [], b = 0; b < this.length; b++) a.push(this[b]);
         return a
-    }, Konva.Collection.mapMethods = function(a) {
+    }, Kinetic.Collection.mapMethods = function(a) {
         var b, c = a.length;
         for (b = 0; c > b; b++) ! function(b) {
             var c = a[b];
-            Konva.Collection.prototype[c] = function() {
+            Kinetic.Collection.prototype[c] = function() {
                 var a, b = this.length;
                 for (args = [].slice.call(arguments), a = 0; b > a; a++) this[a][c].apply(this[a], args)
             }
@@ -1807,9 +1807,9 @@ function() {
     }
 }(),
 function() {
-    Konva.Transform = function() {
+    Kinetic.Transform = function() {
         this.m = [1, 0, 0, 1, 0, 0]
-    }, Konva.Transform.prototype = {
+    }, Kinetic.Transform.prototype = {
         translate: function(a, b) {
             this.m[4] += this.m[0] * a + this.m[2] * b, this.m[5] += this.m[1] * a + this.m[3] * b
         },
@@ -1873,7 +1873,7 @@ function() {
         h = "#",
         i = "",
         j = "0",
-        k = "Konva warning: ",
+        k = "Kinetic warning: ",
         l = "rgb(",
         m = {
             aqua: [0, 255, 255],
@@ -1898,7 +1898,7 @@ function() {
             transparent: [255, 255, 255, 0]
         },
         n = /rgb\((\d{1,3}),(\d{1,3}),(\d{1,3})\)/;
-    Konva.Util = {
+    Kinetic.Util = {
         _isElement: function(a) {
             return !(!a || 1 != a.nodeType)
         },
@@ -2098,7 +2098,7 @@ function() {
         _expandPoints: function(a, b) {
             var c, d, e = a.length,
                 f = [];
-            for (c = 1; e - 1 > c; c++) d = Konva.Util._getControlPoints(a[c - 1], a[c], a[c + 1], b), f.push(d[0]), f.push(a[c]), f.push(d[1]);
+            for (c = 1; e - 1 > c; c++) d = Kinetic.Util._getControlPoints(a[c - 1], a[c], a[c + 1], b), f.push(d[0]), f.push(a[c]), f.push(d[1]);
             return f
         }
     }
@@ -2109,9 +2109,9 @@ function() {
         c = window.devicePixelRatio || 1,
         d = b.webkitBackingStorePixelRatio || b.mozBackingStorePixelRatio || b.msBackingStorePixelRatio || b.oBackingStorePixelRatio || b.backingStorePixelRatio || 1,
         e = c / d;
-    Konva.Canvas = function(a) {
+    Kinetic.Canvas = function(a) {
         this.init(a)
-    }, Konva.Canvas.prototype = {
+    }, Kinetic.Canvas.prototype = {
         init: function(a) {
             a = a || {};
             var b = a.width || 0,
@@ -2152,7 +2152,7 @@ function() {
                 try {
                     return this.element.toDataURL()
                 } catch (d) {
-                    return Konva.Util.warn("Unable to get data URL. " + d.message), ""
+                    return Kinetic.Util.warn("Unable to get data URL. " + d.message), ""
                 }
             }
         },
@@ -2192,16 +2192,16 @@ function() {
             var b = this.getContext();
             b.save(), this._applyAncestorTransforms(a), b.beginPath(), a.getClipFunc()(this), b.clip(), b.setTransform(1, 0, 0, 1, 0, 0)
         }
-    }, Konva.SceneCanvas = function(a) {
-        Konva.Canvas.call(this, a)
-    }, Konva.SceneCanvas.prototype = {
+    }, Kinetic.SceneCanvas = function(a) {
+        Kinetic.Canvas.call(this, a)
+    }, Kinetic.SceneCanvas.prototype = {
         setWidth: function(a) {
             var b = this.pixelRatio;
-            Konva.Canvas.prototype.setWidth.call(this, a), this.context.scale(b, b)
+            Kinetic.Canvas.prototype.setWidth.call(this, a), this.context.scale(b, b)
         },
         setHeight: function(a) {
             var b = this.pixelRatio;
-            Konva.Canvas.prototype.setHeight.call(this, a), this.context.scale(b, b)
+            Kinetic.Canvas.prototype.setHeight.call(this, a), this.context.scale(b, b)
         },
         _fillColor: function(a) {
             var b = this.context,
@@ -2263,9 +2263,9 @@ function() {
                 a.getShadowOpacity() && (b.globalAlpha = a.getShadowOpacity() * c), b.shadowColor = d, b.shadowBlur = e, b.shadowOffsetX = f.x, b.shadowOffsetY = f.y
             }
         }
-    }, Konva.Util.extend(Konva.SceneCanvas, Konva.Canvas), Konva.HitCanvas = function(a) {
-        Konva.Canvas.call(this, a)
-    }, Konva.HitCanvas.prototype = {
+    }, Kinetic.Util.extend(Kinetic.SceneCanvas, Kinetic.Canvas), Kinetic.HitCanvas = function(a) {
+        Kinetic.Canvas.call(this, a)
+    }, Kinetic.HitCanvas.prototype = {
         _fill: function(a) {
             var b = this.context;
             b.save(), b.fillStyle = a.colorKey, a._fillFuncHit(b), b.restore()
@@ -2276,7 +2276,7 @@ function() {
                 d = a.getStrokeWidth();
             (c || d) && (this._applyLineCap(a), b.save(), b.lineWidth = d || 2, b.strokeStyle = a.colorKey, a._strokeFuncHit(b), b.restore())
         }
-    }, Konva.Util.extend(Konva.HitCanvas, Konva.Canvas)
+    }, Kinetic.Util.extend(Kinetic.HitCanvas, Kinetic.Canvas)
 }(),
 function() {
     var a = " ",
@@ -2307,9 +2307,9 @@ function() {
         z = "B",
         A = "#",
         B = "children";
-    Konva.Util.addMethods(Konva.Node, {
+    Kinetic.Util.addMethods(Kinetic.Node, {
         _nodeInit: function(a) {
-            this._id = Konva.Global.idCounter++, this.eventListeners = {}, this.setAttrs(a)
+            this._id = Kinetic.Global.idCounter++, this.eventListeners = {}, this.setAttrs(a)
         },
         on: function(d, e) {
             var f, g, h, i, j, k, l = d.split(a),
@@ -2336,19 +2336,19 @@ function() {
             return a && a.children && (a.children.splice(this.index, 1), a._setChildrenIndices(), delete this.parent), this
         },
         destroy: function() {
-            var a = Konva.Global;
+            var a = Kinetic.Global;
             a._removeId(this.getId()), a._removeName(this.getName(), this._id), this.remove()
         },
         getAttr: function(a) {
-            var b = d + Konva.Util._capitalize(a);
-            return Konva.Util._isFunction(this[b]) ? this[b]() : this.attrs[a]
+            var b = d + Kinetic.Util._capitalize(a);
+            return Kinetic.Util._isFunction(this[b]) ? this[b]() : this.attrs[a]
         },
         setAttr: function() {
             var a = Array.prototype.slice.call(arguments),
                 b = a[0],
-                c = e + Konva.Util._capitalize(b),
+                c = e + Kinetic.Util._capitalize(b),
                 d = this[c];
-            return a.shift(), Konva.Util._isFunction(d) ? d.apply(this, a) : this.attrs[b] = a[0], this
+            return a.shift(), Kinetic.Util._isFunction(d) ? d.apply(this, a) : this.attrs[b] = a[0], this
         },
         getAttrs: function() {
             return this.attrs || {}
@@ -2359,7 +2359,7 @@ function() {
         setAttrs: function(a) {
             var b, c;
             if (a)
-                for (b in a) b === B || (c = e + Konva.Util._capitalize(b), Konva.Util._isFunction(this[c]) ? this[c](a[b]) : this._setAttr(b, a[b]));
+                for (b in a) b === B || (c = e + Kinetic.Util._capitalize(b), Kinetic.Util._isFunction(this[c]) ? this[c](a[b]) : this._setAttr(b, a[b]));
             return this
         },
         getVisible: function() {
@@ -2396,7 +2396,7 @@ function() {
             return a
         },
         setPosition: function() {
-            var a = Konva.Util._getXY([].slice.call(arguments));
+            var a = Kinetic.Util._getXY([].slice.call(arguments));
             return this.setX(a.x), this.setY(a.y), this
         },
         getPosition: function() {
@@ -2411,7 +2411,7 @@ function() {
             return a.translate(b.x, b.y), a.getTranslation()
         },
         setAbsolutePosition: function() {
-            var a, b = Konva.Util._getXY([].slice.call(arguments)),
+            var a, b = Kinetic.Util._getXY([].slice.call(arguments)),
                 c = this._clearTransform();
             return this.attrs.x = c.x, this.attrs.y = c.y, delete c.x, delete c.y, a = this.getAbsoluteTransform(), a.invert(), a.translate(b.x, b.y), b = {
                 x: this.attrs.x + a.getTranslation().x,
@@ -2419,7 +2419,7 @@ function() {
             }, this.setPosition(b.x, b.y), this._setTransform(c), this
         },
         move: function() {
-            var a = Konva.Util._getXY([].slice.call(arguments)),
+            var a = Kinetic.Util._getXY([].slice.call(arguments)),
                 b = this.getX(),
                 c = this.getY();
             return void 0 !== a.x && (b += a.x), void 0 !== a.y && (c += a.y), this.setPosition(b, c), this
@@ -2434,7 +2434,7 @@ function() {
             return this.setRotation(this.getRotation() + a), this
         },
         rotateDeg: function(a) {
-            return this.setRotation(this.getRotation() + Konva.Util._degToRad(a)), this
+            return this.setRotation(this.getRotation() + Kinetic.Util._degToRad(a)), this
         },
         moveToTop: function() {
             var a = this.index;
@@ -2462,10 +2462,10 @@ function() {
             return this.getParent() && (a *= this.getParent().getAbsoluteOpacity()), a
         },
         moveTo: function(a) {
-            return Konva.Node.prototype.remove.call(this), a.add(this), this
+            return Kinetic.Node.prototype.remove.call(this), a.add(this), this
         },
         toObject: function() {
-            var a, b, c = Konva.Util,
+            var a, b, c = Kinetic.Util,
                 d = {},
                 e = this.getAttrs();
             d.attrs = {};
@@ -2488,13 +2488,13 @@ function() {
             return c ? this._fireAndBubble(a, b || {}) : this._fire(a, b || {}), this
         },
         getAbsoluteTransform: function() {
-            var a, b = new Konva.Transform;
+            var a, b = new Kinetic.Transform;
             return this._eachAncestorReverse(function(c) {
                 a = c.getTransform(), b.multiply(a)
             }, !0), b
         },
         _getAndCacheTransform: function() {
-            var a = new Konva.Transform,
+            var a = new Kinetic.Transform,
                 b = this.getX(),
                 c = this.getY(),
                 d = this.getRotation(),
@@ -2512,7 +2512,7 @@ function() {
         },
         clone: function(a) {
             var b, c, d, e, f, g = this.getClassName(),
-                h = new Konva[g](this.attrs);
+                h = new Kinetic[g](this.attrs);
             for (b in this.eventListeners)
                 for (c = this.eventListeners[b], d = c.length, e = 0; d > e; e++) f = c[e], f.name.indexOf(j) < 0 && (h.eventListeners[b] || (h.eventListeners[b] = []), h.eventListeners[b].push(f));
             return h.setAttrs(a), h
@@ -2524,7 +2524,7 @@ function() {
                 d = this.getStage(),
                 e = a.x || 0,
                 f = a.y || 0,
-                g = new Konva.SceneCanvas({
+                g = new Kinetic.SceneCanvas({
                     width: a.width || d.getWidth(),
                     height: a.height || d.getHeight(),
                     pixelRatio: 1
@@ -2533,12 +2533,12 @@ function() {
             return h.save(), (e || f) && h.translate(-1 * e, -1 * f), this.drawScene(g), h.restore(), g.toDataURL(b, c)
         },
         toImage: function(a) {
-            Konva.Util._getImage(this.toDataURL(a), function(b) {
+            Kinetic.Util._getImage(this.toDataURL(a), function(b) {
                 a.callback(b)
             })
         },
         setSize: function() {
-            var a = Konva.Util._getSize(Array.prototype.slice.call(arguments));
+            var a = Kinetic.Util._getSize(Array.prototype.slice.call(arguments));
             return this.setWidth(a.width), this.setHeight(a.height), this
         },
         getSize: function() {
@@ -2593,7 +2593,7 @@ function() {
             this.cachedTransform = null
         },
         _fireBeforeChangeEvent: function(a, b, c) {
-            this._fire(k + Konva.Util._capitalize(a) + l, {
+            this._fire(k + Kinetic.Util._capitalize(a) + l, {
                 oldVal: b,
                 newVal: c
             })
@@ -2606,12 +2606,12 @@ function() {
         },
         setId: function(a) {
             var b = this.getId(),
-                c = (this.getStage(), Konva.Global);
+                c = (this.getStage(), Kinetic.Global);
             return c._removeId(b), c._addId(this, a), this._setAttr(m, a), this
         },
         setName: function(a) {
             var b = this.getName(),
-                c = (this.getStage(), Konva.Global);
+                c = (this.getStage(), Kinetic.Global);
             return c._removeName(b, this._id), c._addName(this, a), this._setAttr(n, a), this
         },
         _setAttr: function(a, b) {
@@ -2635,49 +2635,49 @@ function() {
             return this._fire(r, a), this.drawScene(), this.drawHit(), this._fire(s, a), this
         },
         shouldDrawHit: function() {
-            return this.isVisible() && this.isListening() && !Konva.Global.isDragging()
+            return this.isVisible() && this.isListening() && !Kinetic.Global.isDragging()
         },
         isDraggable: function() {
             return !1
         }
-    }), Konva.Node.setPoints = function(a) {
-        var b = Konva.Util._getPoints(a);
+    }), Kinetic.Node.setPoints = function(a) {
+        var b = Kinetic.Util._getPoints(a);
         this._setAttr("points", b)
-    }, Konva.Node.addGetterSetter = function(a, b, c, d) {
+    }, Kinetic.Node.addGetterSetter = function(a, b, c, d) {
         this.addGetter(a, b, c), this.addSetter(a, b, d)
-    }, Konva.Node.addPointGetterSetter = function(a, b, c, d) {
+    }, Kinetic.Node.addPointGetterSetter = function(a, b, c, d) {
         this.addPointGetter(a, b), this.addPointSetter(a, b), this.addGetter(a, b + h, c), this.addGetter(a, b + i, c), this.addSetter(a, b + h, d), this.addSetter(a, b + i, d)
-    }, Konva.Node.addPointsGetterSetter = function(a, b) {
+    }, Kinetic.Node.addPointsGetterSetter = function(a, b) {
         this.addPointsGetter(a, b), this.addPointsSetter(a, b)
-    }, Konva.Node.addRotationGetterSetter = function(a, b, c, d) {
+    }, Kinetic.Node.addRotationGetterSetter = function(a, b, c, d) {
         this.addRotationGetter(a, b, c), this.addRotationSetter(a, b, d)
-    }, Konva.Node.addColorGetterSetter = function(a, b) {
+    }, Kinetic.Node.addColorGetterSetter = function(a, b) {
         this.addGetter(a, b), this.addSetter(a, b), this.addColorRGBGetter(a, b), this.addColorComponentGetter(a, b, u), this.addColorComponentGetter(a, b, v), this.addColorComponentGetter(a, b, w), this.addColorRGBSetter(a, b), this.addColorComponentSetter(a, b, u), this.addColorComponentSetter(a, b, v), this.addColorComponentSetter(a, b, w)
-    }, Konva.Node.addColorRGBGetter = function(a, b) {
-        var c = d + Konva.Util._capitalize(b) + t;
+    }, Kinetic.Node.addColorRGBGetter = function(a, b) {
+        var c = d + Kinetic.Util._capitalize(b) + t;
         a.prototype[c] = function() {
-            return Konva.Util.getRGB(this.attrs[b])
+            return Kinetic.Util.getRGB(this.attrs[b])
         }
-    }, Konva.Node.addColorComponentGetter = function(a, b, c) {
-        var e = d + Konva.Util._capitalize(b),
-            f = e + Konva.Util._capitalize(c);
+    }, Kinetic.Node.addColorComponentGetter = function(a, b, c) {
+        var e = d + Kinetic.Util._capitalize(b),
+            f = e + Kinetic.Util._capitalize(c);
         a.prototype[f] = function() {
             return this[e + t]()[c]
         }
-    }, Konva.Node.addPointsGetter = function(a, b) {
-        var c = d + Konva.Util._capitalize(b);
+    }, Kinetic.Node.addPointsGetter = function(a, b) {
+        var c = d + Kinetic.Util._capitalize(b);
         a.prototype[c] = function() {
             var a = this.attrs[b];
             return void 0 === a ? [] : a
         }
-    }, Konva.Node.addGetter = function(a, b, c) {
-        var e = d + Konva.Util._capitalize(b);
+    }, Kinetic.Node.addGetter = function(a, b, c) {
+        var e = d + Kinetic.Util._capitalize(b);
         a.prototype[e] = function() {
             var a = this.attrs[b];
             return void 0 === a ? c : a
         }
-    }, Konva.Node.addPointGetter = function(a, b) {
-        var c = d + Konva.Util._capitalize(b);
+    }, Kinetic.Node.addPointGetter = function(a, b) {
+        var c = d + Kinetic.Util._capitalize(b);
         a.prototype[c] = function() {
             var a = this;
             return {
@@ -2685,75 +2685,75 @@ function() {
                 y: a[c + i]()
             }
         }
-    }, Konva.Node.addRotationGetter = function(a, b, c) {
-        var e = d + Konva.Util._capitalize(b);
+    }, Kinetic.Node.addRotationGetter = function(a, b, c) {
+        var e = d + Kinetic.Util._capitalize(b);
         a.prototype[e] = function() {
             var a = this.attrs[b];
             return void 0 === a && (a = c), a
         }, a.prototype[e + q] = function() {
             var a = this.attrs[b];
-            return void 0 === a && (a = c), Konva.Util._radToDeg(a)
+            return void 0 === a && (a = c), Kinetic.Util._radToDeg(a)
         }
-    }, Konva.Node.addColorRGBSetter = function(a, b) {
-        var c = e + Konva.Util._capitalize(b) + t;
+    }, Kinetic.Node.addColorRGBSetter = function(a, b) {
+        var c = e + Kinetic.Util._capitalize(b) + t;
         a.prototype[c] = function(a) {
             var c = a && void 0 !== a.r ? 0 | a.r : this.getAttr(b + x),
                 d = a && void 0 !== a.g ? 0 | a.g : this.getAttr(b + y),
                 e = a && void 0 !== a.b ? 0 | a.b : this.getAttr(b + z);
-            this._setAttr(b, A + Konva.Util._rgbToHex(c, d, e))
+            this._setAttr(b, A + Kinetic.Util._rgbToHex(c, d, e))
         }
-    }, Konva.Node.addColorComponentSetter = function(a, b, c) {
-        var d = e + Konva.Util._capitalize(b),
-            f = d + Konva.Util._capitalize(c);
+    }, Kinetic.Node.addColorComponentSetter = function(a, b, c) {
+        var d = e + Kinetic.Util._capitalize(b),
+            f = d + Kinetic.Util._capitalize(c);
         a.prototype[f] = function(a) {
             var b = {};
             b[c] = a, this[d + t](b)
         }
-    }, Konva.Node.addPointsSetter = function(a, b) {
-        var c = e + Konva.Util._capitalize(b);
-        a.prototype[c] = Konva.Node.setPoints
-    }, Konva.Node.addSetter = function(a, b, c) {
-        var d = e + Konva.Util._capitalize(b);
+    }, Kinetic.Node.addPointsSetter = function(a, b) {
+        var c = e + Kinetic.Util._capitalize(b);
+        a.prototype[c] = Kinetic.Node.setPoints
+    }, Kinetic.Node.addSetter = function(a, b, c) {
+        var d = e + Kinetic.Util._capitalize(b);
         a.prototype[d] = function(a) {
             this._setAttr(b, a), c && (this.cachedTransform = null)
         }
-    }, Konva.Node.addPointSetter = function(a, b) {
-        var c = e + Konva.Util._capitalize(b);
+    }, Kinetic.Node.addPointSetter = function(a, b) {
+        var c = e + Kinetic.Util._capitalize(b);
         a.prototype[c] = function() {
-            var a = Konva.Util._getXY([].slice.call(arguments)),
+            var a = Kinetic.Util._getXY([].slice.call(arguments)),
                 d = this.attrs[b],
                 e = 0,
                 f = 0;
             a && (e = a.x, f = a.y, this._fireBeforeChangeEvent(b, d, a), void 0 !== e && this[c + h](e), void 0 !== f && this[c + i](f), this._fireChangeEvent(b, d, a))
         }
-    }, Konva.Node.addRotationSetter = function(a, b, c) {
-        var d = e + Konva.Util._capitalize(b);
+    }, Kinetic.Node.addRotationSetter = function(a, b, c) {
+        var d = e + Kinetic.Util._capitalize(b);
         a.prototype[d] = function(a) {
             this._setAttr(b, a), c && (this.cachedTransform = null)
         }, a.prototype[d + q] = function(a) {
-            this._setAttr(b, Konva.Util._degToRad(a)), c && (this.cachedTransform = null)
+            this._setAttr(b, Kinetic.Util._degToRad(a)), c && (this.cachedTransform = null)
         }
-    }, Konva.Node.create = function(a, b) {
+    }, Kinetic.Node.create = function(a, b) {
         return this._createNode(JSON.parse(a), b)
-    }, Konva.Node._createNode = function(a, b) {
-        var c, d, e, f = Konva.Node.prototype.getClassName.call(a),
+    }, Kinetic.Node._createNode = function(a, b) {
+        var c, d, e, f = Kinetic.Node.prototype.getClassName.call(a),
             g = a.children;
-        if (b && (a.attrs.container = b), c = new Konva[f](a.attrs), g)
+        if (b && (a.attrs.container = b), c = new Kinetic[f](a.attrs), g)
             for (d = g.length, e = 0; d > e; e++) c.add(this._createNode(g[e]));
         return c
-    }, Konva.Node.addGetterSetter(Konva.Node, "x", 0, !0), Konva.Node.addGetterSetter(Konva.Node, "y", 0, !0), Konva.Node.addGetterSetter(Konva.Node, "opacity", 1), Konva.Node.addGetter(Konva.Node, "name"), Konva.Node.addGetter(Konva.Node, "id"), Konva.Node.addRotationGetterSetter(Konva.Node, "rotation", 0, !0), Konva.Node.addPointGetterSetter(Konva.Node, "scale", 1, !0), Konva.Node.addPointGetterSetter(Konva.Node, "skew", 0, !0), Konva.Node.addPointGetterSetter(Konva.Node, "offset", 0, !0), Konva.Node.addSetter(Konva.Node, "width"), Konva.Node.addSetter(Konva.Node, "height"), Konva.Node.addSetter(Konva.Node, "listening"), Konva.Node.addSetter(Konva.Node, "visible"), Konva.Node.prototype.isListening = Konva.Node.prototype.getListening, Konva.Node.prototype.isVisible = Konva.Node.prototype.getVisible, Konva.Collection.mapMethods(["on", "off", "remove", "destroy", "show", "hide", "move", "rotate", "moveToTop", "moveUp", "moveDown", "moveToBottom", "moveTo", "fire", "draw"])
+    }, Kinetic.Node.addGetterSetter(Kinetic.Node, "x", 0, !0), Kinetic.Node.addGetterSetter(Kinetic.Node, "y", 0, !0), Kinetic.Node.addGetterSetter(Kinetic.Node, "opacity", 1), Kinetic.Node.addGetter(Kinetic.Node, "name"), Kinetic.Node.addGetter(Kinetic.Node, "id"), Kinetic.Node.addRotationGetterSetter(Kinetic.Node, "rotation", 0, !0), Kinetic.Node.addPointGetterSetter(Kinetic.Node, "scale", 1, !0), Kinetic.Node.addPointGetterSetter(Kinetic.Node, "skew", 0, !0), Kinetic.Node.addPointGetterSetter(Kinetic.Node, "offset", 0, !0), Kinetic.Node.addSetter(Kinetic.Node, "width"), Kinetic.Node.addSetter(Kinetic.Node, "height"), Kinetic.Node.addSetter(Kinetic.Node, "listening"), Kinetic.Node.addSetter(Kinetic.Node, "visible"), Kinetic.Node.prototype.isListening = Kinetic.Node.prototype.getListening, Kinetic.Node.prototype.isVisible = Kinetic.Node.prototype.getVisible, Kinetic.Collection.mapMethods(["on", "off", "remove", "destroy", "show", "hide", "move", "rotate", "moveToTop", "moveUp", "moveDown", "moveToBottom", "moveTo", "fire", "draw"])
 }(),
 function() {
     function a(a) {
         window.setTimeout(a, 1e3 / 60)
     }
-    Konva.Animation = function(a, b) {
-        this.func = a, this.setLayers(b), this.id = Konva.Animation.animIdCounter++, this.frame = {
+    Kinetic.Animation = function(a, b) {
+        this.func = a, this.setLayers(b), this.id = Kinetic.Animation.animIdCounter++, this.frame = {
             time: 0,
             timeDiff: 0,
             lastTime: (new Date).getTime()
         }
-    }, Konva.Animation.prototype = {
+    }, Kinetic.Animation.prototype = {
         setLayers: function(a) {
             var b = [];
             b = a ? a.length > 0 ? a : [a] : [], this.layers = b
@@ -2770,28 +2770,28 @@ function() {
             return this.layers.push(a), !0
         },
         isRunning: function() {
-            for (var a = Konva.Animation, b = a.animations, c = 0; c < b.length; c++)
+            for (var a = Kinetic.Animation, b = a.animations, c = 0; c < b.length; c++)
                 if (b[c].id === this.id) return !0;
             return !1
         },
         start: function() {
-            this.stop(), this.frame.timeDiff = 0, this.frame.lastTime = (new Date).getTime(), Konva.Animation._addAnimation(this)
+            this.stop(), this.frame.timeDiff = 0, this.frame.lastTime = (new Date).getTime(), Kinetic.Animation._addAnimation(this)
         },
         stop: function() {
-            Konva.Animation._removeAnimation(this)
+            Kinetic.Animation._removeAnimation(this)
         },
         _updateFrameObject: function(a) {
             this.frame.timeDiff = a - this.frame.lastTime, this.frame.lastTime = a, this.frame.time += this.frame.timeDiff, this.frame.frameRate = 1e3 / this.frame.timeDiff
         }
-    }, Konva.Animation.animations = [], Konva.Animation.animIdCounter = 0, Konva.Animation.animRunning = !1, Konva.Animation._addAnimation = function(a) {
+    }, Kinetic.Animation.animations = [], Kinetic.Animation.animIdCounter = 0, Kinetic.Animation.animRunning = !1, Kinetic.Animation._addAnimation = function(a) {
         this.animations.push(a), this._handleAnimation()
-    }, Konva.Animation._removeAnimation = function(a) {
+    }, Kinetic.Animation._removeAnimation = function(a) {
         for (var b = a.id, c = this.animations, d = c.length, e = 0; d > e; e++)
             if (c[e].id === b) {
                 this.animations.splice(e, 1);
                 break
             }
-    }, Konva.Animation._runFrames = function() {
+    }, Kinetic.Animation._runFrames = function() {
         var a, b, c, d, e, f, g, h, i = {},
             j = this.animations;
         for (d = 0; d < j.length; d++) {
@@ -2799,27 +2799,27 @@ function() {
             c && c.call(a, a.frame)
         }
         for (h in i) i[h].draw()
-    }, Konva.Animation._animationLoop = function() {
+    }, Kinetic.Animation._animationLoop = function() {
         var a = this;
-        this.animations.length > 0 ? (this._runFrames(), Konva.Animation.requestAnimFrame(function() {
+        this.animations.length > 0 ? (this._runFrames(), Kinetic.Animation.requestAnimFrame(function() {
             a._animationLoop()
         })) : this.animRunning = !1
-    }, Konva.Animation._handleAnimation = function() {
+    }, Kinetic.Animation._handleAnimation = function() {
         var a = this;
         this.animRunning || (this.animRunning = !0, a._animationLoop())
     }, RAF = function() {
         return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || a
-    }(), Konva.Animation.requestAnimFrame = function(b) {
-        var c = Konva.DD && Konva.DD.isDragging ? a : RAF;
+    }(), Kinetic.Animation.requestAnimFrame = function(b) {
+        var c = Kinetic.DD && Kinetic.DD.isDragging ? a : RAF;
         c(b)
     };
-    var b = Konva.Node.prototype.moveTo;
-    Konva.Node.prototype.moveTo = function(a) {
+    var b = Kinetic.Node.prototype.moveTo;
+    Kinetic.Node.prototype.moveTo = function(a) {
         b.call(this, a)
-    }, Konva.Layer.batchAnim = new Konva.Animation(function() {
+    }, Kinetic.Layer.batchAnim = new Kinetic.Animation(function() {
         0 === this.getLayers().length && this.stop(), this.setLayers([])
-    }), Konva.Layer.prototype.batchDraw = function() {
-        var a = Konva.Layer.batchAnim;
+    }), Kinetic.Layer.prototype.batchDraw = function() {
+        var a = Kinetic.Layer.batchAnim;
         a.addLayer(this), a.isRunning() || a.start()
     }
 }(),
@@ -2835,40 +2835,40 @@ function() {
         c = 2,
         d = 3,
         e = 0;
-    Konva.Tween = function(b) {
+    Kinetic.Tween = function(b) {
         var c, d = this,
             g = b.node,
             h = g._id,
             i = b.duration || 1,
-            j = b.easing || Konva.Easings.Linear,
+            j = b.easing || Kinetic.Easings.Linear,
             k = !!b.yoyo;
-        this.node = g, this._id = e++, this.onFinish = b.onFinish, this.anim = new Konva.Animation(function() {
+        this.node = g, this._id = e++, this.onFinish = b.onFinish, this.anim = new Kinetic.Animation(function() {
             d.tween.onEnterFrame()
         }, g.getLayer() || g.getLayers()), this.tween = new f(c, function(a) {
             d._tweenFunc(a)
-        }, j, 0, 1, 1e3 * i, k), this._addListeners(), Konva.Tween.attrs[h] || (Konva.Tween.attrs[h] = {}), Konva.Tween.attrs[h][this._id] || (Konva.Tween.attrs[h][this._id] = {}), Konva.Tween.tweens[h] || (Konva.Tween.tweens[h] = {});
+        }, j, 0, 1, 1e3 * i, k), this._addListeners(), Kinetic.Tween.attrs[h] || (Kinetic.Tween.attrs[h] = {}), Kinetic.Tween.attrs[h][this._id] || (Kinetic.Tween.attrs[h][this._id] = {}), Kinetic.Tween.tweens[h] || (Kinetic.Tween.tweens[h] = {});
         for (c in b) void 0 === a[c] && this._addAttr(c, b[c]);
         this.reset()
-    }, Konva.Tween.attrs = {}, Konva.Tween.tweens = {}, Konva.Tween.prototype = {
+    }, Kinetic.Tween.attrs = {}, Kinetic.Tween.tweens = {}, Kinetic.Tween.prototype = {
         _addAttr: function(a, b) {
             var c, d, e, f, g, h, i, j = this.node,
                 k = j._id;
-            if (e = Konva.Tween.tweens[k][a], e && delete Konva.Tween.attrs[k][e][a], c = j.getAttr(a), Konva.Util._isArray(b))
-                for (b = Konva.Util._getPoints(b), d = [], g = b.length, f = 0; g > f; f++) h = c[f], i = b[f], d.push({
+            if (e = Kinetic.Tween.tweens[k][a], e && delete Kinetic.Tween.attrs[k][e][a], c = j.getAttr(a), Kinetic.Util._isArray(b))
+                for (b = Kinetic.Util._getPoints(b), d = [], g = b.length, f = 0; g > f; f++) h = c[f], i = b[f], d.push({
                     x: i.x - h.x,
                     y: i.y - h.y
                 });
             else d = b - c;
-            Konva.Tween.attrs[k][this._id][a] = {
+            Kinetic.Tween.attrs[k][this._id][a] = {
                 start: c,
                 diff: d
-            }, Konva.Tween.tweens[k][a] = this._id
+            }, Kinetic.Tween.tweens[k][a] = this._id
         },
         _tweenFunc: function(a) {
             var b, c, d, e, f, g, h, i, j, k = this.node,
-                l = Konva.Tween.attrs[k._id][this._id];
+                l = Kinetic.Tween.attrs[k._id][this._id];
             for (b in l) {
-                if (c = l[b], d = c.start, e = c.diff, Konva.Util._isArray(d))
+                if (c = l[b], d = c.start, e = c.diff, Kinetic.Util._isArray(d))
                     for (f = [], h = d.length, g = 0; h > g; g++) i = d[g], j = e[g], f.push({
                         x: i.x + j.x * a,
                         y: i.y + j.y * a
@@ -2913,10 +2913,10 @@ function() {
         destroy: function() {
             var a, b = this.node._id,
                 c = this._id,
-                d = Konva.Tween.tweens[b];
+                d = Kinetic.Tween.tweens[b];
             this.pause();
-            for (a in d) delete Konva.Tween.tweens[b][a];
-            delete Konva.Tween.attrs[b][c]
+            for (a in d) delete Kinetic.Tween.tweens[b][a];
+            delete Kinetic.Tween.attrs[b][c]
         }
     };
     var f = function(a, b, c, d, e, f, g) {
@@ -2967,7 +2967,7 @@ function() {
         getTimer: function() {
             return (new Date).getTime()
         }
-    }, Konva.Easings = {
+    }, Kinetic.Easings = {
         BackEaseIn: function(a, b, c, d) {
             var e = 1.70158;
             return c * (a /= d) * a * ((e + 1) * a - e) + b
@@ -2996,10 +2996,10 @@ function() {
             return (a /= d) < 1 / 2.75 ? c * 7.5625 * a * a + b : 2 / 2.75 > a ? c * (7.5625 * (a -= 1.5 / 2.75) * a + .75) + b : 2.5 / 2.75 > a ? c * (7.5625 * (a -= 2.25 / 2.75) * a + .9375) + b : c * (7.5625 * (a -= 2.625 / 2.75) * a + .984375) + b
         },
         BounceEaseIn: function(a, b, c, d) {
-            return c - Konva.Easings.BounceEaseOut(d - a, 0, c, d) + b
+            return c - Kinetic.Easings.BounceEaseOut(d - a, 0, c, d) + b
         },
         BounceEaseInOut: function(a, b, c, d) {
-            return d / 2 > a ? .5 * Konva.Easings.BounceEaseIn(2 * a, 0, c, d) + b : .5 * Konva.Easings.BounceEaseOut(2 * a - d, 0, c, d) + .5 * c + b
+            return d / 2 > a ? .5 * Kinetic.Easings.BounceEaseIn(2 * a, 0, c, d) + b : .5 * Kinetic.Easings.BounceEaseOut(2 * a - d, 0, c, d) + .5 * c + b
         },
         EaseIn: function(a, b, c, d) {
             return c * (a /= d) * a + b
@@ -3025,8 +3025,8 @@ function() {
     }
 }(),
 function() {
-    Konva.DD = {
-        anim: new Konva.Animation,
+    Kinetic.DD = {
+        anim: new Kinetic.Animation,
         isDragging: !1,
         offset: {
             x: 0,
@@ -3034,7 +3034,7 @@ function() {
         },
         node: null,
         _drag: function(a) {
-            var b = Konva.DD,
+            var b = Kinetic.DD,
                 c = b.node;
             if (c) {
                 var d = c.getStage().getPointerPosition(),
@@ -3047,7 +3047,7 @@ function() {
             }
         },
         _endDragBefore: function(a) {
-            var b, c, d = Konva.DD,
+            var b, c, d = Kinetic.DD,
                 e = d.node;
             e && (b = e.nodeType, c = e.getLayer(), d.anim.stop(), d.isDragging && (d.isDragging = !1, a && (a.dragEndNode = e)), delete d.node, (c || e).draw())
         },
@@ -3056,51 +3056,51 @@ function() {
             var b = a.dragEndNode;
             a && b && b.fire("dragend", a, !0)
         }
-    }, Konva.Node.prototype.startDrag = function() {
-        var a = Konva.DD,
+    }, Kinetic.Node.prototype.startDrag = function() {
+        var a = Kinetic.DD,
             b = this.getStage(),
             c = this.getLayer(),
             d = b.getPointerPosition(),
             e = (this.getTransform().getTranslation(), this.getAbsolutePosition());
         d && (a.node && a.node.stopDrag(), a.node = this, a.offset.x = d.x - e.x, a.offset.y = d.y - e.y, a.anim.setLayers(c || this.getLayers()), a.anim.start())
-    }, Konva.Node.prototype.stopDrag = function() {
-        var a = Konva.DD,
+    }, Kinetic.Node.prototype.stopDrag = function() {
+        var a = Kinetic.DD,
             b = {};
         a._endDragBefore(b), a._endDragAfter(b)
-    }, Konva.Node.prototype.setDraggable = function(a) {
+    }, Kinetic.Node.prototype.setDraggable = function(a) {
         this._setAttr("draggable", a), this._dragChange()
     };
-    var a = Konva.Node.prototype.destroy;
-    Konva.Node.prototype.destroy = function() {
-        var b = Konva.DD;
+    var a = Kinetic.Node.prototype.destroy;
+    Kinetic.Node.prototype.destroy = function() {
+        var b = Kinetic.DD;
         b.node && b.node._id === this._id && this.stopDrag(), a.call(this)
-    }, Konva.Node.prototype.isDragging = function() {
-        var a = Konva.DD;
+    }, Kinetic.Node.prototype.isDragging = function() {
+        var a = Kinetic.DD;
         return a.node && a.node._id === this._id && a.isDragging
-    }, Konva.Node.prototype._listenDrag = function() {
+    }, Kinetic.Node.prototype._listenDrag = function() {
         this._dragCleanup();
         var a = this;
         this.on("mousedown.kinetic touchstart.kinetic", function(b) {
-            Konva.DD.node || a.startDrag(b)
+            Kinetic.DD.node || a.startDrag(b)
         })
-    }, Konva.Node.prototype._dragChange = function() {
+    }, Kinetic.Node.prototype._dragChange = function() {
         if (this.attrs.draggable) this._listenDrag();
         else {
             this._dragCleanup();
             var a = this.getStage(),
-                b = Konva.DD;
+                b = Kinetic.DD;
             a && b.node && b.node._id === this._id && b.node.stopDrag()
         }
-    }, Konva.Node.prototype._dragCleanup = function() {
+    }, Kinetic.Node.prototype._dragCleanup = function() {
         this.off("mousedown.kinetic"), this.off("touchstart.kinetic")
-    }, Konva.Node.addGetterSetter(Konva.Node, "dragBoundFunc"), Konva.Node.addGetter(Konva.Node, "draggable", !1), Konva.Node.prototype.isDraggable = Konva.Node.prototype.getDraggable;
+    }, Kinetic.Node.addGetterSetter(Kinetic.Node, "dragBoundFunc"), Kinetic.Node.addGetter(Kinetic.Node, "draggable", !1), Kinetic.Node.prototype.isDraggable = Kinetic.Node.prototype.getDraggable;
     var b = document.getElementsByTagName("html")[0];
-    b.addEventListener("mouseup", Konva.DD._endDragBefore, !0), b.addEventListener("touchend", Konva.DD._endDragBefore, !0), b.addEventListener("mouseup", Konva.DD._endDragAfter, !1), b.addEventListener("touchend", Konva.DD._endDragAfter, !1)
+    b.addEventListener("mouseup", Kinetic.DD._endDragBefore, !0), b.addEventListener("touchend", Kinetic.DD._endDragBefore, !0), b.addEventListener("mouseup", Kinetic.DD._endDragAfter, !1), b.addEventListener("touchend", Kinetic.DD._endDragAfter, !1)
 }(),
 function() {
-    Konva.Util.addMethods(Konva.Container, {
+    Kinetic.Util.addMethods(Kinetic.Container, {
         _containerInit: function(a) {
-            this.children = new Konva.Collection, Konva.Node.call(this, a)
+            this.children = new Kinetic.Collection, Kinetic.Node.call(this, a)
         },
         getChildren: function() {
             return this.children
@@ -3120,44 +3120,44 @@ function() {
             return this
         },
         add: function(a) {
-            var b = (Konva.Global, this.children);
+            var b = (Kinetic.Global, this.children);
             return a.index = b.length, a.parent = this, b.push(a), this._fire("add", {
                 child: a
             }), this
         },
         destroy: function() {
-            this.hasChildren() && this.destroyChildren(), Konva.Node.prototype.destroy.call(this)
+            this.hasChildren() && this.destroyChildren(), Kinetic.Node.prototype.destroy.call(this)
         },
         get: function(a) {
-            var b = new Konva.Collection;
+            var b = new Kinetic.Collection;
             if ("#" === a.charAt(0)) {
                 var c = this._getNodeById(a.slice(1));
                 c && b.push(c)
             } else if ("." === a.charAt(0)) {
                 var d = this._getNodesByName(a.slice(1));
-                Konva.Collection.apply(b, d)
+                Kinetic.Collection.apply(b, d)
             } else {
                 for (var e = [], f = this.getChildren(), g = f.length, h = 0; g > h; h++) e = e.concat(f[h]._get(a));
-                Konva.Collection.apply(b, e)
+                Kinetic.Collection.apply(b, e)
             }
             return b
         },
         _getNodeById: function(a) {
-            var b = (this.getStage(), Konva.Global),
+            var b = (this.getStage(), Kinetic.Global),
                 c = b.ids[a];
             return void 0 !== c && this.isAncestorOf(c) ? c : null
         },
         _getNodesByName: function(a) {
-            var b = Konva.Global,
+            var b = Kinetic.Global,
                 c = b.names[a] || [];
             return this._getDescendants(c)
         },
         _get: function(a) {
-            for (var b = Konva.Node.prototype._get.call(this, a), c = this.getChildren(), d = c.length, e = 0; d > e; e++) b = b.concat(c[e]._get(a));
+            for (var b = Kinetic.Node.prototype._get.call(this, a), c = this.getChildren(), d = c.length, e = 0; d > e; e++) b = b.concat(c[e]._get(a));
             return b
         },
         toObject: function() {
-            var a = Konva.Node.prototype.toObject.call(this);
+            var a = Kinetic.Node.prototype.toObject.call(this);
             a.children = [];
             for (var b = this.getChildren(), c = b.length, d = 0; c > d; d++) {
                 var e = b[d];
@@ -3180,13 +3180,13 @@ function() {
             return !1
         },
         clone: function(a) {
-            var b = Konva.Node.prototype.clone.call(this, a);
+            var b = Kinetic.Node.prototype.clone.call(this, a);
             return this.getChildren().each(function(a) {
                 b.add(a.clone())
             }), b
         },
         getAllIntersections: function() {
-            for (var a = Konva.Util._getXY(Array.prototype.slice.call(arguments)), b = [], c = this.get("Shape"), d = c.length, e = 0; d > e; e++) {
+            for (var a = Kinetic.Util._getXY(Array.prototype.slice.call(arguments)), b = [], c = this.get("Shape"), d = c.length, e = 0; d > e; e++) {
                 var f = c[e];
                 f.isVisible() && f.intersects(a) && b.push(f)
             }
@@ -3215,7 +3215,7 @@ function() {
             }
             return this
         }
-    }), Konva.Util.extend(Konva.Container, Konva.Node), Konva.Node.addGetterSetter(Konva.Container, "clipFunc")
+    }), Kinetic.Util.extend(Kinetic.Container, Kinetic.Node), Kinetic.Node.addGetterSetter(Kinetic.Container, "clipFunc")
 }(),
 function() {
     function a(a) {
@@ -3233,12 +3233,12 @@ function() {
     function d(a) {
         a.stroke()
     }
-    Konva.Util.addMethods(Konva.Shape, {
+    Kinetic.Util.addMethods(Kinetic.Shape, {
         _initShape: function(e) {
             this.nodeType = "Shape", this._fillFunc = a, this._strokeFunc = b, this._fillFuncHit = c, this._strokeFuncHit = d;
-            for (var f, g = Konva.Global.shapes;;)
-                if (f = Konva.Util.getRandomColor(), f && !(f in g)) break;
-            this.colorKey = f, g[f] = this, this.createAttrs(), Konva.Node.call(this, e)
+            for (var f, g = Kinetic.Global.shapes;;)
+                if (f = Kinetic.Util.getRandomColor(), f && !(f in g)) break;
+            this.colorKey = f, g[f] = this, this.createAttrs(), Kinetic.Node.call(this, e)
         },
         hasChildren: function() {
             return !1
@@ -3262,7 +3262,7 @@ function() {
             return this.className === a || this.nodeType === a ? [this] : []
         },
         intersects: function() {
-            var a = Konva.Util._getXY(Array.prototype.slice.call(arguments)),
+            var a = Kinetic.Util._getXY(Array.prototype.slice.call(arguments)),
                 b = this.getStage(),
                 c = b.hitCanvas;
             c.clear(), this.drawScene(c);
@@ -3300,7 +3300,7 @@ function() {
             return this._setAttr("dashArrayEnabled", !1), this
         },
         destroy: function() {
-            return Konva.Node.prototype.destroy.call(this), delete Konva.Global.shapes[this.colorKey], this
+            return Kinetic.Node.prototype.destroy.call(this), delete Kinetic.Global.shapes[this.colorKey], this
         },
         drawScene: function(a) {
             a = a || this.getLayer().getCanvas();
@@ -3318,7 +3318,7 @@ function() {
         _setDrawFuncs: function() {
             !this.attrs.drawFunc && this.drawFunc && this.setDrawFunc(this.drawFunc), !this.attrs.drawHitFunc && this.drawHitFunc && this.setDrawHitFunc(this.drawHitFunc)
         }
-    }), Konva.Util.extend(Konva.Shape, Konva.Node), Konva.Node.addColorGetterSetter(Konva.Shape, "stroke"), Konva.Node.addGetterSetter(Konva.Shape, "lineJoin"), Konva.Node.addGetterSetter(Konva.Shape, "lineCap"), Konva.Node.addGetterSetter(Konva.Shape, "strokeWidth"), Konva.Node.addGetterSetter(Konva.Shape, "drawFunc"), Konva.Node.addGetterSetter(Konva.Shape, "drawHitFunc"), Konva.Node.addGetterSetter(Konva.Shape, "dashArray"), Konva.Node.addColorGetterSetter(Konva.Shape, "shadowColor"), Konva.Node.addGetterSetter(Konva.Shape, "shadowBlur"), Konva.Node.addGetterSetter(Konva.Shape, "shadowOpacity"), Konva.Node.addGetterSetter(Konva.Shape, "fillPatternImage"), Konva.Node.addColorGetterSetter(Konva.Shape, "fill"), Konva.Node.addGetterSetter(Konva.Shape, "fillPatternX"), Konva.Node.addGetterSetter(Konva.Shape, "fillPatternY"), Konva.Node.addGetterSetter(Konva.Shape, "fillLinearGradientColorStops"), Konva.Node.addGetterSetter(Konva.Shape, "fillRadialGradientStartRadius"), Konva.Node.addGetterSetter(Konva.Shape, "fillRadialGradientEndRadius"), Konva.Node.addGetterSetter(Konva.Shape, "fillRadialGradientColorStops"), Konva.Node.addGetterSetter(Konva.Shape, "fillPatternRepeat"), Konva.Node.addGetterSetter(Konva.Shape, "fillEnabled", !0), Konva.Node.addGetterSetter(Konva.Shape, "strokeEnabled", !0), Konva.Node.addGetterSetter(Konva.Shape, "shadowEnabled", !0), Konva.Node.addGetterSetter(Konva.Shape, "dashArrayEnabled", !0), Konva.Node.addGetterSetter(Konva.Shape, "fillPriority", "color"), Konva.Node.addGetterSetter(Konva.Shape, "strokeScaleEnabled", !0), Konva.Node.addPointGetterSetter(Konva.Shape, "fillPatternOffset", 0), Konva.Node.addPointGetterSetter(Konva.Shape, "fillPatternScale", 1), Konva.Node.addPointGetterSetter(Konva.Shape, "fillLinearGradientStartPoint", 0), Konva.Node.addPointGetterSetter(Konva.Shape, "fillLinearGradientEndPoint", 0), Konva.Node.addPointGetterSetter(Konva.Shape, "fillRadialGradientStartPoint", 0), Konva.Node.addPointGetterSetter(Konva.Shape, "fillRadialGradientEndPoint", 0), Konva.Node.addPointGetterSetter(Konva.Shape, "shadowOffset", 0), Konva.Node.addRotationGetterSetter(Konva.Shape, "fillPatternRotation", 0)
+    }), Kinetic.Util.extend(Kinetic.Shape, Kinetic.Node), Kinetic.Node.addColorGetterSetter(Kinetic.Shape, "stroke"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "lineJoin"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "lineCap"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "strokeWidth"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "drawFunc"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "drawHitFunc"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "dashArray"), Kinetic.Node.addColorGetterSetter(Kinetic.Shape, "shadowColor"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "shadowBlur"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "shadowOpacity"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "fillPatternImage"), Kinetic.Node.addColorGetterSetter(Kinetic.Shape, "fill"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "fillPatternX"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "fillPatternY"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "fillLinearGradientColorStops"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "fillRadialGradientStartRadius"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "fillRadialGradientEndRadius"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "fillRadialGradientColorStops"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "fillPatternRepeat"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "fillEnabled", !0), Kinetic.Node.addGetterSetter(Kinetic.Shape, "strokeEnabled", !0), Kinetic.Node.addGetterSetter(Kinetic.Shape, "shadowEnabled", !0), Kinetic.Node.addGetterSetter(Kinetic.Shape, "dashArrayEnabled", !0), Kinetic.Node.addGetterSetter(Kinetic.Shape, "fillPriority", "color"), Kinetic.Node.addGetterSetter(Kinetic.Shape, "strokeScaleEnabled", !0), Kinetic.Node.addPointGetterSetter(Kinetic.Shape, "fillPatternOffset", 0), Kinetic.Node.addPointGetterSetter(Kinetic.Shape, "fillPatternScale", 1), Kinetic.Node.addPointGetterSetter(Kinetic.Shape, "fillLinearGradientStartPoint", 0), Kinetic.Node.addPointGetterSetter(Kinetic.Shape, "fillLinearGradientEndPoint", 0), Kinetic.Node.addPointGetterSetter(Kinetic.Shape, "fillRadialGradientStartPoint", 0), Kinetic.Node.addPointGetterSetter(Kinetic.Shape, "fillRadialGradientEndPoint", 0), Kinetic.Node.addPointGetterSetter(Kinetic.Shape, "shadowOffset", 0), Kinetic.Node.addRotationGetterSetter(Kinetic.Shape, "fillPatternRotation", 0)
 }(),
 function() {
     function a(a, b) {
@@ -3353,9 +3353,9 @@ function() {
         z = "",
         A = [j, i, k, e, n, r, o],
         B = A.length;
-    Konva.Util.addMethods(Konva.Stage, {
+    Kinetic.Util.addMethods(Kinetic.Stage, {
         _initStage: function(a) {
-            this.createAttrs(), Konva.Container.call(this, a), this.nodeType = b, this.dblClickWindow = 400, this._id = Konva.Global.idCounter++, this._buildDOM(), this._bindContentEvents(), Konva.Global.stages.push(this)
+            this.createAttrs(), Kinetic.Container.call(this, a), this.nodeType = b, this.dblClickWindow = 400, this._id = Kinetic.Global.idCounter++, this._buildDOM(), this._bindContentEvents(), Kinetic.Global.stages.push(this)
         },
         setContainer: function(a) {
             return typeof a === c && (a = document.getElementById(a)), this._setAttr(y, a), this
@@ -3364,13 +3364,13 @@ function() {
             var a, b, c = this.getChildren(),
                 d = c.length;
             for (a = 0; d > a; a++) b = c[a], b.getClearBeforeDraw() && (b.getCanvas().clear(), b.getHitCanvas().clear());
-            return Konva.Node.prototype.draw.call(this), this
+            return Kinetic.Node.prototype.draw.call(this), this
         },
         setHeight: function(a) {
-            return Konva.Node.prototype.setHeight.call(this, a), this._resizeDOM(), this
+            return Kinetic.Node.prototype.setHeight.call(this, a), this._resizeDOM(), this
         },
         setWidth: function(a) {
-            return Konva.Node.prototype.setWidth.call(this, a), this._resizeDOM(), this
+            return Kinetic.Node.prototype.setWidth.call(this, a), this._resizeDOM(), this
         },
         clear: function() {
             var a, b = this.children,
@@ -3380,7 +3380,7 @@ function() {
         },
         destroy: function() {
             var a = this.content;
-            Konva.Container.prototype.destroy.call(this), a && Konva.Util._isInDocument(a) && this.getContainer().removeChild(a)
+            Kinetic.Container.prototype.destroy.call(this), a && Kinetic.Util._isInDocument(a) && this.getContainer().removeChild(a)
         },
         getMousePosition: function() {
             return this.mousePos
@@ -3411,7 +3411,7 @@ function() {
                 d = a.quality || null,
                 e = a.x || 0,
                 f = a.y || 0,
-                g = new Konva.SceneCanvas({
+                g = new Kinetic.SceneCanvas({
                     width: a.width || this.getWidth(),
                     height: a.height || this.getHeight(),
                     pixelRatio: 1
@@ -3423,13 +3423,13 @@ function() {
         toImage: function(a) {
             var b = a.callback;
             a.callback = function(a) {
-                Konva.Util._getImage(a, function(a) {
+                Kinetic.Util._getImage(a, function(a) {
                     b(a)
                 })
             }, this.toDataURL(a)
         },
         getIntersection: function() {
-            var a, b, c = Konva.Util._getXY(Array.prototype.slice.call(arguments)),
+            var a, b, c = Kinetic.Util._getXY(Array.prototype.slice.call(arguments)),
                 d = this.getChildren(),
                 e = d.length,
                 f = e - 1;
@@ -3447,7 +3447,7 @@ function() {
             }
         },
         add: function(a) {
-            return Konva.Container.prototype.add.call(this, a), a.canvas.setSize(this.attrs.width, this.attrs.height), a.hitCanvas.setSize(this.attrs.width, this.attrs.height), a.draw(), this.content.appendChild(a.canvas.element), this
+            return Kinetic.Container.prototype.add.call(this, a), a.canvas.setSize(this.attrs.width, this.attrs.height), a.hitCanvas.setSize(this.attrs.width, this.attrs.height), a.draw(), this.content.appendChild(a.canvas.element), this
         },
         getParent: function() {
             return null
@@ -3467,27 +3467,27 @@ function() {
         },
         _mouseout: function(a) {
             this._setPointerPosition(a);
-            var b = Konva.Global,
+            var b = Kinetic.Global,
                 c = this.targetShape;
             c && !b.isDragging() && (c._fireAndBubble(e, a), c._fireAndBubble(f, a), this.targetShape = null), this.mousePos = void 0
         },
         _mousemove: function(a) {
             this._setPointerPosition(a);
-            var b, c = Konva.Global,
-                d = Konva.DD,
+            var b, c = Kinetic.Global,
+                d = Kinetic.DD,
                 j = this.getIntersection(this.getPointerPosition());
             j ? (b = j.shape, b && (c.isDragging() || 255 !== j.pixel[3] || this.targetShape && this.targetShape._id === b._id ? b._fireAndBubble(i, a) : (this.targetShape && (this.targetShape._fireAndBubble(e, a, b), this.targetShape._fireAndBubble(f, a, b)), b._fireAndBubble(g, a, this.targetShape), b._fireAndBubble(h, a, this.targetShape), this.targetShape = b))) : this.targetShape && !c.isDragging() && (this.targetShape._fireAndBubble(e, a), this.targetShape._fireAndBubble(f, a), this.targetShape = null), d && d._drag(a)
         },
         _mousedown: function(a) {
             this._setPointerPosition(a);
-            var b, c = Konva.Global,
+            var b, c = Kinetic.Global,
                 d = this.getIntersection(this.getPointerPosition());
             d && d.shape && (b = d.shape, this.clickStart = !0, this.clickStartShape = b, b._fireAndBubble(j, a)), this.isDraggable() && !c.isDragReady() && this.startDrag(a)
         },
         _mouseup: function(a) {
             this._setPointerPosition(a);
             var b, c = this,
-                d = Konva.Global,
+                d = Kinetic.Global,
                 e = this.getIntersection(this.getPointerPosition());
             e && e.shape && (b = e.shape, b._fireAndBubble(k, a), this.clickStart && (d.isDragging() || b._id !== this.clickStartShape._id || (b._fireAndBubble(l, a), this.inDoubleClickWindow && b._fireAndBubble(m, a), this.inDoubleClickWindow = !0, setTimeout(function() {
                 c.inDoubleClickWindow = !1
@@ -3495,14 +3495,14 @@ function() {
         },
         _touchstart: function(a) {
             this._setPointerPosition(a);
-            var b, c = Konva.Global,
+            var b, c = Kinetic.Global,
                 d = this.getIntersection(this.getPointerPosition());
             d && d.shape && (b = d.shape, this.tapStart = !0, this.tapStartShape = b, b._fireAndBubble(n, a)), this.isDraggable() && !c.isDragReady() && this.startDrag(a)
         },
         _touchend: function(a) {
             this._setPointerPosition(a);
             var b, c = this,
-                d = Konva.Global,
+                d = Kinetic.Global,
                 e = this.getIntersection(this.getPointerPosition());
             e && e.shape && (b = e.shape, b._fireAndBubble(o, a), this.tapStart && (d.isDragging() || b._id !== this.tapStartShape._id || (b._fireAndBubble(p, a), this.inDoubleClickWindow && b._fireAndBubble(q, a), this.inDoubleClickWindow = !0, setTimeout(function() {
                 c.inDoubleClickWindow = !1
@@ -3510,7 +3510,7 @@ function() {
         },
         _touchmove: function(a) {
             this._setPointerPosition(a);
-            var b, c = Konva.DD,
+            var b, c = Kinetic.DD,
                 d = this.getIntersection(this.getPointerPosition());
             d && d.shape && (b = d.shape, b._fireAndBubble(r, a)), c && c._drag(a)
         },
@@ -3538,25 +3538,25 @@ function() {
         },
         _buildDOM: function() {
             var a = this.getContainer();
-            a.innerHTML = z, this.content = document.createElement(s), this.content.style.position = t, this.content.style.display = u, this.content.className = v, a.appendChild(this.content), this.bufferCanvas = new Konva.SceneCanvas, this.hitCanvas = new Konva.HitCanvas, this._resizeDOM()
+            a.innerHTML = z, this.content = document.createElement(s), this.content.style.position = t, this.content.style.display = u, this.content.className = v, a.appendChild(this.content), this.bufferCanvas = new Kinetic.SceneCanvas, this.hitCanvas = new Kinetic.HitCanvas, this._resizeDOM()
         },
         _onContent: function(a, b) {
             var c, d, e = a.split(w),
                 f = e.length;
             for (c = 0; f > c; c++) d = e[c], this.content.addEventListener(d, b, !1)
         }
-    }), Konva.Util.extend(Konva.Stage, Konva.Container), Konva.Node.addGetter(Konva.Stage, "container")
+    }), Kinetic.Util.extend(Kinetic.Stage, Kinetic.Container), Kinetic.Node.addGetter(Kinetic.Stage, "container")
 }(),
 function() {
     var a = "#";
-    Konva.Util.addMethods(Konva.Layer, {
+    Kinetic.Util.addMethods(Kinetic.Layer, {
         _initLayer: function(a) {
-            this.nodeType = "Layer", this.createAttrs(), this.canvas = new Konva.SceneCanvas, this.canvas.getElement().style.position = "absolute", this.hitCanvas = new Konva.HitCanvas, Konva.Container.call(this, a)
+            this.nodeType = "Layer", this.createAttrs(), this.canvas = new Kinetic.SceneCanvas, this.canvas.getElement().style.position = "absolute", this.hitCanvas = new Kinetic.HitCanvas, Kinetic.Container.call(this, a)
         },
         getIntersection: function() {
-            var b, c, d, e = Konva.Util._getXY(Array.prototype.slice.call(arguments));
+            var b, c, d, e = Kinetic.Util._getXY(Array.prototype.slice.call(arguments));
             if (this.isVisible() && this.isListening()) {
-                if (b = this.hitCanvas.context.getImageData(0 | e.x, 0 | e.y, 1, 1).data, 255 === b[3]) return c = Konva.Util._rgbToHex(b[0], b[1], b[2]), d = Konva.Global.shapes[a + c], {
+                if (b = this.hitCanvas.context.getImageData(0 | e.x, 0 | e.y, 1, 1).data, 255 === b[3]) return c = Kinetic.Util._rgbToHex(b[0], b[1], b[2]), d = Kinetic.Global.shapes[a + c], {
                     shape: d,
                     pixel: b
                 };
@@ -3567,11 +3567,11 @@ function() {
             return null
         },
         drawScene: function(a) {
-            return a = a || this.getCanvas(), this.getClearBeforeDraw() && a.clear(), Konva.Container.prototype.drawScene.call(this, a), this
+            return a = a || this.getCanvas(), this.getClearBeforeDraw() && a.clear(), Kinetic.Container.prototype.drawScene.call(this, a), this
         },
         drawHit: function() {
             var a = this.getLayer();
-            return a && a.getClearBeforeDraw() && a.getHitCanvas().clear(), Konva.Container.prototype.drawHit.call(this), this
+            return a && a.getClearBeforeDraw() && a.getHitCanvas().clear(), Kinetic.Container.prototype.drawHit.call(this), this
         },
         getCanvas: function() {
             return this.canvas
@@ -3586,26 +3586,26 @@ function() {
             return this.getCanvas().clear(), this
         },
         setVisible: function(a) {
-            return Konva.Node.prototype.setVisible.call(this, a), a ? (this.getCanvas().element.style.display = "block", this.hitCanvas.element.style.display = "block") : (this.getCanvas().element.style.display = "none", this.hitCanvas.element.style.display = "none"), this
+            return Kinetic.Node.prototype.setVisible.call(this, a), a ? (this.getCanvas().element.style.display = "block", this.hitCanvas.element.style.display = "block") : (this.getCanvas().element.style.display = "none", this.hitCanvas.element.style.display = "none"), this
         },
         setZIndex: function(a) {
-            Konva.Node.prototype.setZIndex.call(this, a);
+            Kinetic.Node.prototype.setZIndex.call(this, a);
             var b = this.getStage();
             return b && (b.content.removeChild(this.getCanvas().element), a < b.getChildren().length - 1 ? b.content.insertBefore(this.getCanvas().element, b.getChildren()[a + 1].getCanvas().element) : b.content.appendChild(this.getCanvas().element)), this
         },
         moveToTop: function() {
-            Konva.Node.prototype.moveToTop.call(this);
+            Kinetic.Node.prototype.moveToTop.call(this);
             var a = this.getStage();
             a && (a.content.removeChild(this.getCanvas().element), a.content.appendChild(this.getCanvas().element))
         },
         moveUp: function() {
-            if (Konva.Node.prototype.moveUp.call(this)) {
+            if (Kinetic.Node.prototype.moveUp.call(this)) {
                 var a = this.getStage();
                 a && (a.content.removeChild(this.getCanvas().element), this.index < a.getChildren().length - 1 ? a.content.insertBefore(this.getCanvas().element, a.getChildren()[this.index + 1].getCanvas().element) : a.content.appendChild(this.getCanvas().element))
             }
         },
         moveDown: function() {
-            if (Konva.Node.prototype.moveDown.call(this)) {
+            if (Kinetic.Node.prototype.moveDown.call(this)) {
                 var a = this.getStage();
                 if (a) {
                     var b = a.getChildren();
@@ -3614,7 +3614,7 @@ function() {
             }
         },
         moveToBottom: function() {
-            if (Konva.Node.prototype.moveToBottom.call(this)) {
+            if (Kinetic.Node.prototype.moveToBottom.call(this)) {
                 var a = this.getStage();
                 if (a) {
                     var b = a.getChildren();
@@ -3629,23 +3629,23 @@ function() {
             var a = this.getStage(),
                 b = this.getCanvas(),
                 c = b.element;
-            return Konva.Node.prototype.remove.call(this), a && b && Konva.Util._isInDocument(c) && a.content.removeChild(c), this
+            return Kinetic.Node.prototype.remove.call(this), a && b && Kinetic.Util._isInDocument(c) && a.content.removeChild(c), this
         }
-    }), Konva.Util.extend(Konva.Layer, Konva.Container), Konva.Node.addGetterSetter(Konva.Layer, "clearBeforeDraw", !0)
+    }), Kinetic.Util.extend(Kinetic.Layer, Kinetic.Container), Kinetic.Node.addGetterSetter(Kinetic.Layer, "clearBeforeDraw", !0)
 }(),
 function() {
-    Konva.Util.addMethods(Konva.Group, {
+    Kinetic.Util.addMethods(Kinetic.Group, {
         _initGroup: function(a) {
-            this.nodeType = "Group", this.createAttrs(), Konva.Container.call(this, a)
+            this.nodeType = "Group", this.createAttrs(), Kinetic.Container.call(this, a)
         }
-    }), Konva.Util.extend(Konva.Group, Konva.Container)
+    }), Kinetic.Util.extend(Kinetic.Group, Kinetic.Container)
 }(),
 function() {
-    Konva.Rect = function(a) {
+    Kinetic.Rect = function(a) {
         this._initRect(a)
-    }, Konva.Rect.prototype = {
+    }, Kinetic.Rect.prototype = {
         _initRect: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = "Rect", this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = "Rect", this._setDrawFuncs()
         },
         drawFunc: function(a) {
             var b = a.getContext(),
@@ -3654,16 +3654,16 @@ function() {
                 e = this.getHeight();
             b.beginPath(), c ? (b.moveTo(c, 0), b.lineTo(d - c, 0), b.arc(d - c, c, c, 3 * Math.PI / 2, 0, !1), b.lineTo(d, e - c), b.arc(d - c, e - c, c, 0, Math.PI / 2, !1), b.lineTo(c, e), b.arc(c, e - c, c, Math.PI / 2, Math.PI, !1), b.lineTo(0, c), b.arc(c, c, c, Math.PI, 3 * Math.PI / 2, !1)) : b.rect(0, 0, d, e), b.closePath(), a.fillStroke(this)
         }
-    }, Konva.Util.extend(Konva.Rect, Konva.Shape), Konva.Node.addGetterSetter(Konva.Rect, "cornerRadius", 0)
+    }, Kinetic.Util.extend(Kinetic.Rect, Kinetic.Shape), Kinetic.Node.addGetterSetter(Kinetic.Rect, "cornerRadius", 0)
 }(),
 function() {
     var a = 2 * Math.PI - 1e-4,
         b = "Circle";
-    Konva.Circle = function(a) {
+    Kinetic.Circle = function(a) {
         this._initCircle(a)
-    }, Konva.Circle.prototype = {
+    }, Kinetic.Circle.prototype = {
         _initCircle: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = b, this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = b, this._setDrawFuncs()
         },
         drawFunc: function(b) {
             var c = b.getContext();
@@ -3676,21 +3676,21 @@ function() {
             return 2 * this.getRadius()
         },
         setWidth: function(a) {
-            Konva.Node.prototype.setWidth.call(this, a), this.setRadius(a / 2)
+            Kinetic.Node.prototype.setWidth.call(this, a), this.setRadius(a / 2)
         },
         setHeight: function(a) {
-            Konva.Node.prototype.setHeight.call(this, a), this.setRadius(a / 2)
+            Kinetic.Node.prototype.setHeight.call(this, a), this.setRadius(a / 2)
         }
-    }, Konva.Util.extend(Konva.Circle, Konva.Shape), Konva.Node.addGetterSetter(Konva.Circle, "radius", 0)
+    }, Kinetic.Util.extend(Kinetic.Circle, Kinetic.Shape), Kinetic.Node.addGetterSetter(Kinetic.Circle, "radius", 0)
 }(),
 function() {
     var a = 2 * Math.PI - 1e-4,
         b = "Ellipse";
-    Konva.Ellipse = function(a) {
+    Kinetic.Ellipse = function(a) {
         this._initEllipse(a)
-    }, Konva.Ellipse.prototype = {
+    }, Kinetic.Ellipse.prototype = {
         _initEllipse: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = b, this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = b, this._setDrawFuncs()
         },
         drawFunc: function(b) {
             var c = b.getContext(),
@@ -3704,39 +3704,39 @@ function() {
             return 2 * this.getRadius().y
         },
         setWidth: function(a) {
-            Konva.Node.prototype.setWidth.call(this, a), this.setRadius({
+            Kinetic.Node.prototype.setWidth.call(this, a), this.setRadius({
                 x: a / 2
             })
         },
         setHeight: function(a) {
-            Konva.Node.prototype.setHeight.call(this, a), this.setRadius({
+            Kinetic.Node.prototype.setHeight.call(this, a), this.setRadius({
                 y: a / 2
             })
         }
-    }, Konva.Util.extend(Konva.Ellipse, Konva.Shape), Konva.Node.addPointGetterSetter(Konva.Ellipse, "radius", 0)
+    }, Kinetic.Util.extend(Kinetic.Ellipse, Kinetic.Shape), Kinetic.Node.addPointGetterSetter(Kinetic.Ellipse, "radius", 0)
 }(),
 function() {
-    Konva.Wedge = function(a) {
+    Kinetic.Wedge = function(a) {
         this._initWedge(a)
-    }, Konva.Wedge.prototype = {
+    }, Kinetic.Wedge.prototype = {
         _initWedge: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = "Wedge", this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = "Wedge", this._setDrawFuncs()
         },
         drawFunc: function(a) {
             var b = a.getContext();
             b.beginPath(), b.arc(0, 0, this.getRadius(), 0, this.getAngle(), this.getClockwise()), b.lineTo(0, 0), b.closePath(), a.fillStroke(this)
         }
-    }, Konva.Util.extend(Konva.Wedge, Konva.Shape), Konva.Node.addGetterSetter(Konva.Wedge, "radius", 0), Konva.Node.addRotationGetterSetter(Konva.Wedge, "angle", 0), Konva.Node.addGetterSetter(Konva.Wedge, "clockwise", !1)
+    }, Kinetic.Util.extend(Kinetic.Wedge, Kinetic.Shape), Kinetic.Node.addGetterSetter(Kinetic.Wedge, "radius", 0), Kinetic.Node.addRotationGetterSetter(Kinetic.Wedge, "angle", 0), Kinetic.Node.addGetterSetter(Kinetic.Wedge, "clockwise", !1)
 }(),
 function() {
     var a = "Image",
         b = "crop",
         c = "set";
-    Konva.Image = function(a) {
+    Kinetic.Image = function(a) {
         this._initImage(a)
-    }, Konva.Image.prototype = {
+    }, Kinetic.Image.prototype = {
         _initImage: function(b) {
-            Konva.Shape.call(this, b), this.className = a, this._setDrawFuncs()
+            Kinetic.Shape.call(this, b), this.className = a, this._setDrawFuncs()
         },
         drawFunc: function(a) {
             var b, c, d, e, f, g, h = this.getWidth(),
@@ -3760,14 +3760,14 @@ function() {
                 e = this.getWidth(),
                 f = this.getHeight(),
                 g = this.getFilter();
-            a = this.filterCanvas ? this.filterCanvas : this.filterCanvas = new Konva.SceneCanvas({
+            a = this.filterCanvas ? this.filterCanvas : this.filterCanvas = new Kinetic.SceneCanvas({
                 width: e,
                 height: f
             }), b = a.getContext();
             try {
                 this._drawImage(b, [d, 0, 0, e, f]), c = b.getImageData(0, 0, a.getWidth(), a.getHeight()), g.call(this, c), b.putImageData(c, 0, 0)
             } catch (h) {
-                this.clearFilter(), Konva.Util.warn("Unable to apply filter. " + h.message)
+                this.clearFilter(), Kinetic.Util.warn("Unable to apply filter. " + h.message)
             }
         },
         clearFilter: function() {
@@ -3775,16 +3775,16 @@ function() {
         },
         setCrop: function() {
             var a = [].slice.call(arguments),
-                c = Konva.Util._getXY(a),
-                d = Konva.Util._getSize(a),
-                e = Konva.Util._merge(c, d);
-            this._setAttr(b, Konva.Util._merge(e, this.getCrop()))
+                c = Kinetic.Util._getXY(a),
+                d = Kinetic.Util._getSize(a),
+                e = Kinetic.Util._merge(c, d);
+            this._setAttr(b, Kinetic.Util._merge(e, this.getCrop()))
         },
         createImageHitRegion: function(a) {
             var b, c, d, e, f, g = this,
                 h = this.getWidth(),
                 i = this.getHeight(),
-                j = new Konva.Canvas({
+                j = new Kinetic.Canvas({
                     width: h,
                     height: i
                 }),
@@ -3792,12 +3792,12 @@ function() {
                 l = this.getImage();
             k.drawImage(l, 0, 0);
             try {
-                for (b = k.getImageData(0, 0, h, i), c = b.data, d = Konva.Util._hexToRgb(this.colorKey), e = 0, f = c.length; f > e; e += 4) c[e + 3] > 0 && (c[e] = d.r, c[e + 1] = d.g, c[e + 2] = d.b);
-                Konva.Util._getImage(b, function(b) {
+                for (b = k.getImageData(0, 0, h, i), c = b.data, d = Kinetic.Util._hexToRgb(this.colorKey), e = 0, f = c.length; f > e; e += 4) c[e + 3] > 0 && (c[e] = d.r, c[e + 1] = d.g, c[e + 2] = d.b);
+                Kinetic.Util._getImage(b, function(b) {
                     g.imageHitRegion = b, a && a()
                 })
             } catch (m) {
-                Konva.Util.warn("Unable to create image hit region. " + m.message)
+                Kinetic.Util.warn("Unable to create image hit region. " + m.message)
             }
         },
         clearImageHitRegion: function() {
@@ -3823,21 +3823,21 @@ function() {
                 a.drawImage(b[0], b[1], b[2], b[3], b[4], b[5], b[6], b[7], b[8]);
             }
         }
-    }, Konva.Util.extend(Konva.Image, Konva.Shape), Konva.Node.addFilterGetterSetter = function(a, b, c) {
+    }, Kinetic.Util.extend(Kinetic.Image, Kinetic.Shape), Kinetic.Node.addFilterGetterSetter = function(a, b, c) {
         this.addGetter(a, b, c), this.addFilterSetter(a, b)
-    }, Konva.Node.addFilterSetter = function(a, b) {
-        var d = c + Konva.Util._capitalize(b);
+    }, Kinetic.Node.addFilterSetter = function(a, b) {
+        var d = c + Kinetic.Util._capitalize(b);
         a.prototype[d] = function(a) {
             this._setAttr(b, a), this._applyFilter = !0
         }
-    }, Konva.Node.addGetterSetter(Konva.Image, "image"), Konva.Node.addGetter(Konva.Image, "crop"), Konva.Node.addFilterGetterSetter(Konva.Image, "filter")
+    }, Kinetic.Node.addGetterSetter(Kinetic.Image, "image"), Kinetic.Node.addGetter(Kinetic.Image, "crop"), Kinetic.Node.addFilterGetterSetter(Kinetic.Image, "filter")
 }(),
 function() {
-    Konva.Polygon = function(a) {
+    Kinetic.Polygon = function(a) {
         this._initPolygon(a)
-    }, Konva.Polygon.prototype = {
+    }, Kinetic.Polygon.prototype = {
         _initPolygon: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = "Polygon", this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = "Polygon", this._setDrawFuncs()
         },
         drawFunc: function(a) {
             var b = a.getContext(),
@@ -3847,7 +3847,7 @@ function() {
             for (var e = 1; d > e; e++) b.lineTo(c[e].x, c[e].y);
             b.closePath(), a.fillStroke(this)
         }
-    }, Konva.Util.extend(Konva.Polygon, Konva.Shape), Konva.Node.addPointsGetterSetter(Konva.Polygon, "points")
+    }, Kinetic.Util.extend(Kinetic.Polygon, Kinetic.Shape), Kinetic.Node.addPointsGetterSetter(Kinetic.Polygon, "points")
 }(),
 function() {
     function a(a) {
@@ -3879,12 +3879,12 @@ function() {
         v = ["fontFamily", "fontSize", "fontStyle", "padding", "align", "lineHeight", "text", "width", "height", "wrap"],
         w = v.length,
         x = document.createElement(e).getContext(h);
-    Konva.Text = function(a) {
+    Kinetic.Text = function(a) {
         this._initText(a)
-    }, Konva.Text.prototype = {
+    }, Kinetic.Text.prototype = {
         _initText: function(d) {
             var e = this;
-            this.createAttrs(), this.attrs.width = c, this.attrs.height = c, Konva.Shape.call(this, d), this._fillFunc = a, this._strokeFunc = b, this.className = m, this._setDrawFuncs();
+            this.createAttrs(), this.attrs.width = c, this.attrs.height = c, Kinetic.Shape.call(this, d), this._fillFunc = a, this._strokeFunc = b, this.className = m, this._setDrawFuncs();
             for (var f = 0; w > f; f++) this.on(v[f] + g, e._setTextData);
             this._setTextData()
         },
@@ -3912,7 +3912,7 @@ function() {
             b.beginPath(), b.rect(0, 0, c, d), b.closePath(), a.fillStroke(this)
         },
         setText: function(a) {
-            var b = Konva.Util._isString(a) ? a : a.toString();
+            var b = Kinetic.Util._isString(a) ? a : a.toString();
             this._setAttr(l, b)
         },
         getWidth: function() {
@@ -3990,14 +3990,14 @@ function() {
             }
             x.restore(), this.textHeight = b, this.textWidth = d
         }
-    }, Konva.Util.extend(Konva.Text, Konva.Shape), Konva.Node.addGetterSetter(Konva.Text, "fontFamily", d), Konva.Node.addGetterSetter(Konva.Text, "fontSize", 12), Konva.Node.addGetterSetter(Konva.Text, "fontStyle", o), Konva.Node.addGetterSetter(Konva.Text, "padding", 0), Konva.Node.addGetterSetter(Konva.Text, "align", k), Konva.Node.addGetterSetter(Konva.Text, "lineHeight", 1), Konva.Node.addGetterSetter(Konva.Text, "wrap", s), Konva.Node.addGetter(Konva.Text, l, j), Konva.Node.addSetter(Konva.Text, "width"), Konva.Node.addSetter(Konva.Text, "height")
+    }, Kinetic.Util.extend(Kinetic.Text, Kinetic.Shape), Kinetic.Node.addGetterSetter(Kinetic.Text, "fontFamily", d), Kinetic.Node.addGetterSetter(Kinetic.Text, "fontSize", 12), Kinetic.Node.addGetterSetter(Kinetic.Text, "fontStyle", o), Kinetic.Node.addGetterSetter(Kinetic.Text, "padding", 0), Kinetic.Node.addGetterSetter(Kinetic.Text, "align", k), Kinetic.Node.addGetterSetter(Kinetic.Text, "lineHeight", 1), Kinetic.Node.addGetterSetter(Kinetic.Text, "wrap", s), Kinetic.Node.addGetter(Kinetic.Text, l, j), Kinetic.Node.addSetter(Kinetic.Text, "width"), Kinetic.Node.addSetter(Kinetic.Text, "height")
 }(),
 function() {
-    Konva.Line = function(a) {
+    Kinetic.Line = function(a) {
         this._initLine(a)
-    }, Konva.Line.prototype = {
+    }, Kinetic.Line.prototype = {
         _initLine: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = "Line", this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = "Line", this._setDrawFuncs()
         },
         drawFunc: function(a) {
             var b, c, d = this.getPoints(),
@@ -4006,14 +4006,14 @@ function() {
             for (f.beginPath(), f.moveTo(d[0].x, d[0].y), b = 1; e > b; b++) c = d[b], f.lineTo(c.x, c.y);
             a.stroke(this)
         }
-    }, Konva.Util.extend(Konva.Line, Konva.Shape), Konva.Node.addPointsGetterSetter(Konva.Line, "points")
+    }, Kinetic.Util.extend(Kinetic.Line, Kinetic.Shape), Kinetic.Node.addPointsGetterSetter(Kinetic.Line, "points")
 }(),
 function() {
-    Konva.Spline = function(a) {
+    Kinetic.Spline = function(a) {
         this._initSpline(a)
-    }, Konva.Spline.prototype = {
+    }, Kinetic.Spline.prototype = {
         _initSpline: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = "Spline", this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = "Spline", this._setDrawFuncs()
         },
         drawFunc: function(a) {
             var b, c, d, e, f = this.getPoints(),
@@ -4031,19 +4031,19 @@ function() {
             this._setAttr("tension", a), this._setAllPoints()
         },
         setPoints: function(a) {
-            Konva.Node.setPoints.call(this, a), this._setAllPoints()
+            Kinetic.Node.setPoints.call(this, a), this._setAllPoints()
         },
         _setAllPoints: function() {
-            this.allPoints = Konva.Util._expandPoints(this.getPoints(), this.getTension())
+            this.allPoints = Kinetic.Util._expandPoints(this.getPoints(), this.getTension())
         }
-    }, Konva.Util.extend(Konva.Spline, Konva.Shape), Konva.Node.addGetter(Konva.Spline, "tension", 1), Konva.Node.addPointsGetter(Konva.Spline, "points")
+    }, Kinetic.Util.extend(Kinetic.Spline, Kinetic.Shape), Kinetic.Node.addGetter(Kinetic.Spline, "tension", 1), Kinetic.Node.addPointsGetter(Kinetic.Spline, "points")
 }(),
 function() {
-    Konva.Blob = function(a) {
+    Kinetic.Blob = function(a) {
         this._initBlob(a)
-    }, Konva.Blob.prototype = {
+    }, Kinetic.Blob.prototype = {
         _initBlob: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = "Blob", this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = "Blob", this._setDrawFuncs()
         },
         drawFunc: function(a) {
             var b, c, d, e, f = this.getPoints(),
@@ -4060,25 +4060,25 @@ function() {
             this._setAttr("tension", a), this._setAllPoints()
         },
         setPoints: function(a) {
-            Konva.Node.setPoints.call(this, a), this._setAllPoints()
+            Kinetic.Node.setPoints.call(this, a), this._setAllPoints()
         },
         _setAllPoints: function() {
             var a = this.getPoints(),
                 b = a.length,
                 c = this.getTension(),
-                d = Konva.Util,
+                d = Kinetic.Util,
                 e = d._getControlPoints(a[b - 1], a[0], a[1], c),
                 f = d._getControlPoints(a[b - 2], a[b - 1], a[0], c);
-            this.allPoints = Konva.Util._expandPoints(this.getPoints(), this.getTension()), this.allPoints.unshift(e[1]), this.allPoints.push(f[0]), this.allPoints.push(a[b - 1]), this.allPoints.push(f[1]), this.allPoints.push(e[0]), this.allPoints.push(a[0])
+            this.allPoints = Kinetic.Util._expandPoints(this.getPoints(), this.getTension()), this.allPoints.unshift(e[1]), this.allPoints.push(f[0]), this.allPoints.push(a[b - 1]), this.allPoints.push(f[1]), this.allPoints.push(e[0]), this.allPoints.push(a[0])
         }
-    }, Konva.Util.extend(Konva.Blob, Konva.Shape), Konva.Node.addGetter(Konva.Blob, "tension", 1), Konva.Node.addPointsGetter(Konva.Blob, "points")
+    }, Kinetic.Util.extend(Kinetic.Blob, Kinetic.Shape), Kinetic.Node.addGetter(Kinetic.Blob, "tension", 1), Kinetic.Node.addPointsGetter(Kinetic.Blob, "points")
 }(),
 function() {
-    Konva.Sprite = function(a) {
+    Kinetic.Sprite = function(a) {
         this._initSprite(a)
-    }, Konva.Sprite.prototype = {
+    }, Kinetic.Sprite.prototype = {
         _initSprite: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = "Sprite", this._setDrawFuncs(), this.anim = new Konva.Animation;
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = "Sprite", this._setDrawFuncs(), this.anim = new Kinetic.Animation;
             var b = this;
             this.on("animationChange", function() {
                 b.setIndex(0)
@@ -4121,17 +4121,17 @@ function() {
                 e = d.length;
             e - 1 > a ? this.setIndex(a + 1) : this.setIndex(0)
         }
-    }, Konva.Util.extend(Konva.Sprite, Konva.Shape), Konva.Node.addGetterSetter(Konva.Sprite, "animation"), Konva.Node.addGetterSetter(Konva.Sprite, "animations"), Konva.Node.addGetterSetter(Konva.Sprite, "image"), Konva.Node.addGetterSetter(Konva.Sprite, "index", 0), Konva.Node.addGetterSetter(Konva.Sprite, "frameRate", 17)
+    }, Kinetic.Util.extend(Kinetic.Sprite, Kinetic.Shape), Kinetic.Node.addGetterSetter(Kinetic.Sprite, "animation"), Kinetic.Node.addGetterSetter(Kinetic.Sprite, "animations"), Kinetic.Node.addGetterSetter(Kinetic.Sprite, "image"), Kinetic.Node.addGetterSetter(Kinetic.Sprite, "index", 0), Kinetic.Node.addGetterSetter(Kinetic.Sprite, "frameRate", 17)
 }(),
 function() {
-    Konva.Path = function(a) {
+    Kinetic.Path = function(a) {
         this._initPath(a)
-    }, Konva.Path.prototype = {
+    }, Kinetic.Path.prototype = {
         _initPath: function(a) {
             this.dataArray = [];
             var b = this;
-            Konva.Shape.call(this, a), this.className = "Path", this._setDrawFuncs(), this.dataArray = Konva.Path.parsePathData(this.getData()), this.on("dataChange", function() {
-                b.dataArray = Konva.Path.parsePathData(this.getData())
+            Kinetic.Shape.call(this, a), this.className = "Path", this._setDrawFuncs(), this.dataArray = Kinetic.Path.parsePathData(this.getData()), this.on("dataChange", function() {
+                b.dataArray = Kinetic.Path.parsePathData(this.getData())
             })
         },
         drawFunc: function(a) {
@@ -4174,9 +4174,9 @@ function() {
             }
             a.fillStroke(this)
         }
-    }, Konva.Util.extend(Konva.Path, Konva.Shape), Konva.Path.getLineLength = function(a, b, c, d) {
+    }, Kinetic.Util.extend(Kinetic.Path, Kinetic.Shape), Kinetic.Path.getLineLength = function(a, b, c, d) {
         return Math.sqrt((c - a) * (c - a) + (d - b) * (d - b))
-    }, Konva.Path.getPointOnLine = function(a, b, c, d, e, f, g) {
+    }, Kinetic.Path.getPointOnLine = function(a, b, c, d, e, f, g) {
         void 0 === f && (f = b), void 0 === g && (g = c);
         var h = (e - c) / (d - b + 1e-8),
             i = Math.sqrt(a * a / (1 + h * h));
@@ -4199,7 +4199,7 @@ function() {
             }
         }
         return j
-    }, Konva.Path.getPointOnCubicBezier = function(a, b, c, d, e, f, g, h, i) {
+    }, Kinetic.Path.getPointOnCubicBezier = function(a, b, c, d, e, f, g, h, i) {
         function j(a) {
             return a * a * a
         }
@@ -4221,7 +4221,7 @@ function() {
             x: n,
             y: o
         }
-    }, Konva.Path.getPointOnQuadraticBezier = function(a, b, c, d, e, f, g) {
+    }, Kinetic.Path.getPointOnQuadraticBezier = function(a, b, c, d, e, f, g) {
         function h(a) {
             return a * a
         }
@@ -4239,7 +4239,7 @@ function() {
             x: k,
             y: l
         }
-    }, Konva.Path.getPointOnEllipticalArc = function(a, b, c, d, e, f) {
+    }, Kinetic.Path.getPointOnEllipticalArc = function(a, b, c, d, e, f) {
         var g = Math.cos(f),
             h = Math.sin(f),
             i = {
@@ -4250,7 +4250,7 @@ function() {
             x: a + (i.x * g - i.y * h),
             y: b + (i.x * h + i.y * g)
         }
-    }, Konva.Path.parsePathData = function(a) {
+    }, Kinetic.Path.parsePathData = function(a) {
         if (!a) return [];
         var b = a,
             c = ["m", "M", "l", "L", "v", "V", "h", "H", "z", "Z", "c", "C", "q", "Q", "t", "T", "s", "S", "a", "A"];
@@ -4366,8 +4366,8 @@ function() {
             })
         }
         return f
-    }, Konva.Path.calcLength = function(a, b, c, d) {
-        var e, f, g, h = Konva.Path;
+    }, Kinetic.Path.calcLength = function(a, b, c, d) {
+        var e, f, g, h = Kinetic.Path;
         switch (c) {
             case "L":
                 return h.getLineLength(a, b, d[0], d[1]);
@@ -4390,7 +4390,7 @@ function() {
                 return g = h.getPointOnEllipticalArc(d[0], d[1], d[2], d[3], k, 0), e += h.getLineLength(f.x, f.y, g.x, g.y)
         }
         return 0
-    }, Konva.Path.convertEndpointToCenterParameterization = function(a, b, c, d, e, f, g, h, i) {
+    }, Kinetic.Path.convertEndpointToCenterParameterization = function(a, b, c, d, e, f, g, h, i) {
         var j = i * (Math.PI / 180),
             k = Math.cos(j) * (a - c) / 2 + Math.sin(j) * (b - d) / 2,
             l = -1 * Math.sin(j) * (a - c) / 2 + Math.cos(j) * (b - d) / 2,
@@ -4416,7 +4416,7 @@ function() {
             x = [(-1 * k - o) / g, (-1 * l - p) / h],
             y = u(w, x);
         return t(w, x) <= -1 && (y = Math.PI), t(w, x) >= 1 && (y = 0), 0 === f && y > 0 && (y -= 2 * Math.PI), 1 == f && 0 > y && (y += 2 * Math.PI), [q, r, g, h, v, y, j, f]
-    }, Konva.Node.addGetterSetter(Konva.Path, "data")
+    }, Kinetic.Node.addGetterSetter(Kinetic.Path, "data")
 }(),
 function() {
     function a(a) {
@@ -4429,13 +4429,13 @@ function() {
     var c = "",
         d = "Calibri",
         e = "normal";
-    Konva.TextPath = function(a) {
+    Kinetic.TextPath = function(a) {
         this._initTextPath(a)
-    }, Konva.TextPath.prototype = {
+    }, Kinetic.TextPath.prototype = {
         _initTextPath: function(c) {
             var d = this;
-            this.createAttrs(), this.dummyCanvas = document.createElement("canvas"), this.dataArray = [], Konva.Shape.call(this, c), this._fillFunc = a, this._strokeFunc = b, this.className = "TextPath", this._setDrawFuncs(), this.dataArray = Konva.Path.parsePathData(this.attrs.data), this.on("dataChange", function() {
-                d.dataArray = Konva.Path.parsePathData(this.attrs.data)
+            this.createAttrs(), this.dummyCanvas = document.createElement("canvas"), this.dataArray = [], Kinetic.Shape.call(this, c), this._fillFunc = a, this._strokeFunc = b, this.className = "TextPath", this._setDrawFuncs(), this.dataArray = Kinetic.Path.parsePathData(this.attrs.data), this.on("dataChange", function() {
+                d.dataArray = Kinetic.Path.parsePathData(this.attrs.data)
             });
             for (var e = ["text", "textStroke", "textStrokeWidth"], f = 0; f < e.length; f++) {
                 var g = e[f];
@@ -4460,7 +4460,7 @@ function() {
             return this.textHeight
         },
         setText: function(a) {
-            Konva.Text.prototype.setText.call(this, a)
+            Kinetic.Text.prototype.setText.call(this, a)
         },
         _getTextSize: function(a) {
             var b = this.dummyCanvas,
@@ -4497,26 +4497,26 @@ function() {
                         var l = !1;
                         switch (e.command) {
                             case "L":
-                                Konva.Path.getLineLength(c.x, c.y, e.points[0], e.points[1]) > f ? d = Konva.Path.getPointOnLine(f, c.x, c.y, e.points[0], e.points[1], c.x, c.y) : e = void 0;
+                                Kinetic.Path.getLineLength(c.x, c.y, e.points[0], e.points[1]) > f ? d = Kinetic.Path.getPointOnLine(f, c.x, c.y, e.points[0], e.points[1], c.x, c.y) : e = void 0;
                                 break;
                             case "A":
                                 var m = e.points[4],
                                     n = e.points[5],
                                     o = e.points[4] + n;
-                                0 === h ? h = m + 1e-8 : f > g ? h += Math.PI / 180 * n / Math.abs(n) : h -= Math.PI / 360 * n / Math.abs(n), Math.abs(h) > Math.abs(o) && (h = o, l = !0), d = Konva.Path.getPointOnEllipticalArc(e.points[0], e.points[1], e.points[2], e.points[3], h, e.points[6]);
+                                0 === h ? h = m + 1e-8 : f > g ? h += Math.PI / 180 * n / Math.abs(n) : h -= Math.PI / 360 * n / Math.abs(n), Math.abs(h) > Math.abs(o) && (h = o, l = !0), d = Kinetic.Path.getPointOnEllipticalArc(e.points[0], e.points[1], e.points[2], e.points[3], h, e.points[6]);
                                 break;
                             case "C":
-                                0 === h ? h = f > e.pathLength ? 1e-8 : f / e.pathLength : f > g ? h += (f - g) / e.pathLength : h -= (g - f) / e.pathLength, h > 1 && (h = 1, l = !0), d = Konva.Path.getPointOnCubicBezier(h, e.start.x, e.start.y, e.points[0], e.points[1], e.points[2], e.points[3], e.points[4], e.points[5]);
+                                0 === h ? h = f > e.pathLength ? 1e-8 : f / e.pathLength : f > g ? h += (f - g) / e.pathLength : h -= (g - f) / e.pathLength, h > 1 && (h = 1, l = !0), d = Kinetic.Path.getPointOnCubicBezier(h, e.start.x, e.start.y, e.points[0], e.points[1], e.points[2], e.points[3], e.points[4], e.points[5]);
                                 break;
                             case "Q":
-                                0 === h ? h = f / e.pathLength : f > g ? h += (f - g) / e.pathLength : h -= (g - f) / e.pathLength, h > 1 && (h = 1, l = !0), d = Konva.Path.getPointOnQuadraticBezier(h, e.start.x, e.start.y, e.points[0], e.points[1], e.points[2], e.points[3])
+                                0 === h ? h = f / e.pathLength : f > g ? h += (f - g) / e.pathLength : h -= (g - f) / e.pathLength, h > 1 && (h = 1, l = !0), d = Kinetic.Path.getPointOnQuadraticBezier(h, e.start.x, e.start.y, e.points[0], e.points[1], e.points[2], e.points[3])
                         }
-                        void 0 !== d && (g = Konva.Path.getLineLength(c.x, c.y, d.x, d.y)), l && (l = !1, e = void 0)
+                        void 0 !== d && (g = Kinetic.Path.getLineLength(c.x, c.y, d.x, d.y)), l && (l = !1, e = void 0)
                     }
                 }, k = 0; k < f.length && (j(f[k]), void 0 !== c && void 0 !== d); k++) {
-                var l = Konva.Path.getLineLength(c.x, c.y, d.x, d.y),
+                var l = Kinetic.Path.getLineLength(c.x, c.y, d.x, d.y),
                     m = 0,
-                    n = Konva.Path.getPointOnLine(m + l / 2, c.x, c.y, d.x, d.y),
+                    n = Kinetic.Path.getPointOnLine(m + l / 2, c.x, c.y, d.x, d.y),
                     o = Math.atan2(d.y - c.y, d.x - c.x);
                 this.glyphInfo.push({
                     transposeX: n.x,
@@ -4528,14 +4528,14 @@ function() {
                 }), c = d
             }
         }
-    }, Konva.TextPath.prototype._getContextFont = Konva.Text.prototype._getContextFont, Konva.Util.extend(Konva.TextPath, Konva.Shape), Konva.Node.addGetterSetter(Konva.TextPath, "fontFamily", d), Konva.Node.addGetterSetter(Konva.TextPath, "fontSize", 12), Konva.Node.addGetterSetter(Konva.TextPath, "fontStyle", e), Konva.Node.addGetter(Konva.TextPath, "text", c)
+    }, Kinetic.TextPath.prototype._getContextFont = Kinetic.Text.prototype._getContextFont, Kinetic.Util.extend(Kinetic.TextPath, Kinetic.Shape), Kinetic.Node.addGetterSetter(Kinetic.TextPath, "fontFamily", d), Kinetic.Node.addGetterSetter(Kinetic.TextPath, "fontSize", 12), Kinetic.Node.addGetterSetter(Kinetic.TextPath, "fontStyle", e), Kinetic.Node.addGetter(Kinetic.TextPath, "text", c)
 }(),
 function() {
-    Konva.RegularPolygon = function(a) {
+    Kinetic.RegularPolygon = function(a) {
         this._initRegularPolygon(a)
-    }, Konva.RegularPolygon.prototype = {
+    }, Kinetic.RegularPolygon.prototype = {
         _initRegularPolygon: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = "RegularPolygon", this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = "RegularPolygon", this._setDrawFuncs()
         },
         drawFunc: function(a) {
             var b, c, d, e = a.getContext(),
@@ -4544,14 +4544,14 @@ function() {
             for (e.beginPath(), e.moveTo(0, 0 - g), b = 1; f > b; b++) c = g * Math.sin(2 * b * Math.PI / f), d = -1 * g * Math.cos(2 * b * Math.PI / f), e.lineTo(c, d);
             e.closePath(), a.fillStroke(this)
         }
-    }, Konva.Util.extend(Konva.RegularPolygon, Konva.Shape), Konva.Node.addGetterSetter(Konva.RegularPolygon, "radius", 0), Konva.Node.addGetterSetter(Konva.RegularPolygon, "sides", 0)
+    }, Kinetic.Util.extend(Kinetic.RegularPolygon, Kinetic.Shape), Kinetic.Node.addGetterSetter(Kinetic.RegularPolygon, "radius", 0), Kinetic.Node.addGetterSetter(Kinetic.RegularPolygon, "sides", 0)
 }(),
 function() {
-    Konva.Star = function(a) {
+    Kinetic.Star = function(a) {
         this._initStar(a)
-    }, Konva.Star.prototype = {
+    }, Kinetic.Star.prototype = {
         _initStar: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = "Star", this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = "Star", this._setDrawFuncs()
         },
         drawFunc: function(a) {
             var b = a.getContext(),
@@ -4567,7 +4567,7 @@ function() {
             }
             b.closePath(), a.fillStroke(this)
         }
-    }, Konva.Util.extend(Konva.Star, Konva.Shape), Konva.Node.addGetterSetter(Konva.Star, "numPoints", 0), Konva.Node.addGetterSetter(Konva.Star, "innerRadius", 0), Konva.Node.addGetterSetter(Konva.Star, "outerRadius", 0)
+    }, Kinetic.Util.extend(Kinetic.Star, Kinetic.Shape), Kinetic.Node.addGetterSetter(Kinetic.Star, "numPoints", 0), Kinetic.Node.addGetterSetter(Kinetic.Star, "innerRadius", 0), Kinetic.Node.addGetterSetter(Kinetic.Star, "outerRadius", 0)
 }(),
 function() {
     var a = ["fontFamily", "fontSize", "fontStyle", "padding", "lineHeight", "text"],
@@ -4579,12 +4579,12 @@ function() {
         g = "left",
         h = "Label",
         i = a.length;
-    Konva.Label = function(a) {
+    Kinetic.Label = function(a) {
         this._initLabel(a)
-    }, Konva.Label.prototype = {
+    }, Kinetic.Label.prototype = {
         _initLabel: function(a) {
             var b = this;
-            this.createAttrs(), this.className = h, Konva.Group.call(this, a), this.on("add", function(a) {
+            this.createAttrs(), this.className = h, Kinetic.Group.call(this, a), this.on("add", function(a) {
                 b._addListeners(a.child), b._sync()
             })
         },
@@ -4634,11 +4634,11 @@ function() {
                 })
             }
         }
-    }, Konva.Util.extend(Konva.Label, Konva.Group), Konva.Tag = function(a) {
+    }, Kinetic.Util.extend(Kinetic.Label, Kinetic.Group), Kinetic.Tag = function(a) {
         this._initTag(a)
-    }, Konva.Tag.prototype = {
+    }, Kinetic.Tag.prototype = {
         _initTag: function(a) {
-            this.createAttrs(), Konva.Shape.call(this, a), this.className = "Tag", this._setDrawFuncs()
+            this.createAttrs(), Kinetic.Shape.call(this, a), this.className = "Tag", this._setDrawFuncs()
         },
         drawFunc: function(a) {
             var b = a.getContext(),
@@ -4649,10 +4649,10 @@ function() {
                 k = this.getPointerHeight();
             this.getCornerRadius(), b.beginPath(), b.moveTo(0, 0), i === d && (b.lineTo((c - j) / 2, 0), b.lineTo(c / 2, -1 * k), b.lineTo((c + j) / 2, 0)), b.lineTo(c, 0), i === e && (b.lineTo(c, (h - k) / 2), b.lineTo(c + j, h / 2), b.lineTo(c, (h + k) / 2)), b.lineTo(c, h), i === f && (b.lineTo((c + j) / 2, h), b.lineTo(c / 2, h + k), b.lineTo((c - j) / 2, h)), b.lineTo(0, h), i === g && (b.lineTo(0, (h + k) / 2), b.lineTo(-1 * j, h / 2), b.lineTo(0, (h - k) / 2)), b.closePath(), a.fillStroke(this)
         }
-    }, Konva.Util.extend(Konva.Tag, Konva.Shape), Konva.Node.addGetterSetter(Konva.Tag, "pointerDirection", c), Konva.Node.addGetterSetter(Konva.Tag, "pointerWidth", 0), Konva.Node.addGetterSetter(Konva.Tag, "pointerHeight", 0), Konva.Node.addGetterSetter(Konva.Tag, "cornerRadius", 0)
+    }, Kinetic.Util.extend(Kinetic.Tag, Kinetic.Shape), Kinetic.Node.addGetterSetter(Kinetic.Tag, "pointerDirection", c), Kinetic.Node.addGetterSetter(Kinetic.Tag, "pointerWidth", 0), Kinetic.Node.addGetterSetter(Kinetic.Tag, "pointerHeight", 0), Kinetic.Node.addGetterSetter(Kinetic.Tag, "cornerRadius", 0)
 }(),
 function() {
-    Konva.Filters.Grayscale = function(a) {
+    Kinetic.Filters.Grayscale = function(a) {
         for (var b = a.data, c = 0; c < b.length; c += 4) {
             var d = .34 * b[c] + .5 * b[c + 1] + .16 * b[c + 2];
             b[c] = d, b[c + 1] = d, b[c + 2] = d
@@ -4660,12 +4660,12 @@ function() {
     }
 }(),
 function() {
-    Konva.Filters.Brighten = function(a) {
+    Kinetic.Filters.Brighten = function(a) {
         for (var b = this.getFilterBrightness(), c = a.data, d = 0; d < c.length; d += 4) c[d] += b, c[d + 1] += b, c[d + 2] += b
-    }, Konva.Node.addFilterGetterSetter(Konva.Image, "filterBrightness", 0)
+    }, Kinetic.Node.addFilterGetterSetter(Kinetic.Image, "filterBrightness", 0)
 }(),
 function() {
-    Konva.Filters.Invert = function(a) {
+    Kinetic.Filters.Invert = function(a) {
         for (var b = a.data, c = 0; c < b.length; c += 4) b[c] = 255 - b[c], b[c + 1] = 255 - b[c + 1], b[c + 2] = 255 - b[c + 2]
     }
 }(),
@@ -4705,10 +4705,10 @@ function() {
     }
     var c = [512, 512, 456, 512, 328, 456, 335, 512, 405, 328, 271, 456, 388, 335, 292, 512, 454, 405, 364, 328, 298, 271, 496, 456, 420, 388, 360, 335, 312, 292, 273, 512, 482, 454, 428, 405, 383, 364, 345, 328, 312, 298, 284, 271, 259, 496, 475, 456, 437, 420, 404, 388, 374, 360, 347, 335, 323, 312, 302, 292, 282, 273, 265, 512, 497, 482, 468, 454, 441, 428, 417, 405, 394, 383, 373, 364, 354, 345, 337, 328, 320, 312, 305, 298, 291, 284, 278, 271, 265, 259, 507, 496, 485, 475, 465, 456, 446, 437, 428, 420, 412, 404, 396, 388, 381, 374, 367, 360, 354, 347, 341, 335, 329, 323, 318, 312, 307, 302, 297, 292, 287, 282, 278, 273, 269, 265, 261, 512, 505, 497, 489, 482, 475, 468, 461, 454, 447, 441, 435, 428, 422, 417, 411, 405, 399, 394, 389, 383, 378, 373, 368, 364, 359, 354, 350, 345, 341, 337, 332, 328, 324, 320, 316, 312, 309, 305, 301, 298, 294, 291, 287, 284, 281, 278, 274, 271, 268, 265, 262, 259, 257, 507, 501, 496, 491, 485, 480, 475, 470, 465, 460, 456, 451, 446, 442, 437, 433, 428, 424, 420, 416, 412, 408, 404, 400, 396, 392, 388, 385, 381, 377, 374, 370, 367, 363, 360, 357, 354, 350, 347, 344, 341, 338, 335, 332, 329, 326, 323, 320, 318, 315, 312, 310, 307, 304, 302, 299, 297, 294, 292, 289, 287, 285, 282, 280, 278, 275, 273, 271, 269, 267, 265, 263, 261, 259],
         d = [9, 11, 12, 13, 13, 14, 14, 15, 15, 15, 15, 16, 16, 16, 16, 17, 17, 17, 17, 17, 17, 17, 18, 18, 18, 18, 18, 18, 18, 18, 18, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24];
-    Konva.Filters.Blur = function(a) {
+    Kinetic.Filters.Blur = function(a) {
         var c = 0 | this.getFilterRadius();
         c > 0 && b(a, c)
-    }, Konva.Node.addFilterGetterSetter(Konva.Image, "filterRadius", 0)
+    }, Kinetic.Node.addFilterGetterSetter(Kinetic.Image, "filterRadius", 0)
 }(),
 function() {
     function a(a, b, c) {
@@ -4798,11 +4798,11 @@ function() {
             }
         return g
     }
-    Konva.Filters.Mask = function(a) {
+    Kinetic.Filters.Mask = function(a) {
         var b = this.getFilterThreshold(),
             c = d(a, b);
         return c && (c = f(c, a.width, a.height), c = g(c, a.width, a.height), c = h(c, a.width, a.height), e(a, c)), a
-    }, Konva.Node.addFilterGetterSetter(Konva.Image, "filterThreshold", 0)
+    }, Kinetic.Node.addFilterGetterSetter(Kinetic.Image, "filterThreshold", 0)
 }();;
 
 function cart_to_polar(x, y) {
@@ -5411,7 +5411,7 @@ function makecontainer(imgname, isdefault) {
     image = images[imgname];
     imgW = image[0].width;
     offsetx = imgW / 2;
-    container = new Konva.Image({
+    container = new Kinetic.Image({
         x: 355 - offsetx,
         y: 260,
         image: image[0],
@@ -5436,7 +5436,7 @@ function makeribbon(imgname) {
     image = images[imgname];
     imgW = image[0].width;
     offsetx = imgW / 2;
-    ribbon = new Konva.Image({
+    ribbon = new Kinetic.Image({
         x: 355 - offsetx,
         y: 270,
         image: image[0],
@@ -5602,23 +5602,23 @@ function droplistener(background, containerlayer, foreground, event, ui) {
 }
 
 function makecanvas() {
-    stage = new Konva.Stage({
+    stage = new Kinetic.Stage({
         container: "canvasWrapper",
         width: 727,
         height: 503,
         draggable: false,
         listening: true
     });
-    background = new Konva.Layer({
+    background = new Kinetic.Layer({
         name: "background"
     });
-    containerlayer = new Konva.Layer({
+    containerlayer = new Kinetic.Layer({
         name: "containerlayer"
     });
-    sundrylayer = new Konva.Layer({
+    sundrylayer = new Kinetic.Layer({
         name: "sundrylayer"
     });
-    foreground = new Konva.Layer({
+    foreground = new Kinetic.Layer({
         name: "foreground"
     });
     stage.add(background);
@@ -5632,13 +5632,13 @@ function makecanvas() {
     bg = new Image();
     bg.src = "media/images/bg.png";
     bg.onload = function() {
-        vase = new Konva.Image({
+        vase = new Kinetic.Image({
             x: 0,
             y: 0,
             image: bg,
             draggable: false
         });
-        centrepoint = new Konva.Circle({
+        centrepoint = new Kinetic.Circle({
             x: 355,
             y: stage.getHeight() - 190,
             radius: 5,
@@ -5650,14 +5650,14 @@ function makecanvas() {
         startTxt = new Image();
         startTxt.src = "media/images/start.png";
         startTxt.onload = function() {
-            startImg = new Konva.Image({
+            startImg = new Kinetic.Image({
                 x: 176,
                 y: 81,
                 image: startTxt,
                 draggable: false,
                 id: "startText"
             });
-            startImgText = new Konva.Text({
+            startImgText = new Kinetic.Text({
                 x: 200,
                 y: 220,
                 text: "Drag in a stem to get started",
@@ -5670,7 +5670,7 @@ function makecanvas() {
             dustybin = new Image();
             dustybin.src = "media/images/trash.png";
             dustybin.onload = function() {
-                dusty = new Konva.Image({
+                dusty = new Kinetic.Image({
                     x: 22,
                     y: 403,
                     image: dustybin,
@@ -5682,13 +5682,13 @@ function makecanvas() {
                 notepadOn = new Image();
                 notepadOn.src = "media/images/notepadOn.png";
                 notepad.onload = function() {
-                    mycreation = new Konva.Image({
+                    mycreation = new Kinetic.Image({
                         x: 5,
                         y: 311,
                         image: notepad,
                         draggable: false
                     });
-                    mycreationTxt = new Konva.Text({
+                    mycreationTxt = new Kinetic.Text({
                         x: 12,
                         y: 330,
                         text: "My Creation Details",
@@ -5704,13 +5704,13 @@ function makecanvas() {
                     startagainOn = new Image();
                     startagainOn.src = "media/images/resetOn.png";
                     startagain.onload = function() {
-                        resetbouquet = new Konva.Image({
+                        resetbouquet = new Kinetic.Image({
                             x: 12,
                             y: 470,
                             image: startagain,
                             draggable: false
                         });
-                        resetbouquetTxt = new Konva.Text({
+                        resetbouquetTxt = new Kinetic.Text({
                             x: 32,
                             y: 476,
                             text: "Start again",
@@ -5720,7 +5720,7 @@ function makecanvas() {
                             fill: "#333333",
                             align: "left"
                         });
-                        resetIcon = new Konva.Group();
+                        resetIcon = new Kinetic.Group();
                         resetIcon.add(resetbouquet);
                         resetIcon.add(resetbouquetTxt);
                         resetIcon.on('click tap', function(ev) {
@@ -5753,7 +5753,7 @@ function makecanvas() {
                             document.body.style.cursor = "default";
                             background.draw();
                         });
-                        inventoryIcon = new Konva.Group();
+                        inventoryIcon = new Kinetic.Group();
                         inventoryIcon.add(mycreation);
                         inventoryIcon.add(mycreationTxt);
                         inventoryIcon.on('click tap', function(ev) {
@@ -5904,7 +5904,7 @@ function dragMechanics(stem) {
                             imgH = image[4].height;
                             offsetx = imgW / 2;
                             offsety = imgH / 2;
-                            items[nextfree] = new Konva.Image({
+                            items[nextfree] = new Kinetic.Image({
                                 x: mouseX - offsetx,
                                 y: mouseY - offsety,
                                 image: image[4],
@@ -6138,14 +6138,14 @@ function clearAll() {
     startTxt = new Image();
     startTxt.src = "media/images/start.png";
     startTxt.onload = function() {
-        startImg = new Konva.Image({
+        startImg = new Kinetic.Image({
             x: 176,
             y: 81,
             image: startTxt,
             draggable: false,
             id: "startText"
         });
-        startImgText = new Konva.Text({
+        startImgText = new Kinetic.Text({
             x: 200,
             y: 220,
             text: "Drag in a stem to get started",
@@ -6255,7 +6255,7 @@ function recreateBuild(buildxml, background, containerlayer, sundrylayer, foregr
             rads = cart_to_polar(gridX, gridY);
             boundary = get_boundary(gridY, rads[0]);
             
-            items[nextfree] = new Konva.Image({
+            items[nextfree] = new Kinetic.Image({
                 x: imgx,
                 y: imgy,
                 image: image[boundary],
