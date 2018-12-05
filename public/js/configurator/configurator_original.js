@@ -2,9 +2,6 @@
 
 // Scroll
 
-// --------------- BUTTONS SOCIAL ----------------------//
-
-// Share Social - Facebook Share (action)
 function doshares(sharelink, shareTitle, shareImage) {
     function fbshare(link, image, user) {
         var obj = {
@@ -57,7 +54,6 @@ function doshares(sharelink, shareTitle, shareImage) {
     return false;
 }
 
-// Share Social - Click Share button
 function shareclick(button) {
     $(button).click(function(ev) {
         $.colorbox({
@@ -69,7 +65,6 @@ function shareclick(button) {
     });
 }
 
-// Share Social - On Complete
 function shareclick_oncomplete() {
     FB.XFBML.parse();
     $('#message').limit(200, '#charsLeft');
@@ -110,14 +105,8 @@ function shareclick_oncomplete() {
 function silverButtons() {}
 
 function goldButtons() {}
-
-// --------------- BUTTONS SOCIAL END ----------------------//
-
 $('.unavailable, .signInButton, .notRegisteredButton, .registerSubmitButton').removeClass('gold');
 
-// -------------- BOTONES DE SESION DE USUARIOS -------------------
-
-// configurar errores de registro
 function setupRegistrationErrors() {
     $('#registrationSubmit').click(function(ev) {
         $.post("user/login?cb=1", {
@@ -148,7 +137,6 @@ function setupRegistrationErrors() {
     });
 }
 
-// configurar errores de inicio de sesión
 function setupLoginErrors() {
     $('#loginButton').click(function(ev) {
         $.post("user/login?cb=1", {
@@ -177,7 +165,6 @@ function setupLoginErrors() {
     });
 }
 
-// configuración olvide mi contraseña
 function setupForgotPasswordLink() {
     $('.fPassword').click(function(ev) {
         $.colorbox({
@@ -191,7 +178,6 @@ function setupForgotPasswordLink() {
     });
 }
 
-// configuración Enviar contraseña olvidada
 function setupSendForgotPassword() {
     $('.notRegisteredButton input').click(function(ev) {
         $(this).parent().addClass('unavailable');
@@ -222,7 +208,6 @@ function setupSendForgotPassword() {
     });
 }
 
-// botón de configuración de registro
 function setupRegistrationFormButton() {
     $('#registrationButton').click(function(ev) {
         $.post("user/login?cb=1", {
@@ -244,7 +229,6 @@ function setupRegistrationFormButton() {
     });
 }
 
-// Configuración de superposición de inicio de sesión
 function loginOverlaySettings(loginurl) {
     var loginOverlaySettings = {
         href: loginurl,
@@ -259,13 +243,11 @@ function loginOverlaySettings(loginurl) {
     return loginOverlaySettings;
 }
 
-// superposición de inicio de sesión
 function loginOverlay() {
     loginurl = $('#account .signinIcon').find('a').attr('href') + "?cb=1";
     $('#account .signinIcon').colorbox(loginOverlaySettings(loginurl));
 }
 
-// Configurador de superposición de inicio de sesión
 function loginOverlayConfigurator() {
     loginurl = $('#account .signinIconC').find('a').attr('href') + "?cb=1";
     $('#account .signinIconC').click(function(e) {
@@ -279,7 +261,6 @@ function loginOverlayConfigurator() {
     });
 }
 
-// iniciar sesión Overlay Flash Configurator
 function loginOverlayFlashConfigurator() {
     loginurl = $('#account .signinIconC').find('a').attr('href') + "?cb=1";
     $('#account .signinIconC').click(function(e) {
@@ -294,10 +275,6 @@ function loginOverlayFlashConfigurator() {
     });
 }
 
-// -------------- BOTONES DE SESION DE USUARIOS END -------------------
-
-// ------------ GALERIA Y OTROS BOTONES -------------------------
-// caja de la galería
 function gallerybox() {
     $('.gallerybox').each(function(i) {
         var pid = $(this).attr('id');
@@ -322,7 +299,6 @@ function gallerybox() {
     });
 }
 
-// Configuración no disponible
 function unavailableSetup(item, pid) {
     item.find('.outofstock').colorbox({
         href: "overlay/nostock",
@@ -356,7 +332,6 @@ function unavailableSetup(item, pid) {
     });
 }
 
-// configuración de la galería
 function gallerySetup() {
     gallerybox();
     $('#gotoConfigurator').click(function(ev) {
@@ -389,7 +364,6 @@ function gallerySetup() {
     });
 }
 
-// iniciar sesión en Hovers
 function signinHovers() {
     $('.signinIcon').on('mouseover mousedown', function(ev) {
         $('.signinIcon img').attr('src', '/media/images/signinon.png');
@@ -405,7 +379,6 @@ function signinHovers() {
     });
 }
 
-// crear ventana de compartir
 function createShareWin(data) {
     $.colorbox({
         html: data,
@@ -416,8 +389,6 @@ function createShareWin(data) {
         }
     });
 }
-
-// ------------ GALERIA Y OTROS BOTONES FIN -------------------------
 
 function mainListeners() {
     setTimeout(function() {
@@ -439,9 +410,6 @@ function mainListeners() {
     });
 }
 
-// -------------------- NAVEGACION SUPERIOR -----------------------------------------------
-
-// navegación flotante
 function navigationhovers() {
     $('.hintsIcon').on('mouseover mousedown', function(ev) {
         $('.hintsIcon .rollover img').attr('src', '/media/images/leafOn.png');
@@ -456,8 +424,7 @@ function navigationhovers() {
         });
     });
     $('.creativeCharge img').on('mouseover mousedown', function(ev) {
-        //$('.creativeCharge img').attr('src', '/media/images/configurator/creativechargeOn.png');
-        $('.creativeCharge img').attr('src', '/media/images/configurator/creativecharge.png');
+        $('.creativeCharge img').attr('src', '/media/images/configurator/creativechargeOn.png');
     });
     $('.creativeCharge img').on('mouseleave', function(ev) {
         $('.creativeCharge img').attr('src', '/media/images/configurator/creativecharge.png');
@@ -475,8 +442,7 @@ function navigationhovers() {
         });
     });
     $('.helpIcon').on('mouseover mousedown', function(ev) {
-        //$('.helpIcon .rollover').find('img').attr('src', '/media/images/configurator/helpOn.png');
-        $('.helpIcon .rollover').find('img').attr('src', '/media/images/configurator/help.png');
+        $('.helpIcon .rollover').find('img').attr('src', '/media/images/configurator/helpOn.png');
         $('.helpIcon').css({
             'color': '#000000'
         });
@@ -501,11 +467,10 @@ function navigationhovers() {
     });
 }
 
-// ayuda - boton ayuda
 function makeHelp() {
     $('.helpIcon').colorbox({
         href: 'overlay/help',
-        close: '<span class="close"><img class="closeBtn" alt="close" src="/media/images/configurator/menu/closeBtn.gif" /><span class="closeText">Close</span></span>',
+        close: '<span class="close"><img class="closeBtn" alt="close" src="/media/images/configurator/menu/closeBtn.png" /><span class="closeText">Close</span></span>',
         onOpen: function() {
             $('#cboxOverlay').addClass("helpOverlaySettingsBackground");
         },
@@ -524,7 +489,6 @@ function makeHelp() {
     });
 }
 
-// hacer sugerencias - boton sugerencias
 function makeHints() {
     $('.hintsIcon').colorbox({
         href: 'overlay/hintsandtips',
@@ -532,7 +496,6 @@ function makeHints() {
     });
 }
 
-// entrar en Comp Setup
 function enterCompSetup() {
     $('.galleryboxLinks a').click(function(ev) {
         $(this).addClass('unavailable');
@@ -569,7 +532,6 @@ function enterCompSetup() {
     });
 }
 
-// Galería Configurar Comp.
 function gallerySetupComp() {
     $('#gotoConfigurator').click(function(ev) {
         window.location = "configurator";
@@ -610,7 +572,6 @@ function gallerySetupComp() {
     });
 }
 
-// ver compartir hacer clic en completar
 function viewshareclick_oncomplete() {
     $('#message').limit(200, '#charsLeft');
     $('.submit input').click(function(ev) {
@@ -642,11 +603,7 @@ function viewshareclick_oncomplete() {
     });
 };
 
-// -------------------- NAVEGACION SUPERIOR FIN -----------------------------------------------
-
 // Kinetic
-
-// --------------------- AYUDANTES RATON Y ROTACION --------------------------------
 
 function cart_to_polar(x, y) {
     r = Math.sqrt((x * x) + (y * y));
@@ -680,7 +637,6 @@ function get_grid_mouse_y(event) {
     return canvasbottom - yoffset;
 }
 
-// obtener el límite
 function get_boundary(gridmouseY, absmouseX) {
     if (gridmouseY >= -20) {
         if (absmouseX <= 70) {
@@ -710,7 +666,6 @@ function get_boundary(gridmouseY, absmouseX) {
     return boundary;
 }
 
-// calcular el índice z
 function calculatezindex(stem) {
     closest = -1;
     lastrad = 0;
@@ -736,7 +691,6 @@ function calculatezindex(stem) {
     return zindex;
 }
 
-// calcular rotación
 function calculate_rotation(gridmouseX, gridmouseY, rads) {
     if (gridmouseY > 0) {
         if (rads[0] > 60) {
@@ -762,9 +716,6 @@ function calculate_rotation(gridmouseX, gridmouseY, rads) {
     return rotation;
 }
 
-// --------------------- AYUDANTES RATON Y ROTACION FIN --------------------------------
-
-// tallo contar hasta
 function stemcountup(placed) {
     containermultiplier = 1 + containerlayer.getChildren()[0].bulky;
     if (placed.pvol > 1) {
@@ -774,11 +725,7 @@ function stemcountup(placed) {
     }
 }
 
-// cuenta regresiva
 function stemcountdown(removed) {
-    console.log('entro en cuenta regresiva - linea 779');
-    console.log(removed);
-    console.log(removed.pvol);
     containermultiplier = 1 + containerlayer.getChildren()[0].bulky;
     if (removed.pvol > 1) {
         stemcount -= (containermultiplier * removed.pvol);
@@ -787,7 +734,6 @@ function stemcountdown(removed) {
     }
 }
 
-// actualización menú
 function updatemenu(newhtml) {
     $('#itemWrapper').empty();
     $('#itemWrapper').append(newhtml);
@@ -798,12 +744,12 @@ function updatemenu(newhtml) {
         }
     });
     $('.secondLevelButton .arrow').css({
-        'background': 'url(../media/images/configurator/menu/menu-silver-arrow-closed.gif) no-repeat top left',
+        'background': 'url(../images/configurator/menu/menu-silver-arrow-closed.png) no-repeat top left',
         'width': '14px',
         'height': '20px'
     });
     $('.topLevelButton .arrow').css({
-        'background': 'url(../media/images/configurator/menu/menu-arrow-closed.gif) no-repeat top left',
+        'background': 'url(../images/configurator/menu/menu-arrow-closed.png) no-repeat top left',
         'width': '14px',
         'height': '20px'
     });
@@ -814,56 +760,40 @@ function updatemenu(newhtml) {
     $('.stemBlockWidthAnchor').removeClass('menuOpen');
 }
 
-//------------------------- MENU ACORDEON ------------------------------------
 function menuaccordian() {
-// -------------- AJAX FILTRO ----------------------------------------
     $('#sortoptions > div').children('a').each(function(index, el) {
         if ($(el).attr('href') != 'stem') {
             $(el).click(function(ev) {
                 var choicetype = $(this).attr('href');
-                console.log('line 818');
-                console.log(choicetype);
-                $.post('sort/html', {
+                /*$.post('sort/html', {
                     type: choicetype
                 }, function(data) {
-                    console.log('post line 822');
-                    console.log(data);
                     updatemenu(data);
                     if (choicetype == 'container') {
                         containeravailability();
                     } else if (choicetype == 'sundry') {
                         sundryavailability();
                     }
-                }).fail(function() {
-                    alert("error menuaccordian - ajax - 829");
-                });
-                //updatemenu('<div class="stem slider"><div class="slideBlock"><div class="product25 productWrap"><div class="productImg"><img src="media/images/products/gb_AlstroemeriaPink-0.png" alt="Alstroemeria (Pink)" class="cImg pstem" /></div><div class="productName">Alstroemeria (Pink)</div></div><div class="product29 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationGreen-0.png" alt="Carnation (Green)" class="cImg pstem" /></div><div class="productName">Carnation (Green)</div></div><div class="product190 productWrap"><div class="productImg"><img src="media/images/products/gb_Carnation-0.png" alt="Carnation (Orange)" class="cImg pstem" /></div><div class="productName">Carnation (Orange)</div></div><div class="product4 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationWhite-0.png" alt="Carnation (White)" class="cImg pstem" /></div><div class="productName">Carnation (White)</div></div><div class="product191 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationYellow-0.png" alt="Carnation (Yellow)" class="cImg pstem" /></div><div class="productName">Carnation (Yellow)</div></div><div class="product43 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayPink-0.png" alt="Carnation spray (Pink)" class="cImg pstem" /></div><div class="productName">Carnation spray (Pink)</div></div></div><div class="slideBlock"><div class="product198 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayWhite-0.png" alt="Carnation spray (White)" class="cImg pstem" /></div><div class="productName">Carnation spray (White)</div></div><div class="product197 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumRed-0.png" alt="Chrysanthemum (Red)" class="cImg pstem" /></div><div class="productName">Chrysanthemum (Red)</div></div><div class="product5 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumBloomWhite-0.png" alt="Chrysanthemum Bloom (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum Bloom (White)</div></div><div class="product196 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayCream-0.png" alt="Chrysanthemum spray (Cream)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Cream)</div></div><div class="product44 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayGreen-0.png" alt="Chrysanthemum spray (Green)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Green)</div></div><div class="product45 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayWhite-0.png" alt="Chrysanthemum spray (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (White)</div></div></div><div class="slideBlock"><div class="product6 productWrap"><div class="productImg"><img src="media/images/products/gb_EryngiumBlue-0.png" alt="Eryngium (Blue)" class="cImg pstem" /></div><div class="productName">Eryngium (Blue)</div></div><div class="product199 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaPurple-0.png" alt="Freesia (Lilac)" class="cImg pstem" /></div><div class="productName">Freesia (Lilac)</div></div><div class="product200 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaYellow-0.png" alt="Freesia (Yellow)" class="cImg pstem" /></div><div class="productName">Freesia (Yellow)</div></div><div class="product30 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiCerise-0.png" alt="Germini (Cerise)" class="cImg pstem" /></div><div class="productName">Germini (Cerise)</div></div><div class="product193 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiOrange-0.png" alt="Germini (Orange)" class="cImg pstem" /></div><div class="productName">Germini (Orange)</div></div><div class="product31 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPeach-0.png" alt="Germini (Peach)" class="cImg pstem" /></div><div class="productName">Germini (Peach)</div></div></div><div class="slideBlock"><div class="product32 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPink-0.png" alt="Germini (Pink)" class="cImg pstem" /></div><div class="productName">Germini (Pink)</div></div><div class="product33 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiWhite-0.png" alt="Germini (White)" class="cImg pstem" /></div><div class="productName">Germini (White)</div></div><div class="product194 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiYellow-0.png" alt="Germini (Yellow)" class="cImg pstem" /></div><div class="productName">Germini (Yellow)</div></div><div class="product34 productWrap"><div class="productImg"><img src="media/images/products/gb_GypsophilaWhite-0.png" alt="Gypsophila (White)" class="cImg pstem" /></div><div class="productName">Gypsophila (White)</div></div><div class="product16 productWrap"><div class="productImg"><img src="media/images/products/gb_IrisBlue-0.png" alt="Iris (Blue)" class="cImg pstem" /></div><div class="productName">Iris (Blue)</div></div><div class="product26 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticCream-0.png" alt="Lily Asiatic (Cream) " class="cImg pstem" /></div><div class="productName">Lily Asiatic (Cream) </div></div></div><div class="slideBlock"><div class="product192 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticOrange-0.png" alt="Lily Asiatic (Orange)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Orange)</div></div><div class="product27 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticWhite-0.png" alt="Lily Asiatic (White)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (White)</div></div><div class="product28 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticYellow-0.png" alt="Lily Asiatic (Yellow)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Yellow)</div></div><div class="product37 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalPink-0.png" alt="Lily Oriental (Pink)" class="cImg pstem" /></div><div class="productName">Lily Oriental (Pink)</div></div><div class="product38 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalWhite-0.png" alt="Lily Oriental (White)" class="cImg pstem" /></div><div class="productName">Lily Oriental (White)</div></div><div class="product10 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusLilac-0.png" alt="Lisianthus (Lilac)" class="cImg pstem" /></div><div class="productName">Lisianthus (Lilac)</div></div></div><div class="slideBlock"><div class="product35 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusPink-0.png" alt="Lisianthus (Pink)" class="cImg pstem" /></div><div class="productName">Lisianthus (Pink)</div></div><div class="product36 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusWhite-0.png" alt="Lisianthus (White)" class="cImg pstem" /></div><div class="productName">Lisianthus (White)</div></div><div class="product13 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseRed-0.png" alt="Rose (Red)" class="cImg pstem" /></div><div class="productName">Rose (Red)</div></div><div class="product202 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseYellow-0.png" alt="Rose (Yellow)" class="cImg pstem" /></div><div class="productName">Rose (Yellow)</div></div><div class="product39 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadCerise-0.png" alt="Rose large head (Cerise)" class="cImg pstem" /></div><div class="productName">Rose large head (Cerise)</div></div><div class="product40 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadOrange-0.png" alt="Rose large head (Orange)" class="cImg pstem" /></div><div class="productName">Rose large head (Orange)</div></div></div><div class="slideBlock"><div class="product41 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadPink-0.png" alt="Rose large head (Pink)" class="cImg pstem" /></div><div class="productName">Rose large head (Pink)</div></div><div class="product42 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadWhite-0.png" alt="Rose large head (White)" class="cImg pstem" /></div><div class="productName">Rose large head (White)</div></div><div class="product201 productWrap"><div class="productImg"><img src="media/images/products/gb_SeptemberFlowerBlue-0.png" alt="September Flower (Blue)" class="cImg pstem" /></div><div class="productName">September Flower (Blue)</div></div><div class="product195 productWrap"><div class="productImg"><img src="media/images/products/gb_Solidago-0.png" alt="Solidago" class="cImg pstem" /></div><div class="productName">Solidago</div></div><div class="product2 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationRed-0.png" alt="Spray Carnation (Red)" class="cImg pstem" /></div><div class="productName">Spray Carnation (Red)</div></div><div class="product46 productWrap"><div class="productImg"><img src="media/images/products/gb_StaticeBlue-0.png" alt="Statice (Blue)" class="cImg pstem" /></div><div class="productName">Statice (Blue)</div></div></div></div>');
+                });*/
+                updatemenu('<div class="stem slider"><div class="slideBlock"><div class="product25 productWrap"><div class="productImg"><img src="media/images/products/gb_AlstroemeriaPink-0.png" alt="Alstroemeria (Pink)" class="cImg pstem" /></div><div class="productName">Alstroemeria (Pink)</div></div><div class="product29 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationGreen-0.png" alt="Carnation (Green)" class="cImg pstem" /></div><div class="productName">Carnation (Green)</div></div><div class="product190 productWrap"><div class="productImg"><img src="media/images/products/gb_Carnation-0.png" alt="Carnation (Orange)" class="cImg pstem" /></div><div class="productName">Carnation (Orange)</div></div><div class="product4 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationWhite-0.png" alt="Carnation (White)" class="cImg pstem" /></div><div class="productName">Carnation (White)</div></div><div class="product191 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationYellow-0.png" alt="Carnation (Yellow)" class="cImg pstem" /></div><div class="productName">Carnation (Yellow)</div></div><div class="product43 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayPink-0.png" alt="Carnation spray (Pink)" class="cImg pstem" /></div><div class="productName">Carnation spray (Pink)</div></div></div><div class="slideBlock"><div class="product198 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayWhite-0.png" alt="Carnation spray (White)" class="cImg pstem" /></div><div class="productName">Carnation spray (White)</div></div><div class="product197 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumRed-0.png" alt="Chrysanthemum (Red)" class="cImg pstem" /></div><div class="productName">Chrysanthemum (Red)</div></div><div class="product5 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumBloomWhite-0.png" alt="Chrysanthemum Bloom (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum Bloom (White)</div></div><div class="product196 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayCream-0.png" alt="Chrysanthemum spray (Cream)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Cream)</div></div><div class="product44 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayGreen-0.png" alt="Chrysanthemum spray (Green)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Green)</div></div><div class="product45 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayWhite-0.png" alt="Chrysanthemum spray (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (White)</div></div></div><div class="slideBlock"><div class="product6 productWrap"><div class="productImg"><img src="media/images/products/gb_EryngiumBlue-0.png" alt="Eryngium (Blue)" class="cImg pstem" /></div><div class="productName">Eryngium (Blue)</div></div><div class="product199 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaPurple-0.png" alt="Freesia (Lilac)" class="cImg pstem" /></div><div class="productName">Freesia (Lilac)</div></div><div class="product200 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaYellow-0.png" alt="Freesia (Yellow)" class="cImg pstem" /></div><div class="productName">Freesia (Yellow)</div></div><div class="product30 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiCerise-0.png" alt="Germini (Cerise)" class="cImg pstem" /></div><div class="productName">Germini (Cerise)</div></div><div class="product193 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiOrange-0.png" alt="Germini (Orange)" class="cImg pstem" /></div><div class="productName">Germini (Orange)</div></div><div class="product31 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPeach-0.png" alt="Germini (Peach)" class="cImg pstem" /></div><div class="productName">Germini (Peach)</div></div></div><div class="slideBlock"><div class="product32 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPink-0.png" alt="Germini (Pink)" class="cImg pstem" /></div><div class="productName">Germini (Pink)</div></div><div class="product33 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiWhite-0.png" alt="Germini (White)" class="cImg pstem" /></div><div class="productName">Germini (White)</div></div><div class="product194 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiYellow-0.png" alt="Germini (Yellow)" class="cImg pstem" /></div><div class="productName">Germini (Yellow)</div></div><div class="product34 productWrap"><div class="productImg"><img src="media/images/products/gb_GypsophilaWhite-0.png" alt="Gypsophila (White)" class="cImg pstem" /></div><div class="productName">Gypsophila (White)</div></div><div class="product16 productWrap"><div class="productImg"><img src="media/images/products/gb_IrisBlue-0.png" alt="Iris (Blue)" class="cImg pstem" /></div><div class="productName">Iris (Blue)</div></div><div class="product26 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticCream-0.png" alt="Lily Asiatic (Cream) " class="cImg pstem" /></div><div class="productName">Lily Asiatic (Cream) </div></div></div><div class="slideBlock"><div class="product192 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticOrange-0.png" alt="Lily Asiatic (Orange)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Orange)</div></div><div class="product27 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticWhite-0.png" alt="Lily Asiatic (White)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (White)</div></div><div class="product28 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticYellow-0.png" alt="Lily Asiatic (Yellow)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Yellow)</div></div><div class="product37 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalPink-0.png" alt="Lily Oriental (Pink)" class="cImg pstem" /></div><div class="productName">Lily Oriental (Pink)</div></div><div class="product38 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalWhite-0.png" alt="Lily Oriental (White)" class="cImg pstem" /></div><div class="productName">Lily Oriental (White)</div></div><div class="product10 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusLilac-0.png" alt="Lisianthus (Lilac)" class="cImg pstem" /></div><div class="productName">Lisianthus (Lilac)</div></div></div><div class="slideBlock"><div class="product35 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusPink-0.png" alt="Lisianthus (Pink)" class="cImg pstem" /></div><div class="productName">Lisianthus (Pink)</div></div><div class="product36 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusWhite-0.png" alt="Lisianthus (White)" class="cImg pstem" /></div><div class="productName">Lisianthus (White)</div></div><div class="product13 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseRed-0.png" alt="Rose (Red)" class="cImg pstem" /></div><div class="productName">Rose (Red)</div></div><div class="product202 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseYellow-0.png" alt="Rose (Yellow)" class="cImg pstem" /></div><div class="productName">Rose (Yellow)</div></div><div class="product39 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadCerise-0.png" alt="Rose large head (Cerise)" class="cImg pstem" /></div><div class="productName">Rose large head (Cerise)</div></div><div class="product40 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadOrange-0.png" alt="Rose large head (Orange)" class="cImg pstem" /></div><div class="productName">Rose large head (Orange)</div></div></div><div class="slideBlock"><div class="product41 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadPink-0.png" alt="Rose large head (Pink)" class="cImg pstem" /></div><div class="productName">Rose large head (Pink)</div></div><div class="product42 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadWhite-0.png" alt="Rose large head (White)" class="cImg pstem" /></div><div class="productName">Rose large head (White)</div></div><div class="product201 productWrap"><div class="productImg"><img src="media/images/products/gb_SeptemberFlowerBlue-0.png" alt="September Flower (Blue)" class="cImg pstem" /></div><div class="productName">September Flower (Blue)</div></div><div class="product195 productWrap"><div class="productImg"><img src="media/images/products/gb_Solidago-0.png" alt="Solidago" class="cImg pstem" /></div><div class="productName">Solidago</div></div><div class="product2 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationRed-0.png" alt="Spray Carnation (Red)" class="cImg pstem" /></div><div class="productName">Spray Carnation (Red)</div></div><div class="product46 productWrap"><div class="productImg"><img src="media/images/products/gb_StaticeBlue-0.png" alt="Statice (Blue)" class="cImg pstem" /></div><div class="productName">Statice (Blue)</div></div></div></div>');                
                 if (choicetype == 'container') {
-                    // disponibilidad de contenedores
                     containeravailability();
                 } else if (choicetype == 'sundry') {
-                    // disponibilidad diversa
                     sundryavailability();
-                }
-                ev.preventDefault();
+                }                ev.preventDefault();
             });
         }
     });
     $('.showAllFlowers > a').click(function(ev) {
         lastfilter = 'all';
-        $.post('sort/html', {
+        /*$.post('sort/html', {
             type: 'stem',
             sort: $('#sortby').val()
         }, function(data) {
-            console.log('post line 849');
-            console.log(data);
             updatemenu(data);
             $('#filterByChoice').html('');
-        }).fail(function() {
-            alert("error ajax showAllFlowers - 852");
-        });
-
-        //updatemenu('<div class="stem slider"><div class="slideBlock"><div class="product25 productWrap"><div class="productImg"><img src="media/images/products/gb_AlstroemeriaPink-0.png" alt="Alstroemeria (Pink)" class="cImg pstem" /></div><div class="productName">Alstroemeria (Pink)</div></div><div class="product29 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationGreen-0.png" alt="Carnation (Green)" class="cImg pstem" /></div><div class="productName">Carnation (Green)</div></div><div class="product190 productWrap"><div class="productImg"><img src="media/images/products/gb_Carnation-0.png" alt="Carnation (Orange)" class="cImg pstem" /></div><div class="productName">Carnation (Orange)</div></div><div class="product4 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationWhite-0.png" alt="Carnation (White)" class="cImg pstem" /></div><div class="productName">Carnation (White)</div></div><div class="product191 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationYellow-0.png" alt="Carnation (Yellow)" class="cImg pstem" /></div><div class="productName">Carnation (Yellow)</div></div><div class="product43 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayPink-0.png" alt="Carnation spray (Pink)" class="cImg pstem" /></div><div class="productName">Carnation spray (Pink)</div></div></div><div class="slideBlock"><div class="product198 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayWhite-0.png" alt="Carnation spray (White)" class="cImg pstem" /></div><div class="productName">Carnation spray (White)</div></div><div class="product197 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumRed-0.png" alt="Chrysanthemum (Red)" class="cImg pstem" /></div><div class="productName">Chrysanthemum (Red)</div></div><div class="product5 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumBloomWhite-0.png" alt="Chrysanthemum Bloom (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum Bloom (White)</div></div><div class="product196 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayCream-0.png" alt="Chrysanthemum spray (Cream)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Cream)</div></div><div class="product44 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayGreen-0.png" alt="Chrysanthemum spray (Green)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Green)</div></div><div class="product45 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayWhite-0.png" alt="Chrysanthemum spray (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (White)</div></div></div><div class="slideBlock"><div class="product6 productWrap"><div class="productImg"><img src="media/images/products/gb_EryngiumBlue-0.png" alt="Eryngium (Blue)" class="cImg pstem" /></div><div class="productName">Eryngium (Blue)</div></div><div class="product199 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaPurple-0.png" alt="Freesia (Lilac)" class="cImg pstem" /></div><div class="productName">Freesia (Lilac)</div></div><div class="product200 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaYellow-0.png" alt="Freesia (Yellow)" class="cImg pstem" /></div><div class="productName">Freesia (Yellow)</div></div><div class="product30 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiCerise-0.png" alt="Germini (Cerise)" class="cImg pstem" /></div><div class="productName">Germini (Cerise)</div></div><div class="product193 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiOrange-0.png" alt="Germini (Orange)" class="cImg pstem" /></div><div class="productName">Germini (Orange)</div></div><div class="product31 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPeach-0.png" alt="Germini (Peach)" class="cImg pstem" /></div><div class="productName">Germini (Peach)</div></div></div><div class="slideBlock"><div class="product32 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPink-0.png" alt="Germini (Pink)" class="cImg pstem" /></div><div class="productName">Germini (Pink)</div></div><div class="product33 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiWhite-0.png" alt="Germini (White)" class="cImg pstem" /></div><div class="productName">Germini (White)</div></div><div class="product194 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiYellow-0.png" alt="Germini (Yellow)" class="cImg pstem" /></div><div class="productName">Germini (Yellow)</div></div><div class="product34 productWrap"><div class="productImg"><img src="media/images/products/gb_GypsophilaWhite-0.png" alt="Gypsophila (White)" class="cImg pstem" /></div><div class="productName">Gypsophila (White)</div></div><div class="product16 productWrap"><div class="productImg"><img src="media/images/products/gb_IrisBlue-0.png" alt="Iris (Blue)" class="cImg pstem" /></div><div class="productName">Iris (Blue)</div></div><div class="product26 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticCream-0.png" alt="Lily Asiatic (Cream) " class="cImg pstem" /></div><div class="productName">Lily Asiatic (Cream) </div></div></div><div class="slideBlock"><div class="product192 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticOrange-0.png" alt="Lily Asiatic (Orange)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Orange)</div></div><div class="product27 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticWhite-0.png" alt="Lily Asiatic (White)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (White)</div></div><div class="product28 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticYellow-0.png" alt="Lily Asiatic (Yellow)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Yellow)</div></div><div class="product37 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalPink-0.png" alt="Lily Oriental (Pink)" class="cImg pstem" /></div><div class="productName">Lily Oriental (Pink)</div></div><div class="product38 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalWhite-0.png" alt="Lily Oriental (White)" class="cImg pstem" /></div><div class="productName">Lily Oriental (White)</div></div><div class="product10 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusLilac-0.png" alt="Lisianthus (Lilac)" class="cImg pstem" /></div><div class="productName">Lisianthus (Lilac)</div></div></div><div class="slideBlock"><div class="product35 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusPink-0.png" alt="Lisianthus (Pink)" class="cImg pstem" /></div><div class="productName">Lisianthus (Pink)</div></div><div class="product36 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusWhite-0.png" alt="Lisianthus (White)" class="cImg pstem" /></div><div class="productName">Lisianthus (White)</div></div><div class="product13 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseRed-0.png" alt="Rose (Red)" class="cImg pstem" /></div><div class="productName">Rose (Red)</div></div><div class="product202 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseYellow-0.png" alt="Rose (Yellow)" class="cImg pstem" /></div><div class="productName">Rose (Yellow)</div></div><div class="product39 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadCerise-0.png" alt="Rose large head (Cerise)" class="cImg pstem" /></div><div class="productName">Rose large head (Cerise)</div></div><div class="product40 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadOrange-0.png" alt="Rose large head (Orange)" class="cImg pstem" /></div><div class="productName">Rose large head (Orange)</div></div></div><div class="slideBlock"><div class="product41 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadPink-0.png" alt="Rose large head (Pink)" class="cImg pstem" /></div><div class="productName">Rose large head (Pink)</div></div><div class="product42 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadWhite-0.png" alt="Rose large head (White)" class="cImg pstem" /></div><div class="productName">Rose large head (White)</div></div><div class="product201 productWrap"><div class="productImg"><img src="media/images/products/gb_SeptemberFlowerBlue-0.png" alt="September Flower (Blue)" class="cImg pstem" /></div><div class="productName">September Flower (Blue)</div></div><div class="product195 productWrap"><div class="productImg"><img src="media/images/products/gb_Solidago-0.png" alt="Solidago" class="cImg pstem" /></div><div class="productName">Solidago</div></div><div class="product2 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationRed-0.png" alt="Spray Carnation (Red)" class="cImg pstem" /></div><div class="productName">Spray Carnation (Red)</div></div><div class="product46 productWrap"><div class="productImg"><img src="media/images/products/gb_StaticeBlue-0.png" alt="Statice (Blue)" class="cImg pstem" /></div><div class="productName">Statice (Blue)</div></div></div></div>');
+        });*/
+        updatemenu('<div class="stem slider"><div class="slideBlock"><div class="product25 productWrap"><div class="productImg"><img src="media/images/products/gb_AlstroemeriaPink-0.png" alt="Alstroemeria (Pink)" class="cImg pstem" /></div><div class="productName">Alstroemeria (Pink)</div></div><div class="product29 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationGreen-0.png" alt="Carnation (Green)" class="cImg pstem" /></div><div class="productName">Carnation (Green)</div></div><div class="product190 productWrap"><div class="productImg"><img src="media/images/products/gb_Carnation-0.png" alt="Carnation (Orange)" class="cImg pstem" /></div><div class="productName">Carnation (Orange)</div></div><div class="product4 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationWhite-0.png" alt="Carnation (White)" class="cImg pstem" /></div><div class="productName">Carnation (White)</div></div><div class="product191 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationYellow-0.png" alt="Carnation (Yellow)" class="cImg pstem" /></div><div class="productName">Carnation (Yellow)</div></div><div class="product43 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayPink-0.png" alt="Carnation spray (Pink)" class="cImg pstem" /></div><div class="productName">Carnation spray (Pink)</div></div></div><div class="slideBlock"><div class="product198 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayWhite-0.png" alt="Carnation spray (White)" class="cImg pstem" /></div><div class="productName">Carnation spray (White)</div></div><div class="product197 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumRed-0.png" alt="Chrysanthemum (Red)" class="cImg pstem" /></div><div class="productName">Chrysanthemum (Red)</div></div><div class="product5 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumBloomWhite-0.png" alt="Chrysanthemum Bloom (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum Bloom (White)</div></div><div class="product196 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayCream-0.png" alt="Chrysanthemum spray (Cream)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Cream)</div></div><div class="product44 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayGreen-0.png" alt="Chrysanthemum spray (Green)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Green)</div></div><div class="product45 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayWhite-0.png" alt="Chrysanthemum spray (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (White)</div></div></div><div class="slideBlock"><div class="product6 productWrap"><div class="productImg"><img src="media/images/products/gb_EryngiumBlue-0.png" alt="Eryngium (Blue)" class="cImg pstem" /></div><div class="productName">Eryngium (Blue)</div></div><div class="product199 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaPurple-0.png" alt="Freesia (Lilac)" class="cImg pstem" /></div><div class="productName">Freesia (Lilac)</div></div><div class="product200 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaYellow-0.png" alt="Freesia (Yellow)" class="cImg pstem" /></div><div class="productName">Freesia (Yellow)</div></div><div class="product30 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiCerise-0.png" alt="Germini (Cerise)" class="cImg pstem" /></div><div class="productName">Germini (Cerise)</div></div><div class="product193 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiOrange-0.png" alt="Germini (Orange)" class="cImg pstem" /></div><div class="productName">Germini (Orange)</div></div><div class="product31 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPeach-0.png" alt="Germini (Peach)" class="cImg pstem" /></div><div class="productName">Germini (Peach)</div></div></div><div class="slideBlock"><div class="product32 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPink-0.png" alt="Germini (Pink)" class="cImg pstem" /></div><div class="productName">Germini (Pink)</div></div><div class="product33 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiWhite-0.png" alt="Germini (White)" class="cImg pstem" /></div><div class="productName">Germini (White)</div></div><div class="product194 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiYellow-0.png" alt="Germini (Yellow)" class="cImg pstem" /></div><div class="productName">Germini (Yellow)</div></div><div class="product34 productWrap"><div class="productImg"><img src="media/images/products/gb_GypsophilaWhite-0.png" alt="Gypsophila (White)" class="cImg pstem" /></div><div class="productName">Gypsophila (White)</div></div><div class="product16 productWrap"><div class="productImg"><img src="media/images/products/gb_IrisBlue-0.png" alt="Iris (Blue)" class="cImg pstem" /></div><div class="productName">Iris (Blue)</div></div><div class="product26 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticCream-0.png" alt="Lily Asiatic (Cream) " class="cImg pstem" /></div><div class="productName">Lily Asiatic (Cream) </div></div></div><div class="slideBlock"><div class="product192 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticOrange-0.png" alt="Lily Asiatic (Orange)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Orange)</div></div><div class="product27 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticWhite-0.png" alt="Lily Asiatic (White)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (White)</div></div><div class="product28 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticYellow-0.png" alt="Lily Asiatic (Yellow)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Yellow)</div></div><div class="product37 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalPink-0.png" alt="Lily Oriental (Pink)" class="cImg pstem" /></div><div class="productName">Lily Oriental (Pink)</div></div><div class="product38 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalWhite-0.png" alt="Lily Oriental (White)" class="cImg pstem" /></div><div class="productName">Lily Oriental (White)</div></div><div class="product10 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusLilac-0.png" alt="Lisianthus (Lilac)" class="cImg pstem" /></div><div class="productName">Lisianthus (Lilac)</div></div></div><div class="slideBlock"><div class="product35 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusPink-0.png" alt="Lisianthus (Pink)" class="cImg pstem" /></div><div class="productName">Lisianthus (Pink)</div></div><div class="product36 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusWhite-0.png" alt="Lisianthus (White)" class="cImg pstem" /></div><div class="productName">Lisianthus (White)</div></div><div class="product13 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseRed-0.png" alt="Rose (Red)" class="cImg pstem" /></div><div class="productName">Rose (Red)</div></div><div class="product202 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseYellow-0.png" alt="Rose (Yellow)" class="cImg pstem" /></div><div class="productName">Rose (Yellow)</div></div><div class="product39 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadCerise-0.png" alt="Rose large head (Cerise)" class="cImg pstem" /></div><div class="productName">Rose large head (Cerise)</div></div><div class="product40 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadOrange-0.png" alt="Rose large head (Orange)" class="cImg pstem" /></div><div class="productName">Rose large head (Orange)</div></div></div><div class="slideBlock"><div class="product41 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadPink-0.png" alt="Rose large head (Pink)" class="cImg pstem" /></div><div class="productName">Rose large head (Pink)</div></div><div class="product42 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadWhite-0.png" alt="Rose large head (White)" class="cImg pstem" /></div><div class="productName">Rose large head (White)</div></div><div class="product201 productWrap"><div class="productImg"><img src="media/images/products/gb_SeptemberFlowerBlue-0.png" alt="September Flower (Blue)" class="cImg pstem" /></div><div class="productName">September Flower (Blue)</div></div><div class="product195 productWrap"><div class="productImg"><img src="media/images/products/gb_Solidago-0.png" alt="Solidago" class="cImg pstem" /></div><div class="productName">Solidago</div></div><div class="product2 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationRed-0.png" alt="Spray Carnation (Red)" class="cImg pstem" /></div><div class="productName">Spray Carnation (Red)</div></div><div class="product46 productWrap"><div class="productImg"><img src="media/images/products/gb_StaticeBlue-0.png" alt="Statice (Blue)" class="cImg pstem" /></div><div class="productName">Statice (Blue)</div></div></div></div>');                
         
         $('.stemBlockWidthAnchor').toggleClass('menuOpen');
         ev.preventDefault();
@@ -872,56 +802,39 @@ function menuaccordian() {
         sorttype = $(this).val();
         sorttext = $(this).children().filter(":selected").text();
         lastsort = sorttype;
-
-        // lastfilter es global ver linea 846 donde esta su declaracion
         if (lastfilter == 'all') {
             postdata = {
                 type: 'stem',
                 sort: sorttype
             };
-            console.log(postdata);
         } else {
             postdata = {
                 type: 'stem',
                 sort: sorttype,
                 filter: lastfilter
             };
-            console.log(postdata);
         }
-        $.post('sort/html', postdata, function(data) {
-            console.log('line 893 post');
-            console.log(postdata);
-            console.log(data);
+        /*$.post('sort/html', postdata, function(data) {
             updatemenu(data);
             $('#sortByChoice').html(sorttext);
-        }).fail(function() {
-            alert("error ajax sortby - 846 to 899");
-        });
-        //updatemenu('<div class="stem slider"><div class="slideBlock"><div class="product25 productWrap"><div class="productImg"><img src="media/images/products/gb_AlstroemeriaPink-0.png" alt="Alstroemeria (Pink)" class="cImg pstem" /></div><div class="productName">Alstroemeria (Pink)</div></div><div class="product29 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationGreen-0.png" alt="Carnation (Green)" class="cImg pstem" /></div><div class="productName">Carnation (Green)</div></div><div class="product190 productWrap"><div class="productImg"><img src="media/images/products/gb_Carnation-0.png" alt="Carnation (Orange)" class="cImg pstem" /></div><div class="productName">Carnation (Orange)</div></div><div class="product4 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationWhite-0.png" alt="Carnation (White)" class="cImg pstem" /></div><div class="productName">Carnation (White)</div></div><div class="product191 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationYellow-0.png" alt="Carnation (Yellow)" class="cImg pstem" /></div><div class="productName">Carnation (Yellow)</div></div><div class="product43 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayPink-0.png" alt="Carnation spray (Pink)" class="cImg pstem" /></div><div class="productName">Carnation spray (Pink)</div></div></div><div class="slideBlock"><div class="product198 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayWhite-0.png" alt="Carnation spray (White)" class="cImg pstem" /></div><div class="productName">Carnation spray (White)</div></div><div class="product197 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumRed-0.png" alt="Chrysanthemum (Red)" class="cImg pstem" /></div><div class="productName">Chrysanthemum (Red)</div></div><div class="product5 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumBloomWhite-0.png" alt="Chrysanthemum Bloom (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum Bloom (White)</div></div><div class="product196 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayCream-0.png" alt="Chrysanthemum spray (Cream)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Cream)</div></div><div class="product44 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayGreen-0.png" alt="Chrysanthemum spray (Green)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Green)</div></div><div class="product45 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayWhite-0.png" alt="Chrysanthemum spray (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (White)</div></div></div><div class="slideBlock"><div class="product6 productWrap"><div class="productImg"><img src="media/images/products/gb_EryngiumBlue-0.png" alt="Eryngium (Blue)" class="cImg pstem" /></div><div class="productName">Eryngium (Blue)</div></div><div class="product199 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaPurple-0.png" alt="Freesia (Lilac)" class="cImg pstem" /></div><div class="productName">Freesia (Lilac)</div></div><div class="product200 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaYellow-0.png" alt="Freesia (Yellow)" class="cImg pstem" /></div><div class="productName">Freesia (Yellow)</div></div><div class="product30 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiCerise-0.png" alt="Germini (Cerise)" class="cImg pstem" /></div><div class="productName">Germini (Cerise)</div></div><div class="product193 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiOrange-0.png" alt="Germini (Orange)" class="cImg pstem" /></div><div class="productName">Germini (Orange)</div></div><div class="product31 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPeach-0.png" alt="Germini (Peach)" class="cImg pstem" /></div><div class="productName">Germini (Peach)</div></div></div><div class="slideBlock"><div class="product32 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPink-0.png" alt="Germini (Pink)" class="cImg pstem" /></div><div class="productName">Germini (Pink)</div></div><div class="product33 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiWhite-0.png" alt="Germini (White)" class="cImg pstem" /></div><div class="productName">Germini (White)</div></div><div class="product194 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiYellow-0.png" alt="Germini (Yellow)" class="cImg pstem" /></div><div class="productName">Germini (Yellow)</div></div><div class="product34 productWrap"><div class="productImg"><img src="media/images/products/gb_GypsophilaWhite-0.png" alt="Gypsophila (White)" class="cImg pstem" /></div><div class="productName">Gypsophila (White)</div></div><div class="product16 productWrap"><div class="productImg"><img src="media/images/products/gb_IrisBlue-0.png" alt="Iris (Blue)" class="cImg pstem" /></div><div class="productName">Iris (Blue)</div></div><div class="product26 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticCream-0.png" alt="Lily Asiatic (Cream) " class="cImg pstem" /></div><div class="productName">Lily Asiatic (Cream) </div></div></div><div class="slideBlock"><div class="product192 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticOrange-0.png" alt="Lily Asiatic (Orange)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Orange)</div></div><div class="product27 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticWhite-0.png" alt="Lily Asiatic (White)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (White)</div></div><div class="product28 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticYellow-0.png" alt="Lily Asiatic (Yellow)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Yellow)</div></div><div class="product37 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalPink-0.png" alt="Lily Oriental (Pink)" class="cImg pstem" /></div><div class="productName">Lily Oriental (Pink)</div></div><div class="product38 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalWhite-0.png" alt="Lily Oriental (White)" class="cImg pstem" /></div><div class="productName">Lily Oriental (White)</div></div><div class="product10 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusLilac-0.png" alt="Lisianthus (Lilac)" class="cImg pstem" /></div><div class="productName">Lisianthus (Lilac)</div></div></div><div class="slideBlock"><div class="product35 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusPink-0.png" alt="Lisianthus (Pink)" class="cImg pstem" /></div><div class="productName">Lisianthus (Pink)</div></div><div class="product36 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusWhite-0.png" alt="Lisianthus (White)" class="cImg pstem" /></div><div class="productName">Lisianthus (White)</div></div><div class="product13 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseRed-0.png" alt="Rose (Red)" class="cImg pstem" /></div><div class="productName">Rose (Red)</div></div><div class="product202 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseYellow-0.png" alt="Rose (Yellow)" class="cImg pstem" /></div><div class="productName">Rose (Yellow)</div></div><div class="product39 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadCerise-0.png" alt="Rose large head (Cerise)" class="cImg pstem" /></div><div class="productName">Rose large head (Cerise)</div></div><div class="product40 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadOrange-0.png" alt="Rose large head (Orange)" class="cImg pstem" /></div><div class="productName">Rose large head (Orange)</div></div></div><div class="slideBlock"><div class="product41 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadPink-0.png" alt="Rose large head (Pink)" class="cImg pstem" /></div><div class="productName">Rose large head (Pink)</div></div><div class="product42 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadWhite-0.png" alt="Rose large head (White)" class="cImg pstem" /></div><div class="productName">Rose large head (White)</div></div><div class="product201 productWrap"><div class="productImg"><img src="media/images/products/gb_SeptemberFlowerBlue-0.png" alt="September Flower (Blue)" class="cImg pstem" /></div><div class="productName">September Flower (Blue)</div></div><div class="product195 productWrap"><div class="productImg"><img src="media/images/products/gb_Solidago-0.png" alt="Solidago" class="cImg pstem" /></div><div class="productName">Solidago</div></div><div class="product2 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationRed-0.png" alt="Spray Carnation (Red)" class="cImg pstem" /></div><div class="productName">Spray Carnation (Red)</div></div><div class="product46 productWrap"><div class="productImg"><img src="media/images/products/gb_StaticeBlue-0.png" alt="Statice (Blue)" class="cImg pstem" /></div><div class="productName">Statice (Blue)</div></div></div></div>');
+        });*/
+        updatemenu('<div class="stem slider"><div class="slideBlock"><div class="product25 productWrap"><div class="productImg"><img src="media/images/products/gb_AlstroemeriaPink-0.png" alt="Alstroemeria (Pink)" class="cImg pstem" /></div><div class="productName">Alstroemeria (Pink)</div></div><div class="product29 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationGreen-0.png" alt="Carnation (Green)" class="cImg pstem" /></div><div class="productName">Carnation (Green)</div></div><div class="product190 productWrap"><div class="productImg"><img src="media/images/products/gb_Carnation-0.png" alt="Carnation (Orange)" class="cImg pstem" /></div><div class="productName">Carnation (Orange)</div></div><div class="product4 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationWhite-0.png" alt="Carnation (White)" class="cImg pstem" /></div><div class="productName">Carnation (White)</div></div><div class="product191 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationYellow-0.png" alt="Carnation (Yellow)" class="cImg pstem" /></div><div class="productName">Carnation (Yellow)</div></div><div class="product43 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayPink-0.png" alt="Carnation spray (Pink)" class="cImg pstem" /></div><div class="productName">Carnation spray (Pink)</div></div></div><div class="slideBlock"><div class="product198 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayWhite-0.png" alt="Carnation spray (White)" class="cImg pstem" /></div><div class="productName">Carnation spray (White)</div></div><div class="product197 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumRed-0.png" alt="Chrysanthemum (Red)" class="cImg pstem" /></div><div class="productName">Chrysanthemum (Red)</div></div><div class="product5 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumBloomWhite-0.png" alt="Chrysanthemum Bloom (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum Bloom (White)</div></div><div class="product196 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayCream-0.png" alt="Chrysanthemum spray (Cream)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Cream)</div></div><div class="product44 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayGreen-0.png" alt="Chrysanthemum spray (Green)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Green)</div></div><div class="product45 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayWhite-0.png" alt="Chrysanthemum spray (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (White)</div></div></div><div class="slideBlock"><div class="product6 productWrap"><div class="productImg"><img src="media/images/products/gb_EryngiumBlue-0.png" alt="Eryngium (Blue)" class="cImg pstem" /></div><div class="productName">Eryngium (Blue)</div></div><div class="product199 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaPurple-0.png" alt="Freesia (Lilac)" class="cImg pstem" /></div><div class="productName">Freesia (Lilac)</div></div><div class="product200 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaYellow-0.png" alt="Freesia (Yellow)" class="cImg pstem" /></div><div class="productName">Freesia (Yellow)</div></div><div class="product30 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiCerise-0.png" alt="Germini (Cerise)" class="cImg pstem" /></div><div class="productName">Germini (Cerise)</div></div><div class="product193 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiOrange-0.png" alt="Germini (Orange)" class="cImg pstem" /></div><div class="productName">Germini (Orange)</div></div><div class="product31 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPeach-0.png" alt="Germini (Peach)" class="cImg pstem" /></div><div class="productName">Germini (Peach)</div></div></div><div class="slideBlock"><div class="product32 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPink-0.png" alt="Germini (Pink)" class="cImg pstem" /></div><div class="productName">Germini (Pink)</div></div><div class="product33 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiWhite-0.png" alt="Germini (White)" class="cImg pstem" /></div><div class="productName">Germini (White)</div></div><div class="product194 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiYellow-0.png" alt="Germini (Yellow)" class="cImg pstem" /></div><div class="productName">Germini (Yellow)</div></div><div class="product34 productWrap"><div class="productImg"><img src="media/images/products/gb_GypsophilaWhite-0.png" alt="Gypsophila (White)" class="cImg pstem" /></div><div class="productName">Gypsophila (White)</div></div><div class="product16 productWrap"><div class="productImg"><img src="media/images/products/gb_IrisBlue-0.png" alt="Iris (Blue)" class="cImg pstem" /></div><div class="productName">Iris (Blue)</div></div><div class="product26 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticCream-0.png" alt="Lily Asiatic (Cream) " class="cImg pstem" /></div><div class="productName">Lily Asiatic (Cream) </div></div></div><div class="slideBlock"><div class="product192 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticOrange-0.png" alt="Lily Asiatic (Orange)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Orange)</div></div><div class="product27 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticWhite-0.png" alt="Lily Asiatic (White)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (White)</div></div><div class="product28 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticYellow-0.png" alt="Lily Asiatic (Yellow)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Yellow)</div></div><div class="product37 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalPink-0.png" alt="Lily Oriental (Pink)" class="cImg pstem" /></div><div class="productName">Lily Oriental (Pink)</div></div><div class="product38 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalWhite-0.png" alt="Lily Oriental (White)" class="cImg pstem" /></div><div class="productName">Lily Oriental (White)</div></div><div class="product10 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusLilac-0.png" alt="Lisianthus (Lilac)" class="cImg pstem" /></div><div class="productName">Lisianthus (Lilac)</div></div></div><div class="slideBlock"><div class="product35 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusPink-0.png" alt="Lisianthus (Pink)" class="cImg pstem" /></div><div class="productName">Lisianthus (Pink)</div></div><div class="product36 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusWhite-0.png" alt="Lisianthus (White)" class="cImg pstem" /></div><div class="productName">Lisianthus (White)</div></div><div class="product13 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseRed-0.png" alt="Rose (Red)" class="cImg pstem" /></div><div class="productName">Rose (Red)</div></div><div class="product202 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseYellow-0.png" alt="Rose (Yellow)" class="cImg pstem" /></div><div class="productName">Rose (Yellow)</div></div><div class="product39 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadCerise-0.png" alt="Rose large head (Cerise)" class="cImg pstem" /></div><div class="productName">Rose large head (Cerise)</div></div><div class="product40 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadOrange-0.png" alt="Rose large head (Orange)" class="cImg pstem" /></div><div class="productName">Rose large head (Orange)</div></div></div><div class="slideBlock"><div class="product41 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadPink-0.png" alt="Rose large head (Pink)" class="cImg pstem" /></div><div class="productName">Rose large head (Pink)</div></div><div class="product42 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadWhite-0.png" alt="Rose large head (White)" class="cImg pstem" /></div><div class="productName">Rose large head (White)</div></div><div class="product201 productWrap"><div class="productImg"><img src="media/images/products/gb_SeptemberFlowerBlue-0.png" alt="September Flower (Blue)" class="cImg pstem" /></div><div class="productName">September Flower (Blue)</div></div><div class="product195 productWrap"><div class="productImg"><img src="media/images/products/gb_Solidago-0.png" alt="Solidago" class="cImg pstem" /></div><div class="productName">Solidago</div></div><div class="product2 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationRed-0.png" alt="Spray Carnation (Red)" class="cImg pstem" /></div><div class="productName">Spray Carnation (Red)</div></div><div class="product46 productWrap"><div class="productImg"><img src="media/images/products/gb_StaticeBlue-0.png" alt="Statice (Blue)" class="cImg pstem" /></div><div class="productName">Statice (Blue)</div></div></div></div>');        
         ev.preventDefault();
     });
     $('.letterBlock span').each(function(index, el) {
         if (!$(el).hasClass('unused')) {
             $(el).click(function(ev) {
                 letter = $(this).attr('class');
-                console.log('line 908');
                 lastfilter = 'name=' + letter;
-                console.log(lastfilter);
-                $.post('sort/html', {
+                /*$.post('sort/html', {
                     type: 'stem',
                     filter: lastfilter,
                     sort: $('#sortby').val()
                 }, function(data) {
-                    console.log('line 919 Post');
-                    console.log({type: 'stem',filter: lastfilter,sort: $('#sortby').val()});
-                    console.log(data);
                     updatemenu(data);
                     $('#filterByChoice').html("Name");
-                }).fail(function() {
-                    alert("error ajax letterBlock - 904 to 919");
-                });
-
-                //updatemenu('<div class="stem slider"><div class="slideBlock"><div class="product25 productWrap"><div class="productImg"><img src="media/images/products/gb_AlstroemeriaPink-0.png" alt="Alstroemeria (Pink)" class="cImg pstem" /></div><div class="productName">Alstroemeria (Pink)</div></div><div class="product29 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationGreen-0.png" alt="Carnation (Green)" class="cImg pstem" /></div><div class="productName">Carnation (Green)</div></div><div class="product190 productWrap"><div class="productImg"><img src="media/images/products/gb_Carnation-0.png" alt="Carnation (Orange)" class="cImg pstem" /></div><div class="productName">Carnation (Orange)</div></div><div class="product4 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationWhite-0.png" alt="Carnation (White)" class="cImg pstem" /></div><div class="productName">Carnation (White)</div></div><div class="product191 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationYellow-0.png" alt="Carnation (Yellow)" class="cImg pstem" /></div><div class="productName">Carnation (Yellow)</div></div><div class="product43 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayPink-0.png" alt="Carnation spray (Pink)" class="cImg pstem" /></div><div class="productName">Carnation spray (Pink)</div></div></div><div class="slideBlock"><div class="product198 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayWhite-0.png" alt="Carnation spray (White)" class="cImg pstem" /></div><div class="productName">Carnation spray (White)</div></div><div class="product197 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumRed-0.png" alt="Chrysanthemum (Red)" class="cImg pstem" /></div><div class="productName">Chrysanthemum (Red)</div></div><div class="product5 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumBloomWhite-0.png" alt="Chrysanthemum Bloom (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum Bloom (White)</div></div><div class="product196 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayCream-0.png" alt="Chrysanthemum spray (Cream)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Cream)</div></div><div class="product44 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayGreen-0.png" alt="Chrysanthemum spray (Green)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Green)</div></div><div class="product45 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayWhite-0.png" alt="Chrysanthemum spray (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (White)</div></div></div><div class="slideBlock"><div class="product6 productWrap"><div class="productImg"><img src="media/images/products/gb_EryngiumBlue-0.png" alt="Eryngium (Blue)" class="cImg pstem" /></div><div class="productName">Eryngium (Blue)</div></div><div class="product199 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaPurple-0.png" alt="Freesia (Lilac)" class="cImg pstem" /></div><div class="productName">Freesia (Lilac)</div></div><div class="product200 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaYellow-0.png" alt="Freesia (Yellow)" class="cImg pstem" /></div><div class="productName">Freesia (Yellow)</div></div><div class="product30 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiCerise-0.png" alt="Germini (Cerise)" class="cImg pstem" /></div><div class="productName">Germini (Cerise)</div></div><div class="product193 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiOrange-0.png" alt="Germini (Orange)" class="cImg pstem" /></div><div class="productName">Germini (Orange)</div></div><div class="product31 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPeach-0.png" alt="Germini (Peach)" class="cImg pstem" /></div><div class="productName">Germini (Peach)</div></div></div><div class="slideBlock"><div class="product32 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPink-0.png" alt="Germini (Pink)" class="cImg pstem" /></div><div class="productName">Germini (Pink)</div></div><div class="product33 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiWhite-0.png" alt="Germini (White)" class="cImg pstem" /></div><div class="productName">Germini (White)</div></div><div class="product194 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiYellow-0.png" alt="Germini (Yellow)" class="cImg pstem" /></div><div class="productName">Germini (Yellow)</div></div><div class="product34 productWrap"><div class="productImg"><img src="media/images/products/gb_GypsophilaWhite-0.png" alt="Gypsophila (White)" class="cImg pstem" /></div><div class="productName">Gypsophila (White)</div></div><div class="product16 productWrap"><div class="productImg"><img src="media/images/products/gb_IrisBlue-0.png" alt="Iris (Blue)" class="cImg pstem" /></div><div class="productName">Iris (Blue)</div></div><div class="product26 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticCream-0.png" alt="Lily Asiatic (Cream) " class="cImg pstem" /></div><div class="productName">Lily Asiatic (Cream) </div></div></div><div class="slideBlock"><div class="product192 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticOrange-0.png" alt="Lily Asiatic (Orange)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Orange)</div></div><div class="product27 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticWhite-0.png" alt="Lily Asiatic (White)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (White)</div></div><div class="product28 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticYellow-0.png" alt="Lily Asiatic (Yellow)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Yellow)</div></div><div class="product37 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalPink-0.png" alt="Lily Oriental (Pink)" class="cImg pstem" /></div><div class="productName">Lily Oriental (Pink)</div></div><div class="product38 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalWhite-0.png" alt="Lily Oriental (White)" class="cImg pstem" /></div><div class="productName">Lily Oriental (White)</div></div><div class="product10 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusLilac-0.png" alt="Lisianthus (Lilac)" class="cImg pstem" /></div><div class="productName">Lisianthus (Lilac)</div></div></div><div class="slideBlock"><div class="product35 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusPink-0.png" alt="Lisianthus (Pink)" class="cImg pstem" /></div><div class="productName">Lisianthus (Pink)</div></div><div class="product36 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusWhite-0.png" alt="Lisianthus (White)" class="cImg pstem" /></div><div class="productName">Lisianthus (White)</div></div><div class="product13 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseRed-0.png" alt="Rose (Red)" class="cImg pstem" /></div><div class="productName">Rose (Red)</div></div><div class="product202 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseYellow-0.png" alt="Rose (Yellow)" class="cImg pstem" /></div><div class="productName">Rose (Yellow)</div></div><div class="product39 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadCerise-0.png" alt="Rose large head (Cerise)" class="cImg pstem" /></div><div class="productName">Rose large head (Cerise)</div></div><div class="product40 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadOrange-0.png" alt="Rose large head (Orange)" class="cImg pstem" /></div><div class="productName">Rose large head (Orange)</div></div></div><div class="slideBlock"><div class="product41 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadPink-0.png" alt="Rose large head (Pink)" class="cImg pstem" /></div><div class="productName">Rose large head (Pink)</div></div><div class="product42 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadWhite-0.png" alt="Rose large head (White)" class="cImg pstem" /></div><div class="productName">Rose large head (White)</div></div><div class="product201 productWrap"><div class="productImg"><img src="media/images/products/gb_SeptemberFlowerBlue-0.png" alt="September Flower (Blue)" class="cImg pstem" /></div><div class="productName">September Flower (Blue)</div></div><div class="product195 productWrap"><div class="productImg"><img src="media/images/products/gb_Solidago-0.png" alt="Solidago" class="cImg pstem" /></div><div class="productName">Solidago</div></div><div class="product2 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationRed-0.png" alt="Spray Carnation (Red)" class="cImg pstem" /></div><div class="productName">Spray Carnation (Red)</div></div><div class="product46 productWrap"><div class="productImg"><img src="media/images/products/gb_StaticeBlue-0.png" alt="Statice (Blue)" class="cImg pstem" /></div><div class="productName">Statice (Blue)</div></div></div></div>');
+                });*/
+                updatemenu('<div class="stem slider"><div class="slideBlock"><div class="product25 productWrap"><div class="productImg"><img src="media/images/products/gb_AlstroemeriaPink-0.png" alt="Alstroemeria (Pink)" class="cImg pstem" /></div><div class="productName">Alstroemeria (Pink)</div></div><div class="product29 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationGreen-0.png" alt="Carnation (Green)" class="cImg pstem" /></div><div class="productName">Carnation (Green)</div></div><div class="product190 productWrap"><div class="productImg"><img src="media/images/products/gb_Carnation-0.png" alt="Carnation (Orange)" class="cImg pstem" /></div><div class="productName">Carnation (Orange)</div></div><div class="product4 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationWhite-0.png" alt="Carnation (White)" class="cImg pstem" /></div><div class="productName">Carnation (White)</div></div><div class="product191 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationYellow-0.png" alt="Carnation (Yellow)" class="cImg pstem" /></div><div class="productName">Carnation (Yellow)</div></div><div class="product43 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayPink-0.png" alt="Carnation spray (Pink)" class="cImg pstem" /></div><div class="productName">Carnation spray (Pink)</div></div></div><div class="slideBlock"><div class="product198 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayWhite-0.png" alt="Carnation spray (White)" class="cImg pstem" /></div><div class="productName">Carnation spray (White)</div></div><div class="product197 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumRed-0.png" alt="Chrysanthemum (Red)" class="cImg pstem" /></div><div class="productName">Chrysanthemum (Red)</div></div><div class="product5 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumBloomWhite-0.png" alt="Chrysanthemum Bloom (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum Bloom (White)</div></div><div class="product196 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayCream-0.png" alt="Chrysanthemum spray (Cream)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Cream)</div></div><div class="product44 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayGreen-0.png" alt="Chrysanthemum spray (Green)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Green)</div></div><div class="product45 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayWhite-0.png" alt="Chrysanthemum spray (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (White)</div></div></div><div class="slideBlock"><div class="product6 productWrap"><div class="productImg"><img src="media/images/products/gb_EryngiumBlue-0.png" alt="Eryngium (Blue)" class="cImg pstem" /></div><div class="productName">Eryngium (Blue)</div></div><div class="product199 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaPurple-0.png" alt="Freesia (Lilac)" class="cImg pstem" /></div><div class="productName">Freesia (Lilac)</div></div><div class="product200 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaYellow-0.png" alt="Freesia (Yellow)" class="cImg pstem" /></div><div class="productName">Freesia (Yellow)</div></div><div class="product30 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiCerise-0.png" alt="Germini (Cerise)" class="cImg pstem" /></div><div class="productName">Germini (Cerise)</div></div><div class="product193 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiOrange-0.png" alt="Germini (Orange)" class="cImg pstem" /></div><div class="productName">Germini (Orange)</div></div><div class="product31 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPeach-0.png" alt="Germini (Peach)" class="cImg pstem" /></div><div class="productName">Germini (Peach)</div></div></div><div class="slideBlock"><div class="product32 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPink-0.png" alt="Germini (Pink)" class="cImg pstem" /></div><div class="productName">Germini (Pink)</div></div><div class="product33 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiWhite-0.png" alt="Germini (White)" class="cImg pstem" /></div><div class="productName">Germini (White)</div></div><div class="product194 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiYellow-0.png" alt="Germini (Yellow)" class="cImg pstem" /></div><div class="productName">Germini (Yellow)</div></div><div class="product34 productWrap"><div class="productImg"><img src="media/images/products/gb_GypsophilaWhite-0.png" alt="Gypsophila (White)" class="cImg pstem" /></div><div class="productName">Gypsophila (White)</div></div><div class="product16 productWrap"><div class="productImg"><img src="media/images/products/gb_IrisBlue-0.png" alt="Iris (Blue)" class="cImg pstem" /></div><div class="productName">Iris (Blue)</div></div><div class="product26 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticCream-0.png" alt="Lily Asiatic (Cream) " class="cImg pstem" /></div><div class="productName">Lily Asiatic (Cream) </div></div></div><div class="slideBlock"><div class="product192 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticOrange-0.png" alt="Lily Asiatic (Orange)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Orange)</div></div><div class="product27 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticWhite-0.png" alt="Lily Asiatic (White)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (White)</div></div><div class="product28 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticYellow-0.png" alt="Lily Asiatic (Yellow)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Yellow)</div></div><div class="product37 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalPink-0.png" alt="Lily Oriental (Pink)" class="cImg pstem" /></div><div class="productName">Lily Oriental (Pink)</div></div><div class="product38 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalWhite-0.png" alt="Lily Oriental (White)" class="cImg pstem" /></div><div class="productName">Lily Oriental (White)</div></div><div class="product10 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusLilac-0.png" alt="Lisianthus (Lilac)" class="cImg pstem" /></div><div class="productName">Lisianthus (Lilac)</div></div></div><div class="slideBlock"><div class="product35 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusPink-0.png" alt="Lisianthus (Pink)" class="cImg pstem" /></div><div class="productName">Lisianthus (Pink)</div></div><div class="product36 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusWhite-0.png" alt="Lisianthus (White)" class="cImg pstem" /></div><div class="productName">Lisianthus (White)</div></div><div class="product13 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseRed-0.png" alt="Rose (Red)" class="cImg pstem" /></div><div class="productName">Rose (Red)</div></div><div class="product202 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseYellow-0.png" alt="Rose (Yellow)" class="cImg pstem" /></div><div class="productName">Rose (Yellow)</div></div><div class="product39 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadCerise-0.png" alt="Rose large head (Cerise)" class="cImg pstem" /></div><div class="productName">Rose large head (Cerise)</div></div><div class="product40 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadOrange-0.png" alt="Rose large head (Orange)" class="cImg pstem" /></div><div class="productName">Rose large head (Orange)</div></div></div><div class="slideBlock"><div class="product41 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadPink-0.png" alt="Rose large head (Pink)" class="cImg pstem" /></div><div class="productName">Rose large head (Pink)</div></div><div class="product42 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadWhite-0.png" alt="Rose large head (White)" class="cImg pstem" /></div><div class="productName">Rose large head (White)</div></div><div class="product201 productWrap"><div class="productImg"><img src="media/images/products/gb_SeptemberFlowerBlue-0.png" alt="September Flower (Blue)" class="cImg pstem" /></div><div class="productName">September Flower (Blue)</div></div><div class="product195 productWrap"><div class="productImg"><img src="media/images/products/gb_Solidago-0.png" alt="Solidago" class="cImg pstem" /></div><div class="productName">Solidago</div></div><div class="product2 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationRed-0.png" alt="Spray Carnation (Red)" class="cImg pstem" /></div><div class="productName">Spray Carnation (Red)</div></div><div class="product46 productWrap"><div class="productImg"><img src="media/images/products/gb_StaticeBlue-0.png" alt="Statice (Blue)" class="cImg pstem" /></div><div class="productName">Statice (Blue)</div></div></div></div>');                
 
             });
             $(el).css('cursor', 'pointer');
@@ -930,21 +843,15 @@ function menuaccordian() {
     $('.flowerColourBlock a').click(function(ev) {
         colour = $(this).attr('class');
         lastfilter = 'colour=' + colour;
-        console.log('line 934');
-        console.log(lastfilter);
-        $.post('sort/html', {
+        /*$.post('sort/html', {
             type: 'stem',
             filter: lastfilter,
             sort: $('#sortby').val()
         }, function(data) {
-            console.log({type: 'stem',filter: lastfilter,sort: $('#sortby').val()});
-            console.log(data);
             updatemenu(data);
             $('#filterByChoice').html("Colour");
-        }).fail(function() {
-            alert("error ajax flowerColourBlock - 931 to 944");
-        });
-        //updatemenu('<div class="stem slider"><div class="slideBlock"><div class="product25 productWrap"><div class="productImg"><img src="media/images/products/gb_AlstroemeriaPink-0.png" alt="Alstroemeria (Pink)" class="cImg pstem" /></div><div class="productName">Alstroemeria (Pink)</div></div><div class="product29 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationGreen-0.png" alt="Carnation (Green)" class="cImg pstem" /></div><div class="productName">Carnation (Green)</div></div><div class="product190 productWrap"><div class="productImg"><img src="media/images/products/gb_Carnation-0.png" alt="Carnation (Orange)" class="cImg pstem" /></div><div class="productName">Carnation (Orange)</div></div><div class="product4 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationWhite-0.png" alt="Carnation (White)" class="cImg pstem" /></div><div class="productName">Carnation (White)</div></div><div class="product191 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationYellow-0.png" alt="Carnation (Yellow)" class="cImg pstem" /></div><div class="productName">Carnation (Yellow)</div></div><div class="product43 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayPink-0.png" alt="Carnation spray (Pink)" class="cImg pstem" /></div><div class="productName">Carnation spray (Pink)</div></div></div><div class="slideBlock"><div class="product198 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayWhite-0.png" alt="Carnation spray (White)" class="cImg pstem" /></div><div class="productName">Carnation spray (White)</div></div><div class="product197 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumRed-0.png" alt="Chrysanthemum (Red)" class="cImg pstem" /></div><div class="productName">Chrysanthemum (Red)</div></div><div class="product5 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumBloomWhite-0.png" alt="Chrysanthemum Bloom (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum Bloom (White)</div></div><div class="product196 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayCream-0.png" alt="Chrysanthemum spray (Cream)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Cream)</div></div><div class="product44 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayGreen-0.png" alt="Chrysanthemum spray (Green)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Green)</div></div><div class="product45 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayWhite-0.png" alt="Chrysanthemum spray (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (White)</div></div></div><div class="slideBlock"><div class="product6 productWrap"><div class="productImg"><img src="media/images/products/gb_EryngiumBlue-0.png" alt="Eryngium (Blue)" class="cImg pstem" /></div><div class="productName">Eryngium (Blue)</div></div><div class="product199 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaPurple-0.png" alt="Freesia (Lilac)" class="cImg pstem" /></div><div class="productName">Freesia (Lilac)</div></div><div class="product200 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaYellow-0.png" alt="Freesia (Yellow)" class="cImg pstem" /></div><div class="productName">Freesia (Yellow)</div></div><div class="product30 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiCerise-0.png" alt="Germini (Cerise)" class="cImg pstem" /></div><div class="productName">Germini (Cerise)</div></div><div class="product193 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiOrange-0.png" alt="Germini (Orange)" class="cImg pstem" /></div><div class="productName">Germini (Orange)</div></div><div class="product31 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPeach-0.png" alt="Germini (Peach)" class="cImg pstem" /></div><div class="productName">Germini (Peach)</div></div></div><div class="slideBlock"><div class="product32 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPink-0.png" alt="Germini (Pink)" class="cImg pstem" /></div><div class="productName">Germini (Pink)</div></div><div class="product33 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiWhite-0.png" alt="Germini (White)" class="cImg pstem" /></div><div class="productName">Germini (White)</div></div><div class="product194 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiYellow-0.png" alt="Germini (Yellow)" class="cImg pstem" /></div><div class="productName">Germini (Yellow)</div></div><div class="product34 productWrap"><div class="productImg"><img src="media/images/products/gb_GypsophilaWhite-0.png" alt="Gypsophila (White)" class="cImg pstem" /></div><div class="productName">Gypsophila (White)</div></div><div class="product16 productWrap"><div class="productImg"><img src="media/images/products/gb_IrisBlue-0.png" alt="Iris (Blue)" class="cImg pstem" /></div><div class="productName">Iris (Blue)</div></div><div class="product26 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticCream-0.png" alt="Lily Asiatic (Cream) " class="cImg pstem" /></div><div class="productName">Lily Asiatic (Cream) </div></div></div><div class="slideBlock"><div class="product192 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticOrange-0.png" alt="Lily Asiatic (Orange)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Orange)</div></div><div class="product27 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticWhite-0.png" alt="Lily Asiatic (White)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (White)</div></div><div class="product28 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticYellow-0.png" alt="Lily Asiatic (Yellow)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Yellow)</div></div><div class="product37 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalPink-0.png" alt="Lily Oriental (Pink)" class="cImg pstem" /></div><div class="productName">Lily Oriental (Pink)</div></div><div class="product38 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalWhite-0.png" alt="Lily Oriental (White)" class="cImg pstem" /></div><div class="productName">Lily Oriental (White)</div></div><div class="product10 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusLilac-0.png" alt="Lisianthus (Lilac)" class="cImg pstem" /></div><div class="productName">Lisianthus (Lilac)</div></div></div><div class="slideBlock"><div class="product35 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusPink-0.png" alt="Lisianthus (Pink)" class="cImg pstem" /></div><div class="productName">Lisianthus (Pink)</div></div><div class="product36 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusWhite-0.png" alt="Lisianthus (White)" class="cImg pstem" /></div><div class="productName">Lisianthus (White)</div></div><div class="product13 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseRed-0.png" alt="Rose (Red)" class="cImg pstem" /></div><div class="productName">Rose (Red)</div></div><div class="product202 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseYellow-0.png" alt="Rose (Yellow)" class="cImg pstem" /></div><div class="productName">Rose (Yellow)</div></div><div class="product39 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadCerise-0.png" alt="Rose large head (Cerise)" class="cImg pstem" /></div><div class="productName">Rose large head (Cerise)</div></div><div class="product40 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadOrange-0.png" alt="Rose large head (Orange)" class="cImg pstem" /></div><div class="productName">Rose large head (Orange)</div></div></div><div class="slideBlock"><div class="product41 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadPink-0.png" alt="Rose large head (Pink)" class="cImg pstem" /></div><div class="productName">Rose large head (Pink)</div></div><div class="product42 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadWhite-0.png" alt="Rose large head (White)" class="cImg pstem" /></div><div class="productName">Rose large head (White)</div></div><div class="product201 productWrap"><div class="productImg"><img src="media/images/products/gb_SeptemberFlowerBlue-0.png" alt="September Flower (Blue)" class="cImg pstem" /></div><div class="productName">September Flower (Blue)</div></div><div class="product195 productWrap"><div class="productImg"><img src="media/images/products/gb_Solidago-0.png" alt="Solidago" class="cImg pstem" /></div><div class="productName">Solidago</div></div><div class="product2 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationRed-0.png" alt="Spray Carnation (Red)" class="cImg pstem" /></div><div class="productName">Spray Carnation (Red)</div></div><div class="product46 productWrap"><div class="productImg"><img src="media/images/products/gb_StaticeBlue-0.png" alt="Statice (Blue)" class="cImg pstem" /></div><div class="productName">Statice (Blue)</div></div></div></div>');
+        });*/
+        updatemenu('<div class="stem slider"><div class="slideBlock"><div class="product25 productWrap"><div class="productImg"><img src="media/images/products/gb_AlstroemeriaPink-0.png" alt="Alstroemeria (Pink)" class="cImg pstem" /></div><div class="productName">Alstroemeria (Pink)</div></div><div class="product29 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationGreen-0.png" alt="Carnation (Green)" class="cImg pstem" /></div><div class="productName">Carnation (Green)</div></div><div class="product190 productWrap"><div class="productImg"><img src="media/images/products/gb_Carnation-0.png" alt="Carnation (Orange)" class="cImg pstem" /></div><div class="productName">Carnation (Orange)</div></div><div class="product4 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationWhite-0.png" alt="Carnation (White)" class="cImg pstem" /></div><div class="productName">Carnation (White)</div></div><div class="product191 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationYellow-0.png" alt="Carnation (Yellow)" class="cImg pstem" /></div><div class="productName">Carnation (Yellow)</div></div><div class="product43 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayPink-0.png" alt="Carnation spray (Pink)" class="cImg pstem" /></div><div class="productName">Carnation spray (Pink)</div></div></div><div class="slideBlock"><div class="product198 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationsprayWhite-0.png" alt="Carnation spray (White)" class="cImg pstem" /></div><div class="productName">Carnation spray (White)</div></div><div class="product197 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumRed-0.png" alt="Chrysanthemum (Red)" class="cImg pstem" /></div><div class="productName">Chrysanthemum (Red)</div></div><div class="product5 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumBloomWhite-0.png" alt="Chrysanthemum Bloom (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum Bloom (White)</div></div><div class="product196 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayCream-0.png" alt="Chrysanthemum spray (Cream)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Cream)</div></div><div class="product44 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayGreen-0.png" alt="Chrysanthemum spray (Green)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (Green)</div></div><div class="product45 productWrap"><div class="productImg"><img src="media/images/products/gb_ChrysanthemumsprayWhite-0.png" alt="Chrysanthemum spray (White)" class="cImg pstem" /></div><div class="productName">Chrysanthemum spray (White)</div></div></div><div class="slideBlock"><div class="product6 productWrap"><div class="productImg"><img src="media/images/products/gb_EryngiumBlue-0.png" alt="Eryngium (Blue)" class="cImg pstem" /></div><div class="productName">Eryngium (Blue)</div></div><div class="product199 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaPurple-0.png" alt="Freesia (Lilac)" class="cImg pstem" /></div><div class="productName">Freesia (Lilac)</div></div><div class="product200 productWrap"><div class="productImg"><img src="media/images/products/gb_FreesiaYellow-0.png" alt="Freesia (Yellow)" class="cImg pstem" /></div><div class="productName">Freesia (Yellow)</div></div><div class="product30 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiCerise-0.png" alt="Germini (Cerise)" class="cImg pstem" /></div><div class="productName">Germini (Cerise)</div></div><div class="product193 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiOrange-0.png" alt="Germini (Orange)" class="cImg pstem" /></div><div class="productName">Germini (Orange)</div></div><div class="product31 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPeach-0.png" alt="Germini (Peach)" class="cImg pstem" /></div><div class="productName">Germini (Peach)</div></div></div><div class="slideBlock"><div class="product32 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiPink-0.png" alt="Germini (Pink)" class="cImg pstem" /></div><div class="productName">Germini (Pink)</div></div><div class="product33 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiWhite-0.png" alt="Germini (White)" class="cImg pstem" /></div><div class="productName">Germini (White)</div></div><div class="product194 productWrap"><div class="productImg"><img src="media/images/products/gb_GerminiYellow-0.png" alt="Germini (Yellow)" class="cImg pstem" /></div><div class="productName">Germini (Yellow)</div></div><div class="product34 productWrap"><div class="productImg"><img src="media/images/products/gb_GypsophilaWhite-0.png" alt="Gypsophila (White)" class="cImg pstem" /></div><div class="productName">Gypsophila (White)</div></div><div class="product16 productWrap"><div class="productImg"><img src="media/images/products/gb_IrisBlue-0.png" alt="Iris (Blue)" class="cImg pstem" /></div><div class="productName">Iris (Blue)</div></div><div class="product26 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticCream-0.png" alt="Lily Asiatic (Cream) " class="cImg pstem" /></div><div class="productName">Lily Asiatic (Cream) </div></div></div><div class="slideBlock"><div class="product192 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticOrange-0.png" alt="Lily Asiatic (Orange)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Orange)</div></div><div class="product27 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticWhite-0.png" alt="Lily Asiatic (White)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (White)</div></div><div class="product28 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyAsiaticYellow-0.png" alt="Lily Asiatic (Yellow)" class="cImg pstem" /></div><div class="productName">Lily Asiatic (Yellow)</div></div><div class="product37 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalPink-0.png" alt="Lily Oriental (Pink)" class="cImg pstem" /></div><div class="productName">Lily Oriental (Pink)</div></div><div class="product38 productWrap"><div class="productImg"><img src="media/images/products/gb_LilyOrientalWhite-0.png" alt="Lily Oriental (White)" class="cImg pstem" /></div><div class="productName">Lily Oriental (White)</div></div><div class="product10 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusLilac-0.png" alt="Lisianthus (Lilac)" class="cImg pstem" /></div><div class="productName">Lisianthus (Lilac)</div></div></div><div class="slideBlock"><div class="product35 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusPink-0.png" alt="Lisianthus (Pink)" class="cImg pstem" /></div><div class="productName">Lisianthus (Pink)</div></div><div class="product36 productWrap"><div class="productImg"><img src="media/images/products/gb_LisianthusWhite-0.png" alt="Lisianthus (White)" class="cImg pstem" /></div><div class="productName">Lisianthus (White)</div></div><div class="product13 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseRed-0.png" alt="Rose (Red)" class="cImg pstem" /></div><div class="productName">Rose (Red)</div></div><div class="product202 productWrap"><div class="productImg"><img src="media/images/products/gb_RoseYellow-0.png" alt="Rose (Yellow)" class="cImg pstem" /></div><div class="productName">Rose (Yellow)</div></div><div class="product39 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadCerise-0.png" alt="Rose large head (Cerise)" class="cImg pstem" /></div><div class="productName">Rose large head (Cerise)</div></div><div class="product40 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadOrange-0.png" alt="Rose large head (Orange)" class="cImg pstem" /></div><div class="productName">Rose large head (Orange)</div></div></div><div class="slideBlock"><div class="product41 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadPink-0.png" alt="Rose large head (Pink)" class="cImg pstem" /></div><div class="productName">Rose large head (Pink)</div></div><div class="product42 productWrap"><div class="productImg"><img src="media/images/products/gb_RoselargeheadWhite-0.png" alt="Rose large head (White)" class="cImg pstem" /></div><div class="productName">Rose large head (White)</div></div><div class="product201 productWrap"><div class="productImg"><img src="media/images/products/gb_SeptemberFlowerBlue-0.png" alt="September Flower (Blue)" class="cImg pstem" /></div><div class="productName">September Flower (Blue)</div></div><div class="product195 productWrap"><div class="productImg"><img src="media/images/products/gb_Solidago-0.png" alt="Solidago" class="cImg pstem" /></div><div class="productName">Solidago</div></div><div class="product2 productWrap"><div class="productImg"><img src="media/images/products/gb_CarnationRed-0.png" alt="Spray Carnation (Red)" class="cImg pstem" /></div><div class="productName">Spray Carnation (Red)</div></div><div class="product46 productWrap"><div class="productImg"><img src="media/images/products/gb_StaticeBlue-0.png" alt="Statice (Blue)" class="cImg pstem" /></div><div class="productName">Statice (Blue)</div></div></div></div>');                
         $('#filterByChoice').html("Colour");        
         
         $('.stemBlockWidthAnchor').toggleClass('menuOpen');
@@ -953,38 +860,29 @@ function menuaccordian() {
     $('.meaningBlock a').click(function(ev) {
         meaning = $(this).attr('class');
         lastfilter = 'meaning=' + meaning;
-        console.log('line 949');
-        console.log(lastfilter);
         $.post('sort/html', {
             type: 'stem',
             filter: lastfilter,
             sort: $('#sortby').val()
         }, function(data) {
-            console.log({type: 'stem',filter: lastfilter,sort: $('#sortby').val()});
-            console.log(data);
             updatemenu(data);
-            $('#meaningBlock').html("Meaning");
-        }).fail(function() {
-            alert("error ajax flowerColourBlock - 946 to 961");
+            $('#filterByChoice').html("Meaning");
         });
         $('.stemBlockWidthAnchor').toggleClass('menuOpen');
         ev.preventDefault();
     });
-    // -------------- AJAX FILTRO FIN ----------------------------------------
-
-    // ------------- ESTILOS / ICONOS MENU ACORDEON ----------------------
     $('#viewMenu').click(function(ev) {
         $('.stemBlockWidthAnchor').toggleClass('menuOpen');
     });
     $('#viewMenu').click(function(ev) {
         if (firstclick) {
             $('.secondLevelButton .arrow').css({
-                'background': 'url(media/images/configurator/menu/menu-silver-arrow-closed.gif) no-repeat top left',
+                'background': 'url(media/images/configurator/menu/menu-silver-arrow-closed.png) no-repeat top left',
                 'width': '14px',
                 'height': '20px'
             });
             $('.topLevelButton .arrow').css({
-                'background': 'url(media/images/configurator/menu/menu-arrow-closed.gif) no-repeat top left',
+                'background': 'url(media/images/configurator/menu/menu-arrow-closed.png) no-repeat top left',
                 'width': '14px',
                 'height': '20px'
             });
@@ -997,12 +895,12 @@ function menuaccordian() {
             firstclick = false;
         } else {
             $('.secondLevelButton .arrow').css({
-                'background': 'url(media/images/configurator/menu/menu-silver-arrow-closed.gif) no-repeat top left',
+                'background': 'url(media/images/configurator/menu/menu-silver-arrow-closed.png) no-repeat top left',
                 'width': '14px',
                 'height': '20px'
             });
             $('.topLevelButton .arrow').css({
-                'background': 'url(media/images/configurator/menu/menu-arrow-closed.gif) no-repeat top left',
+                'background': 'url(media/images/configurator/menu/menu-arrow-closed.png) no-repeat top left',
                 'width': '14px',
                 'height': '20px'
             });
@@ -1029,14 +927,13 @@ function menuaccordian() {
                 $(el).addClass('hideBlock');
             }
             $('.secondLevelButton .arrow').css({
-                'background': 'url(media/images/configurator/menu/menu-silver-arrow-closed.gif) no-repeat top left',
+                'background': 'url(media/images/configurator/menu/menu-silver-arrow-closed.png) no-repeat top left',
                 'width': '14px',
                 'height': '20px'
             });
         });
         $(this).find('.arrow').css({
-            //'background': 'url(media/images/configurator/menu/menu-silver-arrow-open.png) no-repeat top left',
-            'background': 'url(media/images/configurator/menu/menu-arrow-open.png) no-repeat top left',
+            'background': 'url(media/images/configurator/menu/menu-silver-arrow-open.png) no-repeat top left',
             'width': '20px',
             'height': '14px'
         });
@@ -1052,7 +949,7 @@ function menuaccordian() {
             });
         } else {
             $(this).find('.arrow').css({
-                'background': 'url(media/images/configurator/menu/menu-arrow-closed.gif) no-repeat top left',
+                'background': 'url(media/images/configurator/menu/menu-arrow-closed.png) no-repeat top left',
                 'width': '14px',
                 'height': '20px'
             });
@@ -1064,7 +961,7 @@ function menuaccordian() {
     $('.close').click(function(ev) {
         $(this).parent('div').toggleClass('hideBlock');
         $('.secondLevelButton .arrow').css({
-            'background': 'url(media/images/configurator/menu/menu-silver-arrow-closed.gif) no-repeat top left',
+            'background': 'url(media/images/configurator/menu/menu-silver-arrow-closed.png) no-repeat top left',
             'width': '14px',
             'height': '20px'
         });
@@ -1073,11 +970,8 @@ function menuaccordian() {
         $('#productPopUp').hide();
         $('.stemBlockWidthAnchor').toggleClass('menuOpen');
     });
-    // ------------- ESTILOS / ICONOS MENU ACORDEON FIN ----------------------
 }
-//------------------------- MENU ACORDEON FIN ------------------------------------
 
-// oyente de interfaz
 function interfaceListeners() {
     $('.galleryIcon').colorbox({
         width: "380px",
@@ -1091,9 +985,8 @@ function interfaceListeners() {
         }
     });
     $('.totalCostWrap').click(function(ev) {
-        console.log('post10');
-        console.log('line 1092');
-        // carga creativa
+                    console.log('post10');
+
         $.post('overlay/creativecharge', function(data) {
             $.colorbox({
                 width: "913px",
@@ -1105,7 +998,6 @@ function interfaceListeners() {
     });
 }
 
-// uso en - menuaccordian -> sortoptions - lineas 832 y 843
 function sundryavailability() {
     $('.productWrap').each(function(index, el) {
         if (!isDefaultContainer()) {
@@ -1115,13 +1007,8 @@ function sundryavailability() {
     });
 }
 
-// uso en - menuaccordian -> sortoptions - lineas 830, 840 //  1446
-// disponibilidad de contenedores
 function containeravailability() {
-    console.log('Entro en  containeravailability - linea 1117');
     placedfoliage = calculateFoliage();
-    console.log('calcular follaje colocado - linea 1119');
-    console.log(placedfoliage);
     $('.productWrap').each(function(index, el) {
         tempstemcount = 0;
         classes = $(el).attr('class');
@@ -1160,8 +1047,8 @@ function containeravailability() {
                         cssclasses = $(this).parents('.productWrap').attr('class').split(" ");
                         productname = cssclasses[0];
                         productid = productname.replace("product", "");
-                        console.log('post11');
-                        console.log('linea 1160');
+                                    console.log('post11');
+
                         $.post('product/index/' + productid, function(data) {
                             $('#productPopUp').css({
                                 "top": popY,
@@ -1197,8 +1084,8 @@ function containeravailability() {
                         cssclasses = $(this).parents('.productWrap').attr('class').split(" ");
                         productname = cssclasses[0];
                         productid = productname.replace("product", "");
-                        console.log('post12');
-                        console.log('linea 1198');
+                                    console.log('post12');
+
                         $.post('product/index/' + productid, function(data) {
                             $('#productPopUp').css({
                                 "top": popY,
@@ -1216,7 +1103,6 @@ function containeravailability() {
     });
 }
 
-// recalcular el recuento de tallos
 function recalculatestemcount() {
     stemcount = 0;
     placedstems = foreground.getChildren();
@@ -1225,13 +1111,11 @@ function recalculatestemcount() {
     }
 }
 
-// comprobar la capacidad restante
 function checkCapacityRemaining() {
     capacity = containerlayer.getChildren()[0].pvol;
     return capacity - stemcount;
 }
 
-// hacer superposición de información
 function makeInformationOverlay(data) {
     $.colorbox({
         html: data,
@@ -1245,29 +1129,20 @@ function makeInformationOverlay(data) {
     });
 }
 
-// Cheque contenedor completo
 function fullContainerCheck() {
     if (checkCapacityRemaining() == 0) {
         if (containerlayer.getChildren()[0].pvol < maxcontainersize) {
-            console.log('Cheque contenedor completo - POST - linea 1249')
             $.post('overlay/dialog/selectcontainer', function(data) {
-                console.log(data);
                 makeInformationOverlay(data);
-            }).fail(function() {
-                alert("error ajax fullContainerCheck - 1246 to 1255");
             });
         } else {
             $.post('overlay/dialog/full', function(data) {
-                console.log(data);
                 makeInformationOverlay(data);
-            }).fail(function() {
-                alert("error ajax fullContainerCheck - 1246 to 1260");
             });
         }
     }
 }
 
-// calcular follaje
 function calculateFoliage() {
     placedstems = foreground.getChildren();
     numFoliage = 0;
@@ -1279,10 +1154,7 @@ function calculateFoliage() {
     return numFoliage;
 }
 
-// contenedor puede tomar tallo
 function containerCanTakeStem(placed) {
-    console.log('entro en contenedor puede tomar tallo - linea 1280');
-    console.log(placed);
     stemcountup(placed);
     placedfoliage = calculateFoliage();
     if (thistype == "pfoliage") {
@@ -1296,27 +1168,19 @@ function containerCanTakeStem(placed) {
                 postinfo = {
                     foliage: (minimumfoliage - placedfoliage)
                 };
-                console.log('post13');
-                console.log('linea 1297');
-                console.log(postinfo);
+                            console.log('post13');
+
                 $.post('overlay/dialog/nearcapacity', postinfo, function(data) {
-                    console.log(data);
                     makeInformationOverlay(data);
-                }).fail(function() {
-                    alert("error ajax containerCanTakeStem - 1302");
                 });
             } else {
                 postinfo = {
                     foliage: (minimumfoliage - placedfoliage)
                 };
-                console.log('post14');
-                console.log('linea 1309');
-                console.log(postinfo);
+                            console.log('post14');
+
                 $.post('overlay/dialog/nearcapacitylargest', postinfo, function(data) {
-                    console.log(data);
                     makeInformationOverlay(data);
-                }).fail(function() {
-                    alert("error ajax containerCanTakeStem - 1302");
                 });
             }
             cantake = false;
@@ -1324,40 +1188,27 @@ function containerCanTakeStem(placed) {
     } else {
         if (checkCapacityRemaining() < 0) {
             if (containerlayer.getChildren()[0].pvol < maxcontainersize) {
-                console.log('post15');
-                console.log('linea 1325');
+                            console.log('post15');
+
                 $.post('overlay/dialog/cannotplace', function(data) {
-                    console.log(data);
                     makeInformationOverlay(data);
-                }).fail(function() {
-                    alert("error ajax containerCanTakeStem - 1330");
                 });
             } else {
-                console.log('post16');
-                console.log('linea 1331');
+                            console.log('post16');
+
                 $.post('overlay/dialog/cannotplacelargest', postinfo, function(data) {
-                    console.log(data);
                     makeInformationOverlay(data);
-                }).fail(function() {
-                    alert("error ajax containerCanTakeStem - 1339");
                 });
             }
             cantake = false;
         }
     }
     stemcountdown(placed);
-    console.log([cantake, alertmessage]);
     return [cantake, alertmessage];
 }
 
-// Construir contenedor
 function makecontainer(imgname, isdefault) {
-    console.log('entro en: construir contenedor - linea 1355');
-    console.log(imgname);
-    console.log(isdefault);
-    console.log(images);
     image = images[imgname];
-    console.log(image);
     imgW = image[0].width;
     offsetx = imgW / 2;
     container = new Kinetic.Image({
@@ -1373,20 +1224,15 @@ function makecontainer(imgname, isdefault) {
     container.bulky = image[0].bulky;
     container.price = image[0].pcost / 100;
     container.isdefault = isdefault;
-    console.log(container);
     return container;
 }
 
-// es contenedor base
 function isDefaultContainer() {
     containers = containerlayer.getChildren();
     return containers[0].isdefault;
 }
 
-// hacer cinta
 function makeribbon(imgname) {
-    console.log('entro en: makeribbon - linea 1388');
-    console.log(imgname)
     image = images[imgname];
     imgW = image[0].width;
     offsetx = imgW / 2;
@@ -1400,15 +1246,10 @@ function makeribbon(imgname) {
     ribbon.productNum = imgname;
     ribbon.pid = imgname;
     ribbon.price = image[0].pcost / 100;
-    console.log(ribbon);
     return ribbon;
 }
 
-// arrastrar mover oyente
 function dragmoveListener(ev, stem) {
-    console.log('entro en oyente de arrastrar - mover linea 1409');
-    console.log(ev);
-    console.log(stem);
     var imgW = stem.getWidth();
     var imgH = stem.getHeight();
     var limitL = 0 + (imgW / 4);
@@ -1450,10 +1291,7 @@ function dragmoveListener(ev, stem) {
     } else {}
 }
 
-// oyente fin de arrastre
 function dragendListener(ev) {
-    console.log('entro en: Oyente fin de arrastre - linea 1455');
-    console.log(ev);
     background.draw();
     foreground.draw();
     if (ev.changedTouches) {
@@ -1489,7 +1327,6 @@ function dragendListener(ev) {
                         console.log('post17');
 
             setTimeout(function() {
-                console.log('POST: Oyente fin de arrastre - linea 1492');
                 $.post('overlay/dialog/creativecharge1', function(data) {
                     makeInformationOverlay(data);
                 });
@@ -1504,9 +1341,7 @@ function dragendListener(ev) {
     }
 }
 
-// añadir oyentes de vástago
 function add_stem_listeners(stem) {
-    console.log('entro en: añadir oyentes de vástago - linea 1508')
     stem.on("mousedown touchstart", function() {
         var imagesrc = this.getImage();
         for (products in images) {
@@ -1525,14 +1360,7 @@ function add_stem_listeners(stem) {
     });
 }
 
-// soltar oyente
 function droplistener(background, containerlayer, foreground, event, ui) {
-    console.log('entro en: soltar oyente - linea 1530');
-    //console.log(background);
-    //console.log(containerlayer);
-    //console.log(foreground);
-    //console.log(event);
-    //console.log(ui);
     var mouseX, mouseY, imgW, imgH, imgX, imgY;
     var offset = $('#foreground').offset();
     var triggerpoint = 50 + offset.left;
@@ -1554,8 +1382,8 @@ function droplistener(background, containerlayer, foreground, event, ui) {
         fullContainerCheck();
         if (totalflowers == (creativechargeboundary + 1) && optiontobuy) {
             creativecharge = creativecharge2;
-            console.log('post18');
-            console.log('linea 1558 - soltar oyente');
+                        console.log('post18');
+
             setTimeout(function() {
                 $.post('overlay/dialog/creativecharge2', function(data) {
                     makeInformationOverlay(data);
@@ -1573,9 +1401,7 @@ function droplistener(background, containerlayer, foreground, event, ui) {
     }
 }
 
-// hacer lienzo
 function makecanvas() {
-    console.log('Entro en: Construir lienzo - 1578');
     stage = new Kinetic.Stage({
         container: "canvasWrapper",
         width: 727,
@@ -1774,9 +1600,7 @@ function makecanvas() {
     return [stage, background, containerlayer, sundrylayer, foreground];
 }
 
-// borrar inicio
 function clearStart() {
-    console.log('entro en: borrar inicio - linea 1779')
     background = stage.get(".background")[0];
     startimage = stage.get("#startText")[0];
     startimageTxt = stage.get("#startImgText")[0];
@@ -1786,10 +1610,7 @@ function clearStart() {
     start++;
 }
 
-// mecánica de arrastre
 function dragMechanics(stem) {
-    console.log('entro en: mecánica de arrastre - linea 1791');
-    console.log(stem);
     var fullname = stem.attr('alt');
     stem.on("mousedown", function(event) {
         var thisimages = $(this).parents('.productWrap').attr('class').split(" ");
@@ -1835,9 +1656,8 @@ function dragMechanics(stem) {
                 postinfo = {
                     capacity: images[thisimages[0]][0].pvol
                 };
-                console.log('post19');
-                console.log('1839');
-                console.log(postinfo);
+                            console.log('post19');
+
                 $.post('overlay/dialog/containertoosmall', postinfo, function(data) {
                     makeInformationOverlay(data);
                 });
@@ -1989,7 +1809,6 @@ function dragMechanics(stem) {
         }
     });
     stem.on('mouseup', function(ev) {
-        console.log('entro en: mecánica de arrastre - evento mouseup - linea 1992');
         var offset = $('#foreground').offset();
         var triggerpoint = 50 + offset.left;
         $('body').off('mousemove');
@@ -2001,7 +1820,6 @@ function dragMechanics(stem) {
         }
     });
     stem.on('click', function(ev) {
-        console.log('entro en: mecánica de arrastre - evento click - linea 2004');
         ev.stopPropagation();
         popX = $(this).offset().left + $(this).outerWidth();
         if ($(this).offset().top < 251) {
@@ -2012,10 +1830,9 @@ function dragMechanics(stem) {
         cssclasses = $(this).parents('.productWrap').attr('class').split(" ");
         productname = cssclasses[0];
         productid = productname.replace("product", "");
-        console.log('post20');
-        console.log('2016');
+                    console.log('post20');
+
         $.post('product/index/' + productid, function(data) {
-            console.log(data);
             $('#productPopUp').css({
                 "top": popY,
                 "left": popX + 30
@@ -2032,18 +1849,14 @@ function dragMechanics(stem) {
     });
 }
 
-// contenedor imagen oyente
 function cImgListener() {
-    console.log('entro en: contenedor imagen oyente');
     $('img.cImg').each(function() {
         var draggedImg = $(this);
         dragMechanics(draggedImg);
     });
 }
 
-//añadir Canvas Listeners
 function addCanvasListeners(background, containerlayer, foreground) {
-    console.log('entro en: añadir Canvas Listeners - linea 2046');
     $("#foreground").droppable({
         activeClass: "ui-state-default",
         hoverClass: "ui-state-hover",
@@ -2054,7 +1867,6 @@ function addCanvasListeners(background, containerlayer, foreground) {
     });
 }
 
-// hacer inventario
 function makeInventory() {
     placeditems = foreground.getChildren();
     inventory = new Object();
@@ -2078,11 +1890,6 @@ function makeInventory() {
         inventory['sundry']['pid'] = sundrylayer.getChildren()[0].pid.replace("product", "");
         inventory['sundry']['type'] = "sundry";
     }
-    console.log('POST inventory - linea 2081');
-    console.log({
-        'inventory': inventory,
-        'creativecharge': creativecharge
-    });
     $.post('inventory', {
         'inventory': inventory,
         'creativecharge': creativecharge
@@ -2105,7 +1912,6 @@ function makeInventory() {
     });
 }
 
-// limpiar todo
 function clearAll() {
     foreground.removeChildren();
     containerlayer.removeChildren();
@@ -2156,7 +1962,6 @@ function clearAll() {
     start = 0;
 }
 
-// guardar compilación
 function saveBuild() {
     currentcontainer = containerlayer.getChildren()[0];
     if (currentcontainer) {
@@ -2166,26 +1971,19 @@ function saveBuild() {
     vase.moveToTop();
     background.draw();
     foreground.draw();
-
-    console.log('entro en: guardar compilación - linea 2170');
-    console.log(makeBuildXML());
-
     stage.toDataURL({
         callback: function(dataUrl) {
             splitDataUrl = dataUrl.split(',');
             $('#saveinfo form').attr('action', '/store');
             $('#build').attr('value', makeBuildXML());
             $('#buildImg').attr('value', splitDataUrl[1]);
-            //console.log(splitDataUrl[1]);
             $('#saveinfo form').submit();
         },
         mimeType: 'image/jpeg',
         quality: 0.9
     });
-
 }
 
-// hacer construir XML
 function makeBuildXML() {
     stems = foreground.getChildren();
     xml = '<build><stems>';
@@ -2215,7 +2013,6 @@ function makeBuildXML() {
     return xml;
 }
 
-// recrear xml
 function recreateBuild(buildxml, background, containerlayer, sundrylayer, foreground, stage) {
     xml = $.parseXML(buildxml);
     sundrylayer.removeChildren();
@@ -2360,7 +2157,6 @@ function byobinit() {
     $('#save').click(function() {
         saveBuild();
     });
-    //ramo conf comprar
     $('.bouquetConfBuy').click(function() {
         placedfoliage = calculateFoliage();
         if (((totalflowers - placedfoliage) < minimumstems) && (calculateFoliage() < minimumfoliage)) {
@@ -2368,9 +2164,8 @@ function byobinit() {
                 foliage: (minimumfoliage - placedfoliage),
                 stems: (minimumstems - (totalflowers - placedfoliage))
             };
-            console.log('post2');
-            console.log('linea 2372');
-            console.log(postinfo);
+                        console.log('post2');
+
             $.post('overlay/dialog/buystemsfoliage', postinfo, function(data) {
                 makeInformationOverlay(data);
             });
@@ -2378,9 +2173,8 @@ function byobinit() {
             postinfo = {
                 stems: (minimumstems - (totalflowers - placedfoliage))
             };
-            console.log('post3');
-            console.log('linea 2382');
-            console.log(postinfo);
+                        console.log('post3');
+
             $.post('overlay/dialog/buystems', postinfo, function(data) {
                 makeInformationOverlay(data);
             });
@@ -2388,11 +2182,10 @@ function byobinit() {
             postinfo = {
                 foliage: (minimumfoliage - placedfoliage)
             };
-            console.log('post4');
+                        console.log('post4');
+
             console.log('post5');
 
-            console.log('linea 2394');
-            console.log(postinfo);
             $.post('overlay/dialog/buyfoliage', postinfo, function(data) {
                 makeInformationOverlay(data);
             });

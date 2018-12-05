@@ -73,6 +73,7 @@
 
             <div id="saveinfo">
                 <form action="/" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+                    @csrf
                     <input type="hidden" name="build" value="0" id="build">
                     <input type="hidden" name="buildImg" value="0" id="buildImg">
                     <input type="hidden" name="derivation" value="0" id="derivation">
@@ -703,7 +704,8 @@
         $(window).on('load', function() {
             byobinit();
             loginOverlayConfigurator();
-        });    </script>
+        });
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
